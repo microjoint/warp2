@@ -1,17 +1,4 @@
 ---
 classes:
-    - vim
+    - profile::pc
 
-vim::config:
-  '/root/.vim':
-    ensure: directory
-  '/root/.vim/bundle':
-    ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
-  '/home/mcampbell/.vim':
-    ensure: directory
-  '/home/mcampbell/.vim/bundle':
-    ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
