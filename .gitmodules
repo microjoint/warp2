@@ -4,3 +4,15 @@
 [submodule "modules/git"]
 	path = modules/git
 	url = https://github.com/puppetlabs/puppetlabs-git.git
+[submodule "modules/dropbox"]
+	path = modules/dropbox
+	url = https://github.com/microjoint/mj-puppet-dropbox.git
+[submodule "modules/apt"]
+	path = modules/apt
+	url = https://github.com/evolvingweb/puppet-apt.git
+[submodule "modules/stdlib"]
+	path = modules/stdlib
+	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "modules/bash"]
+	path = modules/bash
+	url = https://github.com/microjoint/mj-puppet-bash.git
