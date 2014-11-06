@@ -1,3 +1,6 @@
 [submodule "modules/vim"]
 	path = modules/vim
 	url = https://github.com/microjoint/puppet-vim.git
+[submodule "modules/git"]
+	path = modules/git
+	url = https://github.com/puppetlabs/puppetlabs-git.git
