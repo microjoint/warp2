@@ -1,0 +1,6 @@
+---
+classes:
+    - profile::pc
+
+synergy::config: '/home/mcampbell/.synergy.conf'
+synergy::config_source: 'puppet:///modules/synergy/synergy_willhill.conf'
