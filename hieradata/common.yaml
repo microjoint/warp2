@@ -1,14 +1,18 @@
 ---
+#profile::git::cache_timeout: 'cache'
+profile::git::cache_timeout: 'cache --timeout=86400'
 vim::config:
   '/root/.vim':
     ensure: directory
-  '/root/.vim/bundle':
-    ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
+    owner: mcampbell
+    group: mcampbell
   '/home/mcampbell/.vim/bundle':
     ensure: directory
+    owner: mcampbell
+    group: mcampbell
     source: "puppet:///modules/vim/bundle"
     recurse: remote
+    owner: mcampbell
+    group: mcampbell

@@ -1,5 +1,7 @@
 #
-class profile::git {
+class profile::git (
+    $cache_timeout = "cache --timeout=3600",
+) {
   include git
 
   git::config {'user.name':
@@ -15,7 +17,7 @@ class profile::git {
     user  => 'mcampbell',
   }
   git::config { 'credential.helper':
-    value => 'cache --timeout=3600',
+    value => $cache_timeout,
     user  => 'mcampbell',
   }
 
