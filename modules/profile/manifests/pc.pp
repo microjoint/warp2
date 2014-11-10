@@ -7,4 +7,7 @@ class profile::pc (
   include dropbox
   # setup symlinks
   create_resources( file, $symlinks )
+
+  #screensaver
+  include xscreensaver
 }

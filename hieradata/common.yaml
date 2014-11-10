@@ -4,22 +4,38 @@ profile::git::cache_timeout: 'cache --timeout=86400'
 bash::config:
   '/etc/bashrc':
     ensure: file
-    source: 'puppet:///modules/bash/vimrc'
+    source: 'puppet:///modules/bash/bashrc'
 vim::config:
   '/root/.vim':
     ensure: directory
+    owner: root
+    group: root
+  '/root/.vimrc':
+    ensure: file
+    owner: root
+    group: root
+    source: "puppet:///modules/vim/vimrc"
   '/root/.vim/bundle':
     ensure: directory
     source: "puppet:///modules/vim/bundle"
     recurse: remote
+    owner: root
+    group: root
   '/root/.vim/colors':
     ensure: directory
     source: 'puppet:///modules/vim/colors/colors'
     recurse: remote
+    owner: root
+    group: root
   '/home/mcampbell/.vim':
     ensure: directory
     owner: mcampbell
     group: mcampbell
+  '/home/mcampbell/.vimrc':
+    ensure: file
+    owner: mcampbell
+    group: mcampbell
+    source: "puppet:///modules/vim/vimrc"
   '/home/mcampbell/.vim/bundle':
     ensure: directory
     owner: mcampbell
