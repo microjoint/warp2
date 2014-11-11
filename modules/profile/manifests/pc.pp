@@ -10,4 +10,6 @@ class profile::pc (
 
   #screensaver
   include xscreensaver
+
+  include profile::apps
 }

@@ -27,6 +27,7 @@ vim::config:
     recurse: remote
     owner: root
     group: root
+profile::config::mcampbell:
   '/home/mcampbell/.vim':
     ensure: directory
     owner: mcampbell

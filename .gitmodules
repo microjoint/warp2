@@ -16,3 +16,6 @@
 [submodule "modules/bash"]
 	path = modules/bash
 	url = https://github.com/microjoint/mj-puppet-bash.git
+[submodule "modules/openssh"]
+	path = modules/openssh
+	url = https://github.com/stdmod/puppet-openssh.git
