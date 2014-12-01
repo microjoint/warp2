@@ -54,3 +54,8 @@ profile::config::mcampbell:
     source: 'puppet:///modules/profile/mcampbell/dialrc'
     owner: mcampbell
     group: mcampbell
+  '/home/mcampbell/.ssh/config':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/ssh_config'
+    owner: mcampbell
+    group: mcampbell
