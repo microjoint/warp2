@@ -49,3 +49,8 @@ profile::config::mcampbell:
     owner: mcampbell
     group: mcampbell
     recurse: remote
+  '/home/mcampbell/.dialrc':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/dialrc'
+    owner: mcampbell
+    group: mcampbell
