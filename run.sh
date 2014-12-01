@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ $# -ne 2 ]
 then
     echo "Please supply the root directory. it's usually '.'"

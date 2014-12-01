@@ -4,7 +4,7 @@ class profile::pc (
   ) inherits profile {
   include synergy
 
-  include dropbox
+  # include dropbox
   # setup symlinks
   create_resources( file, $symlinks )
 
