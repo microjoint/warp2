@@ -1,0 +1,16 @@
+---
+profile::user::mcampbell::config:
+  '/home/mcampbell/.config':
+    ensure: directory
+    owner: mcampbell
+    group: mcampbell
+  '/home/mcampbell/.config/rc.lua':
+    ensure: file
+    owner: mcampbell
+    group: mcampbell
+    source: "puppet:///modules/profile/mcampbell/awesome/rc.lua"
+  '/home/mcampbell/.config/theme.lua':
+    ensure: file
+    owner: mcampbell
+    group: mcampbell
+    source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
