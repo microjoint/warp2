@@ -7,4 +7,5 @@
 :hierarchy:
     - "node/%{hostname}"
     - "%{env}"
+    - "%{role}"
     - common

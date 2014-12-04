@@ -2,6 +2,10 @@
 class profile::pc (
   $symlinks = {}
   ) inherits profile {
+
+  include profile::user::mcampbell
+  include profile::user::root
+
   include synergy
 
   # include dropbox

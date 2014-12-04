@@ -5,7 +5,7 @@ bash::config:
   '/etc/bashrc':
     ensure: file
     source: 'puppet:///modules/bash/bashrc'
-vim::config:
+profile::user::root::config:
   '/root/.vim':
     ensure: directory
     owner: root
@@ -14,7 +14,7 @@ vim::config:
     ensure: file
     owner: root
     group: root
-    source: "puppet:///modules/vim/vimrc"
+    source: "puppet:///modules/profile/mcampbell/vimrc"
   '/root/.vim/bundle':
     ensure: directory
     source: "puppet:///modules/vim/bundle"
@@ -27,7 +27,7 @@ vim::config:
     recurse: remote
     owner: root
     group: root
-profile::config::mcampbell:
+profile::user::mcampbell::config:
   '/home/mcampbell/.vim':
     ensure: directory
     owner: mcampbell
@@ -36,7 +36,7 @@ profile::config::mcampbell:
     ensure: file
     owner: mcampbell
     group: mcampbell
-    source: "puppet:///modules/vim/vimrc"
+    source: "puppet:///modules/profile/mcampbell/vimrc"
   '/home/mcampbell/.vim/bundle':
     ensure: directory
     owner: mcampbell
