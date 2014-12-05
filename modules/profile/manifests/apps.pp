@@ -4,4 +4,8 @@ class profile::apps inherits profile {
   include profile::apps::curl
   include profile::apps::tmux
   include profile::apps::awesome
+
+  package {'feh': ensure => installed}
+
+  package {'keychain': ensure => installed}
 }

@@ -1,5 +1,0 @@
----
-xscreensaver::config:
-  '/home/mcampbell/.xscreensaver':
-    ensure: file
-    source: 'puppet:///modules/xscreensaver/xscreensaver'

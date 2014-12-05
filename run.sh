@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/bash 
 
 if [ $# -ne 2 ]
 then
@@ -10,5 +9,5 @@ fi
 
 root=$1
 
-FACTER_env=$2 puppet apply /etc/puppet/manifests/site.pp
-#FACTER_env=$2 puppet apply --verbose --debug /etc/puppet/manifests/site.pp
+FACTER_role=$2 puppet apply /etc/puppet/manifests/site.pp
+#FACTER_role=$2 puppet apply --verbose --debug /etc/puppet/manifests/site.pp
