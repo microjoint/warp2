@@ -1,0 +1,7 @@
+XTerm*faceName: Inconsolata
+XTerm*faceSize: 10
+
+XTerm*background: black
+XTerm*foreground: white
+XTerm*saveLines: 5000
+

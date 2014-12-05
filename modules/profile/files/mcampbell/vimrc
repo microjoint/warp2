@@ -93,7 +93,8 @@
   
   " Vim UI {
     set t_Co=256
-    colorscheme oceanblack256      " load a colorscheme
+    colorscheme seoul256      " load a colorscheme
+    " colorscheme oceanblack256      " load a colorscheme
     set showmode                   " display the current mode
     set cursorline                 " highlight the current line
     hi cursorline guibg=\#333333   " highlight bg color
@@ -154,6 +155,9 @@
     set pastetoggle=<F12>         " toggle safer pastes
     " Remove trailing whitespaces and \^M chars
     " autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\\\s\\\\+$","","")'))
+    
+    " vimwikti folding
+    autocmd FileType vimwiki set foldmethod=indent foldlevel=1
     " }
 
   " Key (re)Mappings {
