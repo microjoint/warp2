@@ -4,8 +4,12 @@ to_install:
   'curl':
     ensure: present
   'tmux':
-    ensure: purged
+    ensure: absent
+  'keychain':
+    ensure: installed
+
 profile::git::cache_timeout: 'cache --timeout=86400'
+
 bash::config:
   '/etc/bashrc':
     ensure: file

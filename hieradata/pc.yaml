@@ -3,10 +3,10 @@ classes:
     - profile::pc
 
 to_install:
-  'curl':
+  'awesome':
     ensure: present
   'xscreensaver':
-    ensure: present
+    ensure: absent
 
 profile::user::mcampbell::config:
   '/home/mcampbell/.xinitrc':

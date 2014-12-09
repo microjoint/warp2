@@ -10,8 +10,10 @@ profile::apps::to_install:
     ensure: installed
 
 
-synergy::config: '/home/mcampbell/.synergy.conf'
-synergy::config_source: 'puppet:///modules/synergy/synergy_willhill.conf'
+profile::user::mcampbell::config:
+  '/home/mcampbell/.synergy.conf':
+    ensure: file
+    source: 'puppet:///modules/synergy/synergy_willhill.conf'
 
 vim::global_config: 'etc/vim/vimrc'
 
