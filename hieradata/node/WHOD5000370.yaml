@@ -4,8 +4,6 @@
 profile::apps::to_install:
   'feh':
     ensure: installed
-  'keychain':
-    ensure: installed
   'subversion':
     ensure: installed
 
@@ -13,7 +11,7 @@ profile::apps::to_install:
 profile::user::mcampbell::config:
   '/home/mcampbell/.synergy.conf':
     ensure: file
-    source: 'puppet:///modules/synergy/synergy_willhill.conf'
+    source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
 
 vim::global_config: 'etc/vim/vimrc'
 
