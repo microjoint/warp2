@@ -9,12 +9,6 @@ to_install:
     ensure: absent
 
 profile::user::mcampbell::config:
-  '/home/mcampbell/.xinitrc':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/xinitrc"
-  '/home/mcampbell/.Xresources':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/Xresources"
   '/home/mcampbell/.bashrc':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/bashrc"
@@ -28,6 +22,12 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.config/awesome/theme.lua':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
+  '/home/mcampbell/.xinitrc':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/xinitrc"
+  '/home/mcampbell/.Xresources':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/Xresources"
   '/home/mcampbell/.xscreensaver':
     ensure: file
-    source: 'puppet:///modules/xscreensaver/xscreensaver'
+    source: 'puppet:///modules/profile/mcampbell/xscreensaver'
