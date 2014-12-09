@@ -1,5 +1,15 @@
 ---
 
+# applications to install
+profile::apps::to_install:
+  'feh':
+    ensure: installed
+  'keychain':
+    ensure: installed
+  'subversion':
+    ensure: installed
+
+
 synergy::config: '/home/mcampbell/.synergy.conf'
 synergy::config_source: 'puppet:///modules/synergy/synergy_willhill.conf'
 

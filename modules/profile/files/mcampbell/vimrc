@@ -68,19 +68,19 @@
     set clipboard=unnamed
 
     " Setting up the directories {
-      set backup                  " nice to have backups, let's put them
-                                  " out of the way
-      set backupdir=$HOME/.vimbackup//
-      set directory=$HOME/.vimswap//
-      set viewdir=$HOME/.vimviews//
+    set backup                  " nice to have backups, let's put them
+                                " out of the way
+    set backupdir=$HOME/.vimbackup//
+    set directory=$HOME/.vimswap//
+    set viewdir=$HOME/.vimviews//
 
-      " Create them if not already there
-      silent execute '!mkdir -p $HOME/.vimbackup'
-      silent execute '!mkdir -p $HOME/.vimswap'
-      silent execute '!mkdir -p $HOME/.vimviews'
+    " Create them if not already there
+    silent execute '!mkdir -p $HOME/.vimbackup'
+    silent execute '!mkdir -p $HOME/.vimswap'
+    silent execute '!mkdir -p $HOME/.vimviews'
 
-      au BufWinLeave \* silent! mkview    "make vim save view
-      au BufWinLeave \* silent! loadview  "load vim save view
+    au BufWinLeave *.* silent! mkview    "make vim save view
+    au BufWinEnter *.* silent! loadview  "load vim save view
     " }
   "}
 
@@ -93,55 +93,31 @@
   
   " Vim UI {
     set t_Co=256
-    colorscheme seoul256      " load a colorscheme
-    " colorscheme oceanblack256      " load a colorscheme
+    colorscheme solarized          " load a colorscheme
+    " colorscheme oceanblack256    " load a colorscheme
     set showmode                   " display the current mode
     set cursorline                 " highlight the current line
     hi cursorline guibg=\#333333   " highlight bg color
     hi cursorColunm guibg=\#333333 " highlight cursor
 
-    "if has('cmdline_info')
-      " set ruler                    " show ruler
-      " set rulerformat=%30(%=\\:b%n%y%m%r%w\\ %l,%c%V\\ %P%) " what a ruler
-      " set rulerformat=%<%f%<%{FileTime()}%<%h%m%r%=%-20.(line=%03l,col=%02c%V,totlin=%L%)\%h%m%r%=%-30(,BfNm=%n%Y%)\%P\*%=%{CurTime()}
-      " set showcmd                  " show partial commands in status line 
-    "endif
-  
-  if has('statusline')
-    set laststatus=2
-"
-    "" Broken down into segments
-      "set statusline=%t             "tail of the filename
-      "set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-      "set statusline+=%{&ff}]       "file format
-      "set statusline+=%h            "help file flag
-      "set statusline+=%m            "modified flag
-      "set statusline+=%r            "read only flag
-      "set statusline+=%y            "filetype
-      "set statusline+=%=            "left/right separator
-      "set statusline+=%c            "cursor column
-      "set statusline+=%l/%L         "cursor line/total lines
-      "set statusline+=\ %P          "percent through file
-  endif
-
-  set backspace=indent,eol,start  " backspace galore
-  set linespace=0                 " no extra spaces between lines
-  set number                      " show line numbers
-  set relativenumber              " show relative numbers
-  set showmatch                   " show matching brackets,etc
-  set incsearch                   " find as you type
-  set hlsearch                    " light up the search
-  set winminheight=0              " allow 0 height windows
-  set ignorecase                  " case insensitive search
-  set smartcase                   " case sensitive if the is a UC
-  set wildmenu                    " show list
-  set wildmode=list:longest,full  " order for list
-  set whichwrap=b,s,h,l,<,>,[,]   " good wraping
-  set scrolljump=5                " lines to jump when leave screen
-  set scrolloff=3                 " lines to keep for context
-  set foldenable                  " fold code
-  set list
-  set listchars=tab:>.,trail:.,extends:\#,nbsp:. " Highlight bad whitespace
+    set backspace=indent,eol,start  " backspace galore
+    set linespace=0                 " no extra spaces between lines
+    set number                      " show line numbers
+    set relativenumber              " show relative numbers
+    set showmatch                   " show matching brackets,etc
+    set incsearch                   " find as you type
+    set hlsearch                    " light up the search
+    set winminheight=0              " allow 0 height windows
+    set ignorecase                  " case insensitive search
+    set smartcase                   " case sensitive if the is a UC
+    set wildmenu                    " show list
+    set wildmode=list:longest,full  " order for list
+    set whichwrap=b,s,h,l,<,>,[,]   " good wraping
+    set scrolljump=5                " lines to jump when leave screen
+    set scrolloff=3                 " lines to keep for context
+    set foldenable                  " fold code
+    set list
+    set listchars=tab:>.,trail:.,extends:\#,nbsp:. " Highlight bad whitespace
   " }
 
   " Formatting {
@@ -155,9 +131,9 @@
     set pastetoggle=<F12>         " toggle safer pastes
     " Remove trailing whitespaces and \^M chars
     " autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\\\s\\\\+$","","")'))
-    
+
     " vimwikti folding
-    autocmd FileType vimwiki set foldmethod=indent foldlevel=1
+    autocmd FileType vimwiki set foldmethod=indent
     " }
 
   " Key (re)Mappings {

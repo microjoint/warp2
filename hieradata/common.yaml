@@ -1,5 +1,10 @@
 ---
 #profile::git::cache_timeout: 'cache'
+to_install:
+  'curl':
+    ensure: present
+  'tmux':
+    ensure: purged
 profile::git::cache_timeout: 'cache --timeout=86400'
 bash::config:
   '/etc/bashrc':
@@ -30,32 +35,20 @@ profile::user::root::config:
 profile::user::mcampbell::config:
   '/home/mcampbell/.vim':
     ensure: directory
-    owner: mcampbell
-    group: mcampbell
   '/home/mcampbell/.vimrc':
     ensure: file
-    owner: mcampbell
-    group: mcampbell
     source: "puppet:///modules/profile/mcampbell/vimrc"
   '/home/mcampbell/.vim/bundle':
     ensure: directory
-    owner: mcampbell
-    group: mcampbell
     source: "puppet:///modules/vim/bundle"
     recurse: remote
   '/home/mcampbell/.vim/colors':
     ensure: directory
     source: 'puppet:///modules/vim/colors/colors'
-    owner: mcampbell
-    group: mcampbell
     recurse: remote
   '/home/mcampbell/.dialrc':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/dialrc'
-    owner: mcampbell
-    group: mcampbell
   '/home/mcampbell/.ssh/config':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/ssh_config'
-    owner: mcampbell
-    group: mcampbell

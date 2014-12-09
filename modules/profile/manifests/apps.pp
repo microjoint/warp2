@@ -1,11 +1,15 @@
 #
-class profile::apps inherits profile {
+class profile::apps
+{
+
+  $to_install = hiera_hash(profile::apps::to_install, undef)
+
   #include profile::apps::passwordsafe
-  include profile::apps::curl
-  include profile::apps::tmux
   include profile::apps::awesome
 
-  package {'feh': ensure => installed}
+  if $to_install
+  {
+    create_resources( package, $to_install )
+  }
 
-  package {'keychain': ensure => installed}
 }

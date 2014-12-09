@@ -1,15 +1,14 @@
 #
-class profile::user::mcampbell (
-  $config = undef,
-) {
+class profile::user::mcampbell
+{
+
+  $config = hiera_hash(profile::user::mcampbell::config)
 
   $defaults = {
     owner => 'mcampbell',
     group => 'mcampbell',
   }
 
-  if $config {
-    create_resources( file, $config, $defaults )
-  }
+  create_resources( file, $config, $defaults )
 
 }

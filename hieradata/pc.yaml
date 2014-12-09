@@ -2,10 +2,11 @@
 classes:
     - profile::pc
 
-xscreensaver::config:
-  '/home/mcampbell/.xscreensaver':
-    ensure: file
-    source: 'puppet:///modules/xscreensaver/xscreensaver'
+to_install:
+  'curl':
+    ensure: present
+  'xscreensaver':
+    ensure: present
 
 profile::user::mcampbell::config:
   '/home/mcampbell/.xinitrc':
@@ -21,15 +22,12 @@ profile::user::mcampbell::config:
     ensure: directory
   '/home/mcampbell/.config/awesome':
     ensure: directory
-    owner: mcampbell
-    group: mcampbell
   '/home/mcampbell/.config/awesome/rc.lua':
     ensure: file
-    owner: mcampbell
-    group: mcampbell
     source: "puppet:///modules/profile/mcampbell/awesome/rc.lua"
   '/home/mcampbell/.config/awesome/theme.lua':
     ensure: file
-    owner: mcampbell
-    group: mcampbell
     source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
+  '/home/mcampbell/.xscreensaver':
+    ensure: file
+    source: 'puppet:///modules/xscreensaver/xscreensaver'
