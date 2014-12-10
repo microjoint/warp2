@@ -9,7 +9,6 @@ class profile
   include openssh
 
   # set common applications
-  include bash
   include profile::git
   include profile::apps
   include vim

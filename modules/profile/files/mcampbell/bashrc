@@ -69,6 +69,10 @@ alias l='ls -CF'                              #
 alias v='vim'
 alias vi='vim'
 
+# git
+alias gitc='git commit -am "."'
+alias gitp='git push'
+
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
