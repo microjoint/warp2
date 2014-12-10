@@ -11,6 +11,9 @@ to_install:
 
 
 profile::user::root::config:
+  '/etc/bash.bashrc':
+    ensure: file
+    source: 'puppet:///modules/profile/root/bashrc'
   '/root/.vim':
     ensure: directory
     owner: root
@@ -68,11 +71,6 @@ profile::user::mcampbell::config:
   '/home/mcampbell/data/src':
     ensure: link
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'
-
-bash::config:
-  '/etc/bashrc':
-    ensure: file
-    source: 'puppet:///modules/bash/bashrc'
 
 vim::global_config: 'etc/vim/vimrc'
 #profile::git::cache_timeout: 'cache'
