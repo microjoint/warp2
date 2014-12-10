@@ -13,12 +13,4 @@ profile::user::mcampbell::config:
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
 
-vim::global_config: 'etc/vim/vimrc'
 
-profile::pc::symlinks:
-  '/home/mcampbell/bin':
-    ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
-  '/home/mcampbell/data/src':
-    ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'

@@ -1,19 +1,20 @@
 ---
+
 classes:
     - profile::pc
 
+# applications to install
 to_install:
   'awesome':
     ensure: present
+  'chromium-browser':
+    ensure: present
+  'numlockx':
+    ensure: present
   'xscreensaver':
-    ensure: absent
+    ensure: present
 
 profile::user::mcampbell::config:
-  '/home/mcampbell/.bashrc':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/bashrc"
-  '/home/mcampbell/.config':
-    ensure: directory
   '/home/mcampbell/.config/awesome':
     ensure: directory
   '/home/mcampbell/.config/awesome/rc.lua':
@@ -30,4 +31,4 @@ profile::user::mcampbell::config:
     source: "puppet:///modules/profile/mcampbell/Xresources"
   '/home/mcampbell/.xscreensaver':
     ensure: file
-    source: 'puppet:///modules/profile/mcampbell/xscreensaver'
+    source: "puppet:///modules/profile/mcampbell/xscreensaver"

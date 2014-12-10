@@ -1,5 +1,6 @@
 ---
-#profile::git::cache_timeout: 'cache'
+
+# applications to install
 to_install:
   'curl':
     ensure: present
@@ -8,12 +9,7 @@ to_install:
   'keychain':
     ensure: installed
 
-profile::git::cache_timeout: 'cache --timeout=86400'
 
-bash::config:
-  '/etc/bashrc':
-    ensure: file
-    source: 'puppet:///modules/bash/bashrc'
 profile::user::root::config:
   '/root/.vim':
     ensure: directory
@@ -36,7 +32,17 @@ profile::user::root::config:
     recurse: remote
     owner: root
     group: root
+
 profile::user::mcampbell::config:
+  '/home/mcampbell/.bashrc':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/bashrc"
+  '/home/mcampbell/.config':
+    ensure: directory
+  '/home/mcampbell/.ssh':
+    ensure: directory
+    source: 'puppet:///modules/profile/mcampbell/ssh'
+    recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
   '/home/mcampbell/.vimrc':
@@ -56,3 +62,20 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.ssh/config':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/ssh_config'
+  '/home/mcampbell/bin':
+    ensure: link
+    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
+  '/home/mcampbell/data/src':
+    ensure: link
+    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'
+
+bash::config:
+  '/etc/bashrc':
+    ensure: file
+    source: 'puppet:///modules/bash/bashrc'
+
+vim::global_config: 'etc/vim/vimrc'
+#profile::git::cache_timeout: 'cache'
+
+profile::git::cache_timeout: 'cache --timeout=86400'
+#

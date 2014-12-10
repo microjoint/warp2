@@ -97,8 +97,8 @@
     " colorscheme oceanblack256    " load a colorscheme
     set showmode                   " display the current mode
     set cursorline                 " highlight the current line
-    hi cursorline guibg=\#333333   " highlight bg color
-    hi cursorColunm guibg=\#333333 " highlight cursor
+    hi cursorline guibg=#333333    " highlight bg color
+    hi cursorColunm guibg=#333333  " highlight cursor
 
     set backspace=indent,eol,start  " backspace galore
     set linespace=0                 " no extra spaces between lines
