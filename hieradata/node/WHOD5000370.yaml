@@ -13,4 +13,5 @@ profile::user::mcampbell::config:
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
 
-
+dnsmasq::dns_servers:
+  - 10.180.18.24

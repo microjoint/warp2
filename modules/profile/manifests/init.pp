@@ -7,6 +7,7 @@ class profile
 
   # set common services
   include openssh
+  include dnsmasq
 
   # set common applications
   include profile::git

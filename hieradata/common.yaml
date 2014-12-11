@@ -75,5 +75,12 @@ profile::user::mcampbell::config:
 vim::global_config: 'etc/vim/vimrc'
 #profile::git::cache_timeout: 'cache'
 
+#dnsmasq
+dnsmasq::dns_servers:
+  - 8.8.8.8
+  - 8.8.4.4
+  - 208.67.222.222
+  - 208.67.220.220
+
 profile::git::cache_timeout: 'cache --timeout=86400'
 #

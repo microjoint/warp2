@@ -20,7 +20,7 @@ xterm &
 xterm &
 
 # start the multiple madness
-synergys &
+synergys -d WARNING &
 
 # start WM
 awesome
