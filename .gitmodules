@@ -22,3 +22,6 @@
 [submodule "modules/dnsmasq"]
 	path = modules/dnsmasq
 	url = https://github.com/microjoint/mj-puppet-dnsmasq.git
+[submodule "modules/pdnsd"]
+	path = modules/pdnsd
+	url = https://github.com/microjoint/puppet-pdnsd.git

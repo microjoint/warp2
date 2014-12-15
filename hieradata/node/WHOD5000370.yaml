@@ -6,6 +6,8 @@ profile::apps::to_install:
     ensure: installed
   'subversion':
     ensure: installed
+  'synergy':
+    ensure: installed
 
 
 profile::user::mcampbell::config:
@@ -13,5 +15,40 @@ profile::user::mcampbell::config:
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
 
-dnsmasq::dns_servers:
-  - 10.180.18.24
+clusterssh::clusters:
+  'sb.pp1':
+    10.211.146.58
+    10.211.146.59
+  'sb.pp2':
+    10.213.146.58
+    10.213.146.59
+  'sb.pp3':
+    10.215.146.58
+    10.215.146.59
+  'wh-sb-web-api.pp1':
+    10.212.145.127
+    10.212.145.128
+  'wh-sb-web-api.pp2':
+    10.214.145.127
+    10.214.145.128
+  'wh-sb-web-api.pp3':
+    10.216.145.127
+    10.216.145.128
+
+hosts:
+  'wendy':
+    ip: 10.210.163.20
+
+pdnsd::preferred_servers:
+  'williamhill':
+    ip: 10.180.18.24
+    proxy_only: off
+    timeout: 4
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
+    exclude:
+      - .thepiratebay.se
+      - .piratebay.org
+      - .piratebay.se

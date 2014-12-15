@@ -1,15 +1,19 @@
 ---
-
+# a machine with GUI
 classes:
     - profile::pc
 
 # applications to install
-to_install:
+profile::apps::to_install:
   'awesome':
     ensure: present
   'chromium-browser':
     ensure: present
+  'clusterssh':
+    ensure: present
   'numlockx':
+    ensure: present
+  'xpdf':
     ensure: present
   'xscreensaver':
     ensure: present

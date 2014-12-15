@@ -1,7 +1,7 @@
 ---
 
 # applications to install
-to_install:
+profile::apps::to_install:
   'curl':
     ensure: present
   'tmux':
@@ -76,11 +76,30 @@ vim::global_config: 'etc/vim/vimrc'
 #profile::git::cache_timeout: 'cache'
 
 #dnsmasq
-dnsmasq::dns_servers:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 208.67.222.222
-  - 208.67.220.220
+pdnsd::preferred_servers:
+  'google':
+    ip: 8.8.8.8, 8.8.4.4
+    proxy_only: off
+    timeout: 4
+    uptest: query
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
+  'opendns':
+    ip: 208.67.222.222, 208.67.220.220
+    proxy_only: off
+    timeout: 4
+    uptest: query
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
+    reject:
+      - 208.69.32.0/24
+      - 208.69.34.0/24
+      - 208.67.219.0/24
+    reject_policy: fail
 
 profile::git::cache_timeout: 'cache --timeout=86400'
 #

@@ -11,4 +11,9 @@ class profile::user::mcampbell
 
   create_resources( file, $config, $defaults )
 
+  file { '/home/mcampbell/.csshrc':
+    ensure  => file,
+    content => template('profile/csshrc.erb'),
+  }
+
 }
