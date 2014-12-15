@@ -4,6 +4,8 @@
 profile::apps::to_install:
   'curl':
     ensure: present
+  'python-virtualenv':
+    ensure: present
   'tmux':
     ensure: absent
   'keychain':

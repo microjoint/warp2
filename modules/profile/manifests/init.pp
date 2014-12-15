@@ -14,4 +14,8 @@ class profile
   include profile::apps
   include vim
 
+  # set up common configuration
+  $hosts = hiera_hash('hosts')
+  create_resources(Host, $hosts)
+
 }
