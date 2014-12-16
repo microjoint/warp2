@@ -11,11 +11,19 @@ profile::apps::to_install:
     ensure: present
   'clusterssh':
     ensure: present
+  'h264':
+    ensure: present
   'numlockx':
+    ensure: present
+  'vlc':
     ensure: present
   'xpdf':
     ensure: present
   'xscreensaver':
+    ensure: present
+  'xubuntu-restricted-addons':
+    ensure: present
+  'xubuntu-restricted-extras':
     ensure: present
 
 profile::user::mcampbell::config:
