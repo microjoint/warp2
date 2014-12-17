@@ -1,0 +1,13 @@
+---
+# applications to install
+profile::apps::to_install:
+  'wifite':
+    ensure: present
+  'aircrack-ng':
+    ensure: present
+
+
+clusterssh::clusters:
+  'sb.pp1':
+    10.211.146.58
+    10.211.146.59
