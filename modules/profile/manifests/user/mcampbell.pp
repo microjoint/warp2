@@ -15,5 +15,9 @@ class profile::user::mcampbell
     ensure  => file,
     content => template('profile/csshrc.erb'),
   }
+  file { '/home/mcampbell/.xinitrc':
+    ensure  => file,
+    content => template('profile/xinitrc.erb')
+  }
 
 }

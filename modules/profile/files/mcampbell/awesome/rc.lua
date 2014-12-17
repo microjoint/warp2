@@ -227,6 +227,12 @@ globalkeys = awful.util.table.join(
             end
         end),
 
+    -- Screen brightness
+    awful.key({ }, "XF86MonBrightnessDown", function ()
+    awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp", function ()
+    awful.util.spawn("xbacklight -inc 15") end)
+
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),

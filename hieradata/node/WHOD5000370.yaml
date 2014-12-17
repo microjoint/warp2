@@ -2,8 +2,6 @@
 
 # applications to install
 profile::apps::to_install:
-  'feh':
-    ensure: installed
   'subversion':
     ensure: installed
   'synergy':

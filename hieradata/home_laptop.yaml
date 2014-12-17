@@ -1,6 +1,0 @@
----
-# a machine with GUI
-classes:
-  - profile::home
-  - profile::pc
-  - profile::laptop
