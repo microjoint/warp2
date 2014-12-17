@@ -1,7 +1,8 @@
 ---
 # a machine with GUI
 classes:
-    - profile
+  - profile::work
+  - profile::pc
 
 # general applications to install
 profile::apps::to_install:

@@ -1,6 +1,6 @@
 ---
 
-# applications to install
+# common applications to install
 profile::apps::to_install:
   'curl':
     ensure: present
@@ -23,6 +23,35 @@ profile::apps::to_install:
   'keychain':
     ensure: installed
 
+# pc applications to install
+profile::apps::to_install:
+  'awesome':
+    ensure: present
+  'chromium-browser':
+    ensure: present
+  'clusterssh':
+    ensure: present
+  'libavcodec-extra':
+    ensure: present
+  'numlockx':
+    ensure: present
+  'vlc':
+    ensure: present
+  'xpdf':
+    ensure: present
+  'xscreensaver':
+    ensure: present
+  'xubuntu-restricted-addons':
+    ensure: present
+  'xubuntu-restricted-extras':
+    ensure: present
+
+# work applications to install
+profile::apps::to_install:
+  'libreoffice':
+    ensure: absent
+
+# generic root config
 profile::user::root::config:
   '/etc/bash.bashrc':
     ensure: file
@@ -49,6 +78,27 @@ profile::user::root::config:
     owner: root
     group: root
 
+# pc user config
+profile::user::mcampbell::config:
+  '/home/mcampbell/.config/awesome':
+    ensure: directory
+  '/home/mcampbell/.config/awesome/rc.lua':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/awesome/rc.lua"
+  '/home/mcampbell/.config/awesome/theme.lua':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
+  '/home/mcampbell/.xinitrc':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/xinitrc"
+  '/home/mcampbell/.Xresources':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/Xresources"
+  '/home/mcampbell/.xscreensaver':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/xscreensaver"
+
+# generic user config
 profile::user::mcampbell::config:
   '/home/mcampbell/.bashrc':
     ensure: file
