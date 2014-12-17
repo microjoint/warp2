@@ -11,7 +11,9 @@ profile::apps::to_install:
     ensure: present
   'clusterssh':
     ensure: present
-  'h264':
+  'libavcodec-extra':
+    ensure: present
+  'libreoffice':
     ensure: present
   'numlockx':
     ensure: present

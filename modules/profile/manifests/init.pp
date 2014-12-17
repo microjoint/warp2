@@ -15,7 +15,10 @@ class profile
   include vim
 
   # set up common configuration
-  $hosts = hiera_hash('hosts')
-  create_resources(Host, $hosts)
+  $hosts = hiera_hash('hosts', undef)
+  if $hosts
+  {
+    create_resources(Host, $hosts)
+  }
 
 }

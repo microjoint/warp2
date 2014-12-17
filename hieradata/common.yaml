@@ -4,6 +4,8 @@
 profile::apps::to_install:
   'curl':
     ensure: present
+  'exfat-fuse':
+    ensure: present
   'ipython':
     ensure: present
   'ipython3':
@@ -14,11 +16,12 @@ profile::apps::to_install:
     ensure: present
   'python-virtualenv':
     ensure: present
+  'rar':
+    ensure: present
   'tmux':
     ensure: absent
   'keychain':
     ensure: installed
-
 
 profile::user::root::config:
   '/etc/bash.bashrc':
@@ -78,6 +81,8 @@ profile::user::mcampbell::config:
   '/home/mcampbell/bin':
     ensure: link
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
+  '/home/mcampbell/data':
+    ensure: directory
   '/home/mcampbell/data/src':
     ensure: link
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'

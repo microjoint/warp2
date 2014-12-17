@@ -38,9 +38,11 @@ use_hotkeys=yes
 window_tiling=no
 window_tiling_direction=right
 
-<% clusters = scope.function_hiera(['clusterssh::clusters']) -%>
+<% clusters = scope.function_hiera(['clusterssh::clusters']) || none -%>
+<% if clusters %>
 clusters = <%= clusters.keys.join(' ') %>
 
 <% clusters.each do |cluster, servers| %>
 <%= cluster %> = <%= servers %>
+<% end %>
 <% end %>
