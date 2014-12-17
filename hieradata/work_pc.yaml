@@ -1,9 +1,9 @@
 ---
 # a machine with GUI
 classes:
-    - profile::pc
+    - profile
 
-# applications to install
+# general applications to install
 profile::apps::to_install:
   'awesome':
     ensure: present
@@ -13,8 +13,6 @@ profile::apps::to_install:
     ensure: present
   'libavcodec-extra':
     ensure: present
-  'libreoffice':
-    ensure: absent
   'numlockx':
     ensure: present
   'vlc':
@@ -26,6 +24,11 @@ profile::apps::to_install:
   'xubuntu-restricted-addons':
     ensure: present
   'xubuntu-restricted-extras':
+    ensure: present
+
+# work applications to install
+profile::apps::to_install:
+  'libreoffice':
     ensure: present
 
 profile::user::mcampbell::config:
