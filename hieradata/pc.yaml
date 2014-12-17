@@ -14,7 +14,7 @@ profile::apps::to_install:
   'libavcodec-extra':
     ensure: present
   'libreoffice':
-    ensure: present
+    ensure: absent
   'numlockx':
     ensure: present
   'vlc':

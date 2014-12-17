@@ -6,5 +6,6 @@
 :logger: console
 :hierarchy:
     - "node/%{hostname}"
+    - "%{environment}"
     - "%{role}"
     - common
