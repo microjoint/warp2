@@ -1,2 +1,2 @@
 # m     h   dom     mon     dow command
-*/5     *   *       *       *   /usr/bin/rsync -aP wendy:/home/tomcat/.jenkins/jobs /home/mcampbell/data/WillHill/src/puppet_sports/jobs
+*/5     *   *       *       *   /usr/bin/rsync -aP wendy:/home/tomcat/.jenkins/jobs/ /home/mcampbell/data/WillHill/src/puppet_sports/jobs

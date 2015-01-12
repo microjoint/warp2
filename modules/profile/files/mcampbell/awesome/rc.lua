@@ -227,7 +227,6 @@ globalkeys = awful.util.table.join(
             end
         end),
 
-~mcampbell/bin/samsung-kbd -inc
     -- Screen brightness
     awful.key({ }, "XF86MonBrightnessDown", function ()
     awful.util.spawn("xbacklight -dec 15") end),
