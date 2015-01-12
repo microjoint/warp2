@@ -1,9 +1,21 @@
 ---
 # applications to install
 profile::apps::to_install:
-  'wifite':
-    ensure: present
   'aircrack-ng':
+    ensure: present
+  'cmake':
+    ensure: present
+  'libfreetype6-dev':
+    ensure: present
+  'libpng12-dev':
+    ensure: present
+  'python-tk':
+    ensure: present
+  'tk':
+    ensure: present
+  'tk-dev':
+    ensure: present
+  'wifite':
     ensure: present
 
 
@@ -11,3 +23,11 @@ clusterssh::clusters:
   'sb.pp1':
     10.211.146.58
     10.211.146.59
+
+vim::colorscheme: desert256
+profile::user::mcampbell::password: $6$oaa9qV7N$4tlLdUrxuvUJbAwrKZasaFu6h9LHoYU5g1nzRNIMj1/KBkgJSbvsp7Oys6.5WYJXjBDy818fx7299kCa.Toi40
+
+profile::config:
+  '/etc/fstab':
+    ensure: file
+    source: 'puppet:///modules/profile/com-fstab'

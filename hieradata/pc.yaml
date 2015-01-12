@@ -1,0 +1,88 @@
+---
+classes:
+  - profile
+
+# pc applications to install
+profile::apps::to_install:
+  'awesome':
+    ensure: present
+  'chromium-browser':
+    ensure: present
+  'clusterssh':
+    ensure: present
+  'feh':
+    ensure: installed
+  'libavcodec-extra':
+    ensure: present
+  'nmap':
+    ensure: present
+  'netcat':
+    ensure: present
+  'numlockx':
+    ensure: present
+  'vlc':
+    ensure: present
+  'wireshark':
+    ensure: present
+  'xpdf':
+    ensure: present
+  'xscreensaver':
+    ensure: present
+  'xubuntu-restricted-addons':
+    ensure: present
+  'xubuntu-restricted-extras':
+    ensure: present
+
+# generic root config
+profile::user::root::config:
+  '/etc/bash.bashrc':
+    ensure: file
+    source: 'puppet:///modules/profile/root/bash.bashrc'
+  '/root/.vim':
+    ensure: directory
+    owner: root
+    group: root
+  '/root/.vim/bundle':
+    ensure: directory
+    source: "puppet:///modules/vim/bundle"
+    recurse: remote
+    owner: root
+    group: root
+  '/root/.vim/colors':
+    ensure: directory
+    source: 'puppet:///modules/vim/colors/colors'
+    recurse: remote
+    owner: root
+    group: root
+
+vim::global_config: 'etc/vim/vimrc'
+#profile::git::cache_timeout: 'cache'
+
+#dnsmasq
+pdnsd::preferred_servers:
+  'google':
+    ip: 8.8.8.8, 8.8.4.4
+    proxy_only: off
+    timeout: 4
+    uptest: query
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
+  'opendns':
+    ip: 208.67.222.222, 208.67.220.220
+    proxy_only: off
+    timeout: 4
+    uptest: query
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
+    reject:
+      - 208.69.32.0/24
+      - 208.69.34.0/24
+      - 208.67.219.0/24
+    reject_policy: fail
+
+profile::git::cache_timeout: 'cache --timeout=86400'
+#

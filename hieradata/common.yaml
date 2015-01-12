@@ -10,6 +10,12 @@ profile::apps::to_install:
     ensure: present
   'ipython3':
     ensure: present
+  'keychain':
+    ensure: installed
+  'p7zip':
+    ensure: present
+  'python-dev':
+    ensure: present
   'python-ipdb':
     ensure: present
   'python3-ipdb':
@@ -20,11 +26,14 @@ profile::apps::to_install:
     ensure: present
   'tmux':
     ensure: absent
-  'keychain':
-    ensure: installed
+  'w3m':
+    ensure: present
 
 # generic root config
 profile::user::root::config:
+  '/etc/sysctl.d/10-dropbox.conf':
+    ensure: file
+    source: 'puppet:///modules/profile/sysctl.d/10-dropbox.conf'
   '/etc/bash.bashrc':
     ensure: file
     source: 'puppet:///modules/profile/root/bash.bashrc'
@@ -32,11 +41,6 @@ profile::user::root::config:
     ensure: directory
     owner: root
     group: root
-  '/root/.vimrc':
-    ensure: file
-    owner: root
-    group: root
-    source: "puppet:///modules/profile/mcampbell/vimrc"
   '/root/.vim/bundle':
     ensure: directory
     source: "puppet:///modules/vim/bundle"
@@ -51,6 +55,16 @@ profile::user::root::config:
     group: root
 
 # generic user config
+profile::user::mcampbell::password: $6$2ZgnzAhY$15Ba254Ow4Wm6LyY7BgVHbfSv0IfGTxHkcaf2RkIlZzQLhBoPn4LN4xZnctC.1sJvnHYcuu7hNhWf2ct4JjAh.
+profile::user::mcampbell::groups:
+  - 'adm'
+  -  'cdrom'
+  -  'sudo'
+  -  'dip'
+  -  'plugdev'
+  -  'lpadmin'
+  -  'sambashare'
+
 profile::user::mcampbell::config:
   '/home/mcampbell/.config/awesome':
     ensure: directory
@@ -77,9 +91,6 @@ profile::user::mcampbell::config:
     recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
-  '/home/mcampbell/.vimrc':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/vimrc"
   '/home/mcampbell/.vim/bundle':
     ensure: directory
     source: "puppet:///modules/vim/bundle"
@@ -113,9 +124,6 @@ profile::user::mcampbell::config:
     recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
-  '/home/mcampbell/.vimrc':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/vimrc"
   '/home/mcampbell/.vim/bundle':
     ensure: directory
     source: "puppet:///modules/vim/bundle"
@@ -140,6 +148,7 @@ profile::user::mcampbell::config:
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'
 
 vim::global_config: 'etc/vim/vimrc'
+vim::colorscheme: solarized
 #profile::git::cache_timeout: 'cache'
 
 #dnsmasq

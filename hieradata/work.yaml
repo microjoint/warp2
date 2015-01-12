@@ -1,0 +1,5 @@
+---
+# work applications to install
+profile::apps::to_install:
+  'libreoffice':
+    ensure: present

@@ -36,6 +36,8 @@
       Plugin 'vimoutliner/vimoutliner'
       Plugin 'vim-scripts/vimwiki'
       Plugin 'kien/ctrlp.vim'
+      Plugin 'tpope/vim-fugitive'
+      Plugin 'scrrloose/nerdtree'
 
       " All of your Plugins must be added before the following line
       call vundle#end()     " required
@@ -93,7 +95,7 @@
   
   " Vim UI {
     set t_Co=256
-    colorscheme solarized          " load a colorscheme
+    colorscheme <%= @colorscheme -%>         " load a colorscheme
     " colorscheme oceanblack256    " load a colorscheme
     set showmode                   " display the current mode
     set cursorline                 " highlight the current line
@@ -231,5 +233,24 @@
       set lines=40                  " 24??
       set term=built_ansi           " make arrow and other keys work
     endif
+  " }
+
+  au BufRead,BufNewFile * let b:start_time=localtime()
+  au CursorHold * call UpdateFile()
+  au CursorHold * silent! checktime
+  au BufWritePre * let b:start_time=localtime()
+  " functions {
+    " UpdateFile {
+      function! UpdateFile()
+        if ((localtime() - b:start_time) >= 10)
+          update
+          checktime
+          let b:start_time=localtime()
+        else
+          echo "Only " . (localtime() - b:start_time) . " seconds have elapsed so far."
+        endif
+      endfunction
+    " }
+
   " }
 " }

@@ -6,12 +6,18 @@ profile::apps::to_install:
     ensure: installed
   'synergy':
     ensure: installed
-
+  'android-tools-adb':
+    ensure: installed
+  'android-tools-fastboot':
+    ensure: installed
 
 profile::user::mcampbell::config:
   '/home/mcampbell/.synergy.conf':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
+  '/var/spool/cron/crontabs/mcampbell':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/cron-WHOD5000370'
 
 clusterssh::clusters:
   'sb.pp1':
@@ -23,6 +29,16 @@ clusterssh::clusters:
   'sb.pp3':
     10.215.146.58
     10.215.146.59
+  'sb.pte':
+    10.220.146.58
+    10.220.146.59
+  'wh-node.pte':
+    10.222.145.53
+    10.222.145.54
+    10.222.145.55
+  'wh-pri.pte':
+    10.222.145.119
+    10.222.145.120
   'wh-sb-web-api.pp1':
     10.212.145.127
     10.212.145.128
@@ -32,6 +48,9 @@ clusterssh::clusters:
   'wh-sb-web-api.pp3':
     10.216.145.127
     10.216.145.128
+  'wh-sb-web-api.pte':
+    10.220.145.117
+    10.220.145.118
   'riak.pp1':
     10.212.145.81
     10.212.145.82
@@ -50,6 +69,12 @@ clusterssh::clusters:
     10.216.145.83
     10.216.145.84
     10.216.145.85
+  'riak.pte':
+    10.222.145.81
+    10.222.145.82
+    10.222.145.83
+    10.222.145.84
+    10.222.145.85
 
 hosts:
   'wendy':

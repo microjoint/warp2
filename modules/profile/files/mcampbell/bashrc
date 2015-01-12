@@ -12,6 +12,9 @@ shopt -s histappend
 
 PATH=~/bin:$PATH
 
+# Vi command line editing mode
+set -o vi
+
 # History Options
 #
 # Don't put duplicate lines in the history.
@@ -158,4 +161,4 @@ alias cd=cd_func
 
 #keychain
 keychain ~/.ssh/id_rsa
-source ~/.keychain/WHOD5000370-sh
+source ~/.keychain/${HOSTNAME}-sh

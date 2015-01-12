@@ -1,0 +1,9 @@
+---
+# work applications to install
+profile::apps::to_install:
+  'aircrack-ng':
+    ensure: present
+  'wifite':
+    ensure: present
+  'reaver':
+    ensure: present

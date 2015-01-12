@@ -1,0 +1,18 @@
+---
+classes:
+  - profile
+  - profile::laptop
+
+# pc applications to install
+profile::apps::to_install:
+  'powertop':
+    ensure: present
+  'xbacklight':
+    ensure: present
+  'transmission':
+    ensure: present
+
+profile::user::root::config:
+  '/etc/acpi/events/lid':
+    ensure: file
+    source: 'puppet:///modules/profile/etc/acpi/lid'

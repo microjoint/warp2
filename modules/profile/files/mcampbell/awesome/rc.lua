@@ -227,11 +227,17 @@ globalkeys = awful.util.table.join(
             end
         end),
 
+~mcampbell/bin/samsung-kbd -inc
     -- Screen brightness
     awful.key({ }, "XF86MonBrightnessDown", function ()
     awful.util.spawn("xbacklight -dec 15") end),
     awful.key({ }, "XF86MonBrightnessUp", function ()
-    awful.util.spawn("xbacklight -inc 15") end)
+    awful.util.spawn("xbacklight -inc 15") end),
+    -- Keyboard brightness
+    awful.key({ }, "XF86KbdBrightnessDown ", function ()
+    awful.util.spawn("samsung-kbd -dec") end),
+    awful.key({ }, "XF86KbdBrightnessUp ", function ()
+    awful.util.spawn("samsung-kbd -inc") end),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
@@ -342,8 +348,9 @@ awful.rules.rules = {
                      keys = clientkeys,
                      size_hints_honor = false,
                      buttons = clientbuttons } },
-    -- { rule = { instance = "findDialag", class = "Gorilla" },
-    { rule = { name = "Find" },
+    { rule = { instance = "openDialog", class = "Gorilla" },
+      properties = { floating = true } },
+    { rule = { instance = "findDialog", class = "Gorilla" },
       properties = { floating = true } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },

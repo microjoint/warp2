@@ -18,6 +18,10 @@ class profile
   include vim
 
   # set up common configuration
+  $config = hiera_hash(profile::config, undef)
+  if $config {
+    create_resources( file, $config)
+  }
   include hosts
   include timezone
 
