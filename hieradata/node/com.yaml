@@ -2,21 +2,27 @@
 # applications to install
 profile::apps::to_install:
   'aircrack-ng':
-    ensure: present
+    ensure: latest
+  'astromenace':
+    ensure: purge
   'cmake':
-    ensure: present
+    ensure: latest
+  'extremetuxracer':
+    ensure: latest
   'libfreetype6-dev':
-    ensure: present
+    ensure: latest
   'libpng12-dev':
-    ensure: present
+    ensure: latest
   'python-tk':
-    ensure: present
+    ensure: latest
   'tk':
-    ensure: present
+    ensure: latest
   'tk-dev':
-    ensure: present
+    ensure: latest
+  'wesnoth-1.12':
+    ensure: latest
   'wifite':
-    ensure: present
+    ensure: latest
 
 
 clusterssh::clusters:
