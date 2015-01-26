@@ -20,6 +20,8 @@ profile::apps::to_install:
     ensure: present
   'numlockx':
     ensure: present
+  'scrot':
+    ensure: present
   'vlc':
     ensure: present
   'wireshark':

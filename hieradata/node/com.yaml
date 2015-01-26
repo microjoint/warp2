@@ -3,8 +3,6 @@
 profile::apps::to_install:
   'aircrack-ng':
     ensure: latest
-  'astromenace':
-    ensure: purge
   'cmake':
     ensure: latest
   'extremetuxracer':

@@ -12,6 +12,8 @@ profile::apps::to_install:
     ensure: present
   'keychain':
     ensure: installed
+  'libav-tools':
+    ensure: present
   'p7zip':
     ensure: present
   'python-dev':
@@ -151,7 +153,7 @@ vim::global_config: 'etc/vim/vimrc'
 vim::colorscheme: solarized
 #profile::git::cache_timeout: 'cache'
 
-#dnsmasq
+#pdnsd
 pdnsd::start_daemon: yes
 pdnsd::preferred_servers:
   'google':

@@ -7,6 +7,8 @@ classes:
 profile::apps::to_install:
   'powertop':
     ensure: present
+  'scrot':
+    ensure: present
   'xbacklight':
     ensure: present
   'transmission':

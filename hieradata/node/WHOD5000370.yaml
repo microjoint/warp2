@@ -77,8 +77,19 @@ clusterssh::clusters:
     10.222.145.85
 
 hosts:
-  'wendy':
+  'gitlab.williamhill-dev.local':
+    ip: 10.210.200.25
+    host_aliases:
+      - gitlab
+  'wendy.williamhill.local':
     ip: 10.210.163.20
+    host_aliases:
+      - wendy
+  'confluence.williamhill.local':
+    ip: 10.1.28.127
+    host_aliases:
+      - oldwiki
+      - wikiold
 
 pdnsd::preferred_servers:
   'williamhill':
