@@ -40,6 +40,9 @@ profile::user::root::config:
   '/etc/bash.bashrc':
     ensure: file
     source: 'puppet:///modules/profile/root/bash.bashrc'
+  '/etc/NetworkManager/NetworkManager.conf':
+    ensure: file
+    source: 'puppet:///modules/profile/etc/NetworkManager/NetworkManager.conf'
   '/root/.vim':
     ensure: directory
     owner: root
