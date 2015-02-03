@@ -20,6 +20,8 @@ profile::apps::to_install:
     ensure: present
   'numlockx':
     ensure: present
+  'sqlite3':
+    ensure: present
   'scrot':
     ensure: present
   'vlc':
@@ -59,6 +61,9 @@ profile::user::root::config:
     recurse: remote
     owner: root
     group: root
+  '/usr/share/xsessions/custom.desktop':
+    ensure: file
+    source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
 
 vim::global_config: 'etc/vim/vimrc'
 #profile::git::cache_timeout: 'cache'
