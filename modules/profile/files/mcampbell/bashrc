@@ -73,8 +73,12 @@ alias v='vim'
 alias vi='vim'
 
 # git
-alias gitc='git commit -am "."'
+git_commit() {
+  git commit -am "$1"
+}
+alias gitc=git_commit
 alias gitp='git push'
+alias gitcp=git_commit && 'git push'
 
 # Umask
 #
