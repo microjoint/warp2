@@ -6,6 +6,8 @@ profile::apps::to_install:
     ensure: present
   'exfat-fuse':
     ensure: present
+  'gtypist':
+    ensure: present
   'ipython':
     ensure: present
   'ipython3':
@@ -28,6 +30,8 @@ profile::apps::to_install:
     ensure: present
   'tmux':
     ensure: absent
+  'tree':
+    ensure: present
   'w3m':
     ensure: present
 
@@ -57,7 +61,8 @@ profile::user::root::config:
     group: root
 
 # generic user config
-profile::user::mcampbell::password: $6$2ZgnzAhY$15Ba254Ow4Wm6LyY7BgVHbfSv0IfGTxHkcaf2RkIlZzQLhBoPn4LN4xZnctC.1sJvnHYcuu7hNhWf2ct4JjAh.
+#profile::user::mcampbell::password: $6$2ZgnzAhY$15Ba254Ow4Wm6LyY7BgVHbfSv0IfGTxHkcaf2RkIlZzQLhBoPn4LN4xZnctC.1sJvnHYcuu7hNhWf2ct4JjAh.
+profile::user::mcampbell::password: $6$zAECeE7u$m/BmTy4Y.2gyd/JB/Lci34kAhakVDBPbiBZBvAxs3BcL.O0tu26VdLW2/en57LPW0BNtfOQN9ikrqtf3/GW2l.
 profile::user::mcampbell::groups:
   - 'adm'
   -  'cdrom'
