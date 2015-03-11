@@ -1,4 +1,4 @@
-#
+# This is the common profile applied to all machines
 class profile
 {
 

@@ -1,6 +1,7 @@
 ---
 classes:
   - profile
+  - profile::desktop
   - profile::laptop
 
 # pc applications to install
