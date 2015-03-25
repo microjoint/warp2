@@ -3,3 +3,7 @@
 profile::apps::to_install:
   'libreoffice':
     ensure: present
+  'bundler':
+    ensure: present
+  'git-flow':
+    ensure: present

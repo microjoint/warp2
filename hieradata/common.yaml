@@ -17,7 +17,7 @@ profile::apps::to_install:
   'libav-tools':
     ensure: present
   'ncurses-term':
-    ensure: present
+    ensure: absent
   'p7zip':
     ensure: present
   'python-dev':

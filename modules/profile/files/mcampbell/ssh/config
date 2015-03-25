@@ -1,4 +1,4 @@
-host 10.201.230.26
+host 10.201.230.26 brsuxnpemg01.nonprod.williamhill.plc gib-ncde-linux-jump-02.prod.williamhill.plc
   User macampbell
 host *
   User mcampbel
