@@ -64,7 +64,8 @@ profile::user::root::config:
 
 # generic user config
 #profile::user::mcampbell::password: $6$2ZgnzAhY$15Ba254Ow4Wm6LyY7BgVHbfSv0IfGTxHkcaf2RkIlZzQLhBoPn4LN4xZnctC.1sJvnHYcuu7hNhWf2ct4JjAh.
-profile::user::mcampbell::password: $6$zAECeE7u$m/BmTy4Y.2gyd/JB/Lci34kAhakVDBPbiBZBvAxs3BcL.O0tu26VdLW2/en57LPW0BNtfOQN9ikrqtf3/GW2l.
+#profile::user::mcampbell::password: $6$zAECeE7u$m/BmTy4Y.2gyd/JB/Lci34kAhakVDBPbiBZBvAxs3BcL.O0tu26VdLW2/en57LPW0BNtfOQN9ikrqtf3/GW2l.
+profile::user::mcampbell::password: $6$5WrnChNE$65Qan5fDtR/QqrFDNS2K5uGP778QszYDT6s7Lp96xQ121NZb89ACbC1MlOPFzHz58LG2faZnhguAcYbvrp65C0
 profile::user::mcampbell::groups:
   - 'adm'
   -  'cdrom'
