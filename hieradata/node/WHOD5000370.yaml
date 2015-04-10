@@ -12,12 +12,28 @@ profile::apps::to_install:
     ensure: installed
 
 profile::user::mcampbell::config:
+  '/home/mcampbell/.config/cifs.pw':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/cifs-WHOD5000370'
   '/home/mcampbell/.synergy.conf':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
   '/var/spool/cron/crontabs/mcampbell':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/cron-WHOD5000370'
+  '/mnt':
+    ensure: directory
+  '/mnt/willhill':
+    ensure: directory
+  '/mnt/willhill/architecture':
+    ensure: directory
+  '/mnt/willhill/systemengineers':
+    ensure: directory
+  '/mnt/willhill/marcusc':
+    ensure: directory
+  '/etc/fstab':
+    ensure: file
+    source: 'puppet:///modules/profile/WHOD5000370-fstab'
 
 clusterssh::clusters:
   'sb.pp1':
