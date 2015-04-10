@@ -2,11 +2,19 @@
 
 # common applications to install
 profile::apps::to_install:
+  'anki':
+    ensure: present
+  'cifs-utils':
+    ensure: present
   'curl':
     ensure: present
   'exfat-fuse':
     ensure: present
   'gtypist':
+    ensure: present
+  'gvfs-fuse':
+    ensure: present
+  'gvfs-backends':
     ensure: present
   'ipython':
     ensure: present
