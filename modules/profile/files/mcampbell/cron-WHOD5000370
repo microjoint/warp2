@@ -1,4 +1,5 @@
-# m     h   dom     mon     dow command
-*/5     *   *       *       *   /usr/bin/rsync -aP wendy:/home/tomcat/.jenkins/jobs/ /home/mcampbell/data/WillHill/src/puppet_sports/jobs
-*       3   *       *       *   cd /home/mcampbell/data/WillHill/src/puppet_sports/jobs; /usr/bin/git add *; /usr/bin/git commit -am '.'; /usr/bin/git push
-*       23  *       *       *   cd /home/mcampbell/data/WillHill/src/Sports\ Betting; /usr/bin/svn up
+# m     h       dom     mon     dow     command
+*/5     *       *       *       *       /usr/bin/rsync -aP wendy:/home/tomcat/.jenkins/jobs/ /home/mcampbell/data/WillHill/src/puppet_sports/jobs
+*       3       *       *       *       cd /home/mcampbell/data/WillHill/src/puppet_sports/jobs; /usr/bin/git add *; /usr/bin/git commit -am '.'; /usr/bin/git push
+*       23      *       *       *       cd /home/mcampbell/data/WillHill/src/Sports\ Betting; /usr/bin/svn up
+*/30    7-20    *       *       1-5     /home/mcampbell/bin/journal

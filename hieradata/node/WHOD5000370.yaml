@@ -102,7 +102,7 @@ hosts:
     host_aliases:
       - wendy
   'work.df':
-    ip: 10.180.22.197
+    ip: 10.180.22.78
   'confluence.williamhill.local':
     ip: 10.1.28.127
     host_aliases:
