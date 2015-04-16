@@ -356,6 +356,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
+    { rule = { role = "journal" },
+      properties = { floating = true, ontop = true }, callback = function(c) c:tags({ tags[1][1], tags[1][2], tags[1][3], tags[1][4], tags[1][5], tags[1][6], tags[1][7], tags[1][8], tags[1][9] }) end },
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
