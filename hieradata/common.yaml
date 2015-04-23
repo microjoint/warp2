@@ -44,6 +44,8 @@ profile::apps::to_install:
     ensure: present
   'w3m':
     ensure: present
+  'xclip':
+    ensure: present
 
 # generic root config
 profile::user::root::config:
