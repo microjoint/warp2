@@ -352,6 +352,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { instance = "findDialog", class = "Gorilla" },
       properties = { floating = true } },
+    { rule = { instance = "findDialog", class = "Gorilla" },
+      properties = { floating = true } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },

@@ -22,9 +22,16 @@ class profile::user::mcampbell
 
   create_resources( file, $config, $defaults )
 
-  file { '/home/mcampbell/.csshrc':
+  file { '/home/mcampbell/.clusterssh':
+    ensure => directory,
+  }
+  file { '/home/mcampbell/.clusterssh/config':
     ensure  => file,
-    content => template('profile/csshrc.erb'),
+    content => template('profile/cssh.config.erb'),
+  }
+  file { '/home/mcampbell/.clusterssh/clusters':
+    ensure  => file,
+    content => template('profile/cssh.clusters.erb'),
   }
   file { '/home/mcampbell/.xinitrc':
     ensure  => file,
