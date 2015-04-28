@@ -38,8 +38,6 @@ profile::apps::to_install:
     ensure: present
   'rar':
     ensure: present
-  'tmux':
-    ensure: absent
   'tree':
     ensure: present
   'w3m':
