@@ -1,4 +1,10 @@
 host 10.201.230.26 brsuxnpemg01.nonprod.williamhill.plc gib-cde-linux-jump-01.prod.williamhill.plc gib-cde-linux-jump-02.prod.williamhill.plc gib-ncde-linux-jump-01.prod.williamhill.plc gib-ncde-linux-jump-02.prod.williamhill.plc
   User macampbell
+host 10.210.200.223 10.210.200.224
+  User mcampbell
+host 10.180.19.154 icinga
+  User icinga
+  Port 993
 host *
   User mcampbel
+  LogLevel quiet

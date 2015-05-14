@@ -1,5 +1,14 @@
+MAILTO=mcampbell
 # m     h       dom     mon     dow     command
-*/5     *       *       *       *       /usr/bin/rsync -aP wendy:/home/tomcat/.jenkins/jobs/ /home/mcampbell/data/WillHill/src/puppet_sports/jobs
-*       3       *       *       *       cd /home/mcampbell/data/WillHill/src/puppet_sports/jobs; /usr/bin/git add *; /usr/bin/git commit -am '.'; /usr/bin/git push
-*       23      *       *       *       cd /home/mcampbell/data/WillHill/src/Sports\ Betting; /usr/bin/svn up
-*/30    7-20    *       *       1-5     /home/mcampbell/bin/journal
+# 0-59  0-23    1-31    1-12    0-7
+#                       jan-dec mon-sun
+
+#make a back up of wendy
+#*/5     *       *       *       *       /usr/bin/rsync --no-motd -aq wendy:/home/tomcat/.jenkins/jobs/ /home/mcampbell/data/WillHill/src/puppet_sports/jobs >/dev/null 2>&1
+#*       3       *       *       *       cd /home/mcampbell/data/WillHill/src/puppet_sports/jobs; /usr/bin/git add *; /usr/bin/git commit -am '.'; /usr/bin/git push
+# update my DVs
+0       *       *       *       *       cd /home/mcampbell/data/WillHill/src/DVs; /usr/bin/svn up >/dev/null
+# open up journal
+*/30      *       *       *       1-5     DISPLAY=:0 /home/mcampbell/bin/journal >/dev/null
+# node 56 is missing due to access. need to add cron to chang perms
+*/5       *       *       *       *       for s in 57 58 59 60 61 62 63 64 65; do rsync -a 10.222.145.$s:/var/log/willhill/wh-sportsbook-web-api/ /home/reggol/logs/node$s; done
