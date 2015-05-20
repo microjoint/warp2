@@ -1,0 +1,6 @@
+<% clusters = scope.function_hiera(['clusterssh::clusters']) || none -%>
+<% if clusters %>
+<% clusters.each do |cluster, servers| %>
+<%= cluster %> <%= servers %>
+<% end %>
+<% end %>
