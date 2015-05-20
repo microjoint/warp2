@@ -45,7 +45,7 @@
 
     " Windows Compatible {
       " On Windows, also use '.vim' instead of 'vimfiles'; this makes
-      " syncronisation across system easier. Also make all keys work 
+      " syncronisation across system easier. Also make all keys work
       if has('win32') || has('win64')
         set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
       endif
@@ -92,7 +92,7 @@
   set t_vb=
   set tm=500
   " }
-  
+
   " Vim UI {
     set t_Co=256
     colorscheme <%= @colorscheme -%>         " load a colorscheme
@@ -130,13 +130,13 @@
     set expandtab                 " tabs are spaces
     set tabstop=4                 " indentation
     set softtabstop=4             " can be deleted
-    set smarttab                  " 
+    set smarttab                  "
     set pastetoggle=<F12>         " toggle safer pastes
     " Remove trailing whitespaces and \^M chars
     " autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\\\s\\\\+$","","")'))
 
-    " vimwikti folding
-    autocmd FileType vimwiki set foldmethod=indent
+    " file type folding
+    autocmd FileType vimwiki,yaml set foldmethod=indent
     " }
 
   " Key (re)Mappings {
@@ -223,6 +223,11 @@
     " NerdTree {
       map <C-n> :NerdTreeToggle<CR>
     " }
+
+    " Syntastic {
+      " Removing any annoying warnings
+      let g:syntastic_quiet_messages = { 'regex': 'void context' }
+    }
   " }
 
   " GUI settings {
@@ -236,10 +241,13 @@
     endif
   " }
 
-  au BufRead,BufNewFile * let b:start_time=localtime()
-  au CursorHold * call UpdateFile()
-  au CursorHold * silent! checktime
-  au BufWritePre * let b:start_time=localtime()
+  " Auto commannds {
+    au BufRead,BufNewFile * let b:start_time=localtime()
+    au CursorHold * call UpdateFile()
+    au CursorHold * silent! checktime
+    au BufWritePre * let b:start_time=localtime()
+  " }
+
   " functions {
     " UpdateFile {
       function! UpdateFile()

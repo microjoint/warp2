@@ -49,6 +49,19 @@ profile::apps::to_install:
   'xclip':
     ensure: present
 
+# common laptop applications
+  'powertop':
+    ensure: present
+  'scrot':
+    ensure: present
+  'xbacklight':
+    ensure: present
+
+#This is for laptops only
+profile::user::root::config:
+  '/etc/acpi/events/lid':
+    ensure: file
+    source: 'puppet:///modules/profile/etc/acpi/lid'
 # generic root config
 profile::user::root::config:
   '/etc/sysctl.d/10-dropbox.conf':

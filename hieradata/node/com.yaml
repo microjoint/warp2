@@ -1,4 +1,19 @@
 ---
+classes:
+  - profile::laptop
+
+# applications to install
+profile::apps::to_install:
+  'powertop':
+    ensure: present
+  'xbacklight':
+    ensure: present
+
+profile::user::root::config:
+  '/etc/acpi/events/lid':
+    ensure: file
+    source: 'puppet:///modules/profile/etc/acpi/lid'
+
 # applications to install
 profile::apps::to_install:
   'aircrack-ng':
