@@ -2,19 +2,19 @@
 class profile
 {
 
-  # set up users
-  include profile::user::mcampbell
+  # we always setup root user
   include profile::user::root
-
 
   # set common services
   include openssh
   include pdnsd
 
-  # set common applications
+  # set common core applications
   include profile::git
 
+  # install all the applications
   include profile::apps
+  # Bring on the vim
   include vim
 
   # set up common configuration

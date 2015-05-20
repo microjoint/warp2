@@ -1,4 +1,8 @@
 ---
+# Which users belong @home
+classess:
+  - profile::user::mcampbell
+
 # work applications to install
 profile::apps::to_install:
   'aircrack-ng':

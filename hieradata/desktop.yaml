@@ -4,21 +4,61 @@ classes:
 
 # pc applications to install
 profile::apps::to_install:
+  'anki':
+    ensure: present
   'awesome':
     ensure: present
   'chromium-browser':
     ensure: present
+  'cifs-utils':
+    ensure: present
   'clusterssh':
+    ensure: present
+  'exfat-fuse':
     ensure: present
   'feh':
     ensure: installed
+  'gtypist':
+    ensure: present
+  'gvfs-fuse':
+    ensure: present
+  'gvfs-backends':
+    ensure: present
+  'ipython':
+    ensure: present
+  'ipython3':
+    ensure: present
+  'keychain':
+    ensure: installed
+  'libav-tools':
+    ensure: present
   'libavcodec-extra':
     ensure: present
+  'mutt':
+    ensure: present
+  'ncurses-term':
+    ensure: absent
   'nmap':
     ensure: present
   'netcat':
     ensure: present
   'numlockx':
+    ensure: present
+  'postfix':
+    ensure: present
+  'p7zip':
+    ensure: present
+  'python-dev':
+    ensure: present
+  'python-ipdb':
+    ensure: present
+  'python3-ipdb':
+    ensure: present
+  'python-virtualenv':
+    ensure: present
+  'rar':
+    ensure: present
+  'scrot':
     ensure: present
   'sqlite3':
     ensure: present
@@ -28,7 +68,11 @@ profile::apps::to_install:
     ensure: present
   'vlc':
     ensure: present
+  'w3m':
+    ensure: present
   'wireshark':
+    ensure: present
+  'xclip':
     ensure: present
   'xpdf':
     ensure: present
@@ -41,6 +85,9 @@ profile::apps::to_install:
 
 # generic root config
 profile::user::root::config:
+  '/etc/sysctl.d/10-dropbox.conf':
+    ensure: file
+    source: 'puppet:///modules/profile/sysctl.d/10-dropbox.conf'
   '/etc/bash.bashrc':
     ensure: file
     source: 'puppet:///modules/profile/root/bash.bashrc'
@@ -69,9 +116,6 @@ profile::user::root::config:
   '/usr/share/xsessions/custom.desktop':
     ensure: file
     source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
-
-vim::global_config: 'etc/vim/vimrc'
-#profile::git::cache_timeout: 'cache'
 
 #dnsmasq
 pdnsd::preferred_servers:

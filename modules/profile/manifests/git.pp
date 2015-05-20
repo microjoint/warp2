@@ -1,10 +1,8 @@
 #
 class profile::git (
-    $cache_timeout = "cache --timeout=3600",
+    $cache_timeout = 'cache --timeout=3600',
 ) {
   include git
-
-  #class { 'git': }
 
   git::config {'user.name':
     value   => 'Marcus Campbell',

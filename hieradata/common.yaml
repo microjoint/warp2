@@ -1,75 +1,6 @@
 ---
-
-# common applications to install
-profile::apps::to_install:
-  'anki':
-    ensure: present
-  'cifs-utils':
-    ensure: present
-  'curl':
-    ensure: present
-  'exfat-fuse':
-    ensure: present
-  'gtypist':
-    ensure: present
-  'gvfs-fuse':
-    ensure: present
-  'gvfs-backends':
-    ensure: present
-  'ipython':
-    ensure: present
-  'ipython3':
-    ensure: present
-  'keychain':
-    ensure: installed
-  'libav-tools':
-    ensure: present
-  'mutt':
-    ensure: present
-  'ncurses-term':
-    ensure: absent
-  'postfix':
-    ensure: present
-  'p7zip':
-    ensure: present
-  'python-dev':
-    ensure: present
-  'python-ipdb':
-    ensure: present
-  'python3-ipdb':
-    ensure: present
-  'python-virtualenv':
-    ensure: present
-  'rar':
-    ensure: present
-  'tree':
-    ensure: present
-  'w3m':
-    ensure: present
-  'xclip':
-    ensure: present
-
-# common laptop applications
-  'powertop':
-    ensure: present
-  'scrot':
-    ensure: present
-  'xbacklight':
-    ensure: present
-
-#This is for laptops only
-profile::user::root::config:
-  '/etc/acpi/events/lid':
-    ensure: file
-    source: 'puppet:///modules/profile/etc/acpi/lid'
 # generic root config
 profile::user::root::config:
-  '/etc/sysctl.d/10-dropbox.conf':
-    ensure: file
-    source: 'puppet:///modules/profile/sysctl.d/10-dropbox.conf'
-  '/etc/ssh/sshd_config':
-    ensure: file
-    source: 'puppet:///modules/profile/etc/sshd_config'
   '/etc/bash.bashrc':
     ensure: file
     source: 'puppet:///modules/profile/root/bash.bashrc'
@@ -91,9 +22,6 @@ profile::user::root::config:
     group: root
 
 # generic user config
-#profile::user::mcampbell::password: $6$2ZgnzAhY$15Ba254Ow4Wm6LyY7BgVHbfSv0IfGTxHkcaf2RkIlZzQLhBoPn4LN4xZnctC.1sJvnHYcuu7hNhWf2ct4JjAh.
-#profile::user::mcampbell::password: $6$zAECeE7u$m/BmTy4Y.2gyd/JB/Lci34kAhakVDBPbiBZBvAxs3BcL.O0tu26VdLW2/en57LPW0BNtfOQN9ikrqtf3/GW2l.
-#profile::user::mcampbell::password: $6$5WrnChNE$65Qan5fDtR/QqrFDNS2K5uGP778QszYDT6s7Lp96xQ121NZb89ACbC1MlOPFzHz58LG2faZnhguAcYbvrp65C0
 profile::user::mcampbell::password: $6$jojfsCCc$ct36us5iNnoMTqN1LV9aGlWJnc35Oq4Clo25e180cpw7BL7Bu8kkNCDK9shHfSEVCn147g9MESAIs4eDvhhlr1
 profile::user::mcampbell::groups:
   - 'adm'
@@ -180,9 +108,39 @@ profile::user::mcampbell::config:
     ensure: link
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'
 
-vim::global_config: 'etc/vim/vimrc'
+
+
+
+
+
+
+
+###################################
+# common applications to everywhere
+###################################
+profile::apps::to_install:
+  'curl':
+    ensure: present
+  'tree':
+    ensure: present
+
+# common laptop applications
+profile::laptop::apps::to_install:
+  'powertop':
+    ensure: present
+  'xbacklight':
+    ensure: present
+
+#This is for laptops only
+profile::laptop::system::config:
+  '/etc/acpi/events/lid':
+    ensure: file
+    source: 'puppet:///modules/profile/etc/acpi/lid'
+
+
+
+# Vim goodness
 vim::colorscheme: desert256
-#profile::git::cache_timeout: 'cache'
 
 #pdnsd
 pdnsd::start_daemon: yes
