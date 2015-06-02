@@ -44,6 +44,9 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.Xresources':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/Xresources"
+  '/home/mcampbell/.Xdefaults':
+    ensure: file
+    source: "puppet:///modules/profile/mcampbell/Xresources"
   '/home/mcampbell/.xscreensaver':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/xscreensaver"
@@ -140,7 +143,7 @@ profile::laptop::system::config:
 
 
 # Vim goodness
-vim::colorscheme: desert256
+vim::colorscheme: last256
 
 #pdnsd
 pdnsd::start_daemon: yes
