@@ -2,7 +2,13 @@
 classes:
   - profile
 
-# pc applications to install
+
+
+
+
+
+
+# applications to install on a desktop machine
 profile::apps::to_install:
   'anki':
     ensure: present

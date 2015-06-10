@@ -25,12 +25,12 @@ profile::user::root::config:
 profile::user::mcampbell::password: $6$jojfsCCc$ct36us5iNnoMTqN1LV9aGlWJnc35Oq4Clo25e180cpw7BL7Bu8kkNCDK9shHfSEVCn147g9MESAIs4eDvhhlr1
 profile::user::mcampbell::groups:
   - 'adm'
-  -  'cdrom'
-  -  'sudo'
-  -  'dip'
-  -  'plugdev'
-  -  'lpadmin'
-  -  'sambashare'
+  - 'cdrom'
+  - 'sudo'
+  - 'dip'
+  - 'plugdev'
+  - 'lpadmin'
+  - 'sambashare'
 
 profile::user::mcampbell::config:
   '/home/mcampbell/.config/awesome':
@@ -79,7 +79,7 @@ profile::user::mcampbell::config:
     ensure: directory
   '/home/mcampbell/data/src':
     ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'
+    target: '/home/mcampbell/sync/Dropbox/1-data/1-docs/4-project/programming/src'
   '/home/mcampbell/.bashrc':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/bashrc"
@@ -107,9 +107,6 @@ profile::user::mcampbell::config:
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
   '/home/mcampbell/data':
     ensure: directory
-  '/home/mcampbell/data/src':
-    ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/src'
 
 
 
