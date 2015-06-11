@@ -3,6 +3,7 @@
     - yaml
 :yaml:
     :datadir: "/etc/puppet/hieradata"
+:eyaml:
 :logger: console
 :hierarchy:
     - "node/%{hostname}"
