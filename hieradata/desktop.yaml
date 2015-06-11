@@ -93,7 +93,7 @@ profile::apps::to_install:
 profile::user::root::config:
   '/etc/sysctl.d/10-dropbox.conf':
     ensure: file
-    source: 'puppet:///modules/profile/sysctl.d/10-dropbox.conf'
+    source: 'puppet:///modules/profile/etc/sysctl.d/10-dropbox.conf'
   '/etc/bash.bashrc':
     ensure: file
     source: 'puppet:///modules/profile/root/bash.bashrc'
