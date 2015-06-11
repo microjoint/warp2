@@ -5,7 +5,26 @@ classes:
 # This will install both server and client
 openssh::package_name: 'ssh'
 
+# we need the search domain
+dns_search: 'mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.wil    liamhill.plc adgency-domain.ad-gency.com Group.WilliamHill.PLC mgmt.prod.williamhill.plc prod.williamhill.plc willi    amhill.local williamHill.PLC williamhill.co.uk williamhill.remote'
 
+#Mount points need on tower
+profile::user::root::mnt_config:
+  '/mnt/willhill/marcusc':
+    ensure: mounted
+    device: '//gib-fs1.adgency-domain.ad-gency.com/marcusc$'
+    fstype: 'cifs'
+    options: 'creds=/home/mcampbell/.config/cifs.pw,users,uid=1000'
+  '/mnt/willhill/systemengineers':
+    ensure: mounted
+    device: '//gib-fs1.adgency-domain.ad-gency.com/systemengineers$'
+    fstype: 'cifs'
+    options: 'creds=/home/mcampbell/.config/cifs.pw,users,uid=1000'
+  '/mnt/willhill/architecture':
+    ensure: mounted
+    device: '//gib-fs1.adgency-domain.ad-gency.com/Architecture$'
+    fstype: 'cifs'
+    options: 'creds=/home/mcampbell/.config/cifs.pw,users,uid=1000'
 
 
 
@@ -271,12 +290,6 @@ profile::user::mcampbell::config:
   '/mnt':
     ensure: directory
   '/mnt/willhill':
-    ensure: directory
-  '/mnt/willhill/architecture':
-    ensure: directory
-  '/mnt/willhill/systemengineers':
-    ensure: directory
-  '/mnt/willhill/marcusc':
     ensure: directory
   '/etc/fstab':
     ensure: file
