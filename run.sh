@@ -1,10 +1,9 @@
 #!/bin/bash 
 
-if [ $# -ne 2 ]
+if [ $# -ne 3 ]
 then
-    echo "Please ser role e.g. pc, laptop"
-    exit 1
+  echo "Please supply environment(work,home) hardware(workstation,laptop,tablet) role(desktop,server,fridge)"
+  exit 1
 fi
 
-FACTER_role=$1 FACTER_environment=$2 puppet apply /etc/puppet/manifests/site.pp
-#FACTER_role=$2 puppet apply --verbose --debug /etc/puppet/manifests/site.pp
+FACTER_environment=$1 FACTER_hardware=$2 FACTER_role=$3 puppet apply /etc/puppet/manifests/site.pp
