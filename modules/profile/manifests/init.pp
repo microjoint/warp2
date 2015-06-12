@@ -22,6 +22,7 @@ class profile
   if $config {
     create_resources( file, $config)
   }
+
   include hosts
   include timezone
 

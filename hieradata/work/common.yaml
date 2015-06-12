@@ -7,3 +7,9 @@ profile::apps::to_install:
     ensure: present
   'git-flow':
     ensure: present
+
+# File needed in a work environment
+profile::user::mcampbell::config:
+  '/home/mcampbell/.dialrc':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/dialrc'

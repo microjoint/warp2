@@ -6,8 +6,10 @@
 :eyaml:
 :logger: console
 :hierarchy:
-    - "node/%{hostname}"
-    - "%{environment}/%{role}"
-    - "%{environment}/%{common}"
-    - "%{role}"
-    - common
+  - "node/%{::hostname}"
+  - "%{::environment}/%{::hardware}/%{::role}"
+  - "%{::environment}/%{::hardware}/common"
+  - "%{::environment}/%{::role}"
+  - "%{::environment}/common"
+  - "%{::role}"
+  - common

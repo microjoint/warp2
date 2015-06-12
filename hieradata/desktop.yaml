@@ -1,6 +1,4 @@
 ---
-classes:
-  - profile
 
 
 
@@ -67,6 +65,8 @@ profile::apps::to_install:
   'scrot':
     ensure: present
   'sqlite3':
+    ensure: present
+  'software-properties-common':
     ensure: present
   'scrot':
     ensure: present
