@@ -1,5 +1,5 @@
 ---
-class:
+classes:
   - profile::desktop
 
 
@@ -126,7 +126,7 @@ profile::user::root::config:
     source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
 
 # pdnsd settings
-pdnsd::params::start_daemon: yes
+pdnsd::start_daemon: yes
 pdnsd::preferred_servers:
   'google':
     ip: 8.8.8.8, 8.8.4.4
