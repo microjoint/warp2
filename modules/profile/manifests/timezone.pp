@@ -1,5 +1,6 @@
-#
-class timezone {
+# Set the timezone
+class profile::timezone
+{
 
   $timezone = hiera('profile::timezone')
 

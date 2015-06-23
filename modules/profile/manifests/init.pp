@@ -7,13 +7,13 @@ class profile
 
   # set common services
   include openssh
-  include pdnsd
 
   # set common core applications
   include profile::git
 
   # install all the applications
   include profile::apps
+
   # Bring on the vim
   include vim
 
@@ -23,7 +23,7 @@ class profile
     create_resources( file, $config)
   }
 
-  include hosts
-  include timezone
+  include profile::hosts
+  include profile::timezone
 
 }

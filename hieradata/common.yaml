@@ -108,9 +108,8 @@ profile::user::mcampbell::config:
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
   '/home/mcampbell/data':
     ensure: directory
-###################################
+
 # common applications to everywhere
-###################################
 profile::apps::to_install:
   'curl':
     ensure: present
@@ -119,60 +118,10 @@ profile::apps::to_install:
   'unison':
     ensure: present
 
-
-
-
-
-
-
-
-
-# common laptop applications
-profile::laptop::apps::to_install:
-  'powertop':
-    ensure: present
-  'xbacklight':
-    ensure: present
-
-#This is for laptops only
-profile::laptop::system::config:
-  '/etc/acpi/events/lid':
-    ensure: file
-    source: 'puppet:///modules/profile/etc/acpi/lid'
-
-
+# Timezone
+profile::timezone: Europe/Madrid
 
 # Vim goodness
 vim::colorscheme: last256
 
-#pdnsd
-pdnsd::start_daemon: yes
-pdnsd::preferred_servers:
-  'google':
-    ip: 8.8.8.8, 8.8.4.4
-    proxy_only: off
-    timeout: 4
-    uptest: query
-    interface: eth0
-    interval: 10m
-    purge_cache: off
-    edns_query: yes
-  'opendns':
-    ip: 208.67.222.222, 208.67.220.220
-    proxy_only: off
-    timeout: 4
-    uptest: query
-    interface: eth0
-    interval: 10m
-    purge_cache: off
-    edns_query: yes
-    reject:
-      - 208.69.32.0/24
-      - 208.69.34.0/24
-      - 208.67.219.0/24
-    reject_policy: fail
-
 profile::git::cache_timeout: 'cache --timeout=86400'
-
-profile::timezone: Europe/Madrid
-#

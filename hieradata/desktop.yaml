@@ -1,4 +1,6 @@
 ---
+class:
+  - profile::desktop
 
 
 
@@ -123,7 +125,7 @@ profile::user::root::config:
     ensure: file
     source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
 
-#dnsmasq
+# pdnsd settings
 pdnsd::preferred_servers:
   'google':
     ip: 8.8.8.8, 8.8.4.4
@@ -150,4 +152,3 @@ pdnsd::preferred_servers:
     reject_policy: fail
 
 profile::git::cache_timeout: 'cache --timeout=86400'
-#
