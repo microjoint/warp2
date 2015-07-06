@@ -1,0 +1,14 @@
+---
+
+# applications to install on a desktop machine
+profile::apps::to_install:
+  'linux-headers-generic':
+    ensure: latest
+  'vagrant':
+    ensure: latest
+  'virtualbox':
+    ensure: latest
+  'virtualbox-dkms':
+    ensure: latest
+  'virtualbox-guest-additions-iso':
+    ensure: latest

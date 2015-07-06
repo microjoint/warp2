@@ -119,10 +119,10 @@ profile::apps::to_install:
   'unison':
     ensure: present
 
+# colorscheme and Vim goodness
+vim::colorscheme: last256
+
 # Timezone
 profile::timezone: Europe/Madrid
-
-# Vim goodness
-vim::colorscheme: last256
 
 profile::git::cache_timeout: 'cache --timeout=86400'
