@@ -6,9 +6,6 @@ classes:
 
 # generic root config
 profile::user::root::config:
-  '/etc/bash.bashrc':
-    ensure: file
-    source: 'puppet:///modules/profile/root/bash.bashrc'
   '/root/.vim':
     ensure: directory
     owner: root
@@ -25,6 +22,14 @@ profile::user::root::config:
     recurse: remote
     owner: root
     group: root
+
+profile::etc::config:
+  '/etc/bash.bashrc':
+    ensure: file
+    source: 'puppet:///modules/profile/root/bash.bashrc'
+  '/etc/tmux.conf':
+    ensure: file
+    source: 'puppet:///modules/profile/etc/tmux.conf'
 
 # generic user config
 profile::user::mcampbell::password: $6$jojfsCCc$ct36us5iNnoMTqN1LV9aGlWJnc35Oq4Clo25e180cpw7BL7Bu8kkNCDK9shHfSEVCn147g9MESAIs4eDvhhlr1

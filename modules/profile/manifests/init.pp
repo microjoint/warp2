@@ -5,6 +5,9 @@ class profile
   # we always setup root user
   include profile::user::root
 
+  # any global configuration
+  include profile::etc
+
   # set common services
   include openssh
 

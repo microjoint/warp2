@@ -2,109 +2,103 @@
 classes:
   - profile::desktop
 
-
-
-
-
-
-
 # applications to install on a desktop machine
 profile::apps::to_install:
   'anki':
-    ensure: present
+    ensure: latest
   'awesome':
-    ensure: present
+    ensure: latest
   'chromium-browser':
-    ensure: present
+    ensure: latest
   'cifs-utils':
-    ensure: present
+    ensure: latest
   'clusterssh':
-    ensure: present
+    ensure: latest
   'exfat-fuse':
-    ensure: present
+    ensure: latest
   'feh':
-    ensure: installed
+    ensure: latest
   'gtypist':
-    ensure: present
+    ensure: latest
   'gvfs-fuse':
-    ensure: present
+    ensure: latest
   'gvfs-backends':
-    ensure: present
+    ensure: latest
   'ipython':
-    ensure: present
+    ensure: latest
   'ipython3':
-    ensure: present
+    ensure: latest
   'keychain':
-    ensure: installed
+    ensure: latest
   'libav-tools':
-    ensure: present
+    ensure: latest
   'libavcodec-extra':
-    ensure: present
+    ensure: latest
   'mutt':
-    ensure: present
+    ensure: latest
   'ncurses-term':
-    ensure: absent
+    ensure: latest
   'nmap':
-    ensure: present
+    ensure: latest
   'netcat':
-    ensure: present
+    ensure: latest
   'numlockx':
-    ensure: present
+    ensure: latest
   'postfix':
-    ensure: present
+    ensure: latest
   'p7zip':
-    ensure: present
+    ensure: latest
   'python-dev':
-    ensure: present
+    ensure: latest
   'python-ipdb':
-    ensure: present
+    ensure: latest
   'python3-ipdb':
-    ensure: present
+    ensure: latest
   'python-virtualenv':
-    ensure: present
+    ensure: latest
   'rar':
-    ensure: present
+    ensure: latest
   'scrot':
-    ensure: present
+    ensure: latest
   'sqlite3':
-    ensure: present
+    ensure: latest
   'software-properties-common':
-    ensure: present
+    ensure: latest
   'scrot':
-    ensure: present
+    ensure: latest
   'tmux':
-    ensure: present
+    ensure: latest
   'vlc':
-    ensure: present
+    ensure: latest
   'w3m':
-    ensure: present
+    ensure: latest
   'wireshark':
-    ensure: present
+    ensure: latest
   'xclip':
-    ensure: present
+    ensure: latest
   'xpdf':
-    ensure: present
+    ensure: latest
   'xscreensaver':
-    ensure: present
+    ensure: latest
   'xubuntu-restricted-addons':
-    ensure: present
+    ensure: latest
   'xubuntu-restricted-extras':
-    ensure: present
+    ensure: latest
 
-# generic root config
-profile::user::root::config:
+# global configuration
+profile::etc::config:
   '/etc/sysctl.d/10-dropbox.conf':
     ensure: file
     source: 'puppet:///modules/profile/etc/sysctl.d/10-dropbox.conf'
-  '/etc/bash.bashrc':
-    ensure: file
-    source: 'puppet:///modules/profile/root/bash.bashrc'
-  '/etc/tmux.conf':
-    ensure: file
-    source: 'puppet:///modules/profile/etc/tmux.conf'
   '/etc/NetworkManager/NetworkManager.conf':
     ensure: file
     source: 'puppet:///modules/profile/etc/NetworkManager/NetworkManager.conf'
+  '/usr/share/xsessions/custom.desktop':
+    ensure: file
+    source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
+
+# generic root config
+profile::user::root::config:
   '/root/.vim':
     ensure: directory
     owner: root
@@ -121,9 +115,6 @@ profile::user::root::config:
     recurse: remote
     owner: root
     group: root
-  '/usr/share/xsessions/custom.desktop':
-    ensure: file
-    source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
 
 # pdnsd settings
 pdnsd::start_daemon: yes
