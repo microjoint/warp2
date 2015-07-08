@@ -130,4 +130,5 @@ vim::colorscheme: last256
 # Timezone
 profile::timezone: Europe/Madrid
 
-profile::git::cache_timeout: 'cache --timeout=86400'
+# git credentials time out in secs. Set to 3 days
+profile::git::cache_timeout: 'cache --timeout=259200'
