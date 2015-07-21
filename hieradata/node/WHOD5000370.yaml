@@ -9,7 +9,7 @@ openssh::package_name: 'ssh'
 dns_search: 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.williamhill.plc adgency-domain.ad-gency.com Group.WilliamHill.PLC mgmt.prod.williamhill.plc prod.williamhill.plc williamhill.local williamHill.PLC williamhill.co.uk williamhill.remote'
 
 #Mount points need on tower
-profile::user::root::mnt_config:
+profile::etc::mnt_config:
   '/mnt/willhill/marcusc':
     ensure: present
     device: '//gib-fs1.adgency-domain.ad-gency.com/marcusc$'
