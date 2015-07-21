@@ -6,7 +6,7 @@ classes:
 openssh::package_name: 'ssh'
 
 # we need the search domain
-dns_search: 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.wil    liamhill.plc adgency-domain.ad-gency.com Group.WilliamHill.PLC mgmt.prod.williamhill.plc prod.williamhill.plc williamhill.local williamHill.PLC williamhill.co.uk williamhill.remote'
+dns_search: 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.williamhill.plc adgency-domain.ad-gency.com Group.WilliamHill.PLC mgmt.prod.williamhill.plc prod.williamhill.plc williamhill.local williamHill.PLC williamhill.co.uk williamhill.remote'
 
 #Mount points need on tower
 profile::user::root::mnt_config:
@@ -14,17 +14,22 @@ profile::user::root::mnt_config:
     ensure: present
     device: '//gib-fs1.adgency-domain.ad-gency.com/marcusc$'
     fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/cifs.pw,users,uid=1000'
+    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
   '/mnt/willhill/systemengineers':
     ensure: present
     device: '//gib-fs1.adgency-domain.ad-gency.com/systemengineers$'
     fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/cifs.pw,users,uid=1000'
-  '/mnt/willhill/architecture':
+    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
+  '/mnt/willhill/online-architecture':
     ensure: present
     device: '//gib-fs1.adgency-domain.ad-gency.com/Architecture$'
     fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/cifs.pw,users,uid=1000'
+    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
+  '/mnt/willhill/group-architecture':
+    ensure: present
+    device: '//group.williamhill.plc/shared'
+    fstype: 'cifs'
+    options: 'creds=/home/mcampbell/.config/group-cifs.pw,users,uid=1000'
 
 
 
@@ -277,9 +282,12 @@ profile::apps::to_install:
     ensure: installed
 
 profile::user::mcampbell::config:
-  '/home/mcampbell/.config/cifs.pw':
+  '/home/mcampbell/.config/group-cifs.pw':
     ensure: file
-    source: 'puppet:///modules/profile/mcampbell/cifs-WHOD5000370'
+    source: 'puppet:///modules/profile/mcampbell/group-cifs-WHOD5000370'
+  '/home/mcampbell/.config/online-cifs.pw':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/online-cifs-WHOD5000370'
   '/home/mcampbell/.synergy.conf':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
