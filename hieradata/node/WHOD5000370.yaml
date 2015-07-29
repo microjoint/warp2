@@ -25,7 +25,7 @@ profile::etc::mnt_config:
     device: '//gib-fs1.adgency-domain.ad-gency.com/Architecture$'
     fstype: 'cifs'
     options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
-  '/mnt/willhill/group-architecture':
+  '/mnt/willhill/group-shared':
     ensure: present
     device: '//group.williamhill.plc/shared'
     fstype: 'cifs'
