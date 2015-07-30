@@ -299,6 +299,9 @@ profile::user::mcampbell::config:
     ensure: directory
   '/mnt/willhill':
     ensure: directory
+  '/home/mcampbell/data/WillHill/architecture':
+    ensure: link
+    target: '/mnt/willhill/group-shared/Architecture'
 
 hosts:
   'gitlab.williamhill-dev.local':
