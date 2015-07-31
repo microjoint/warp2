@@ -300,8 +300,13 @@ profile::user::mcampbell::config:
   '/mnt/willhill':
     ensure: directory
   '/home/mcampbell/data/WillHill/architecture':
+    ensure: directory
+  '/home/mcampbell/data/WillHill/architecture/all':
     ensure: link
     target: '/mnt/willhill/group-shared/Architecture'
+  '/home/mcampbell/data/WillHill/architecture/trafalgar':
+    ensure: link
+    target: '/mnt/willhill/group-shared/Architecture/Infrastructure/Deployment Views/Projects/Online/Trafalgar'
 
 hosts:
   'gitlab.williamhill-dev.local':
