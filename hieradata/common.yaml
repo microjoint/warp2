@@ -32,7 +32,8 @@ profile::etc::config:
     source: 'puppet:///modules/profile/etc/tmux.conf'
 
 # generic user config
-profile::user::mcampbell::password: $6$jojfsCCc$ct36us5iNnoMTqN1LV9aGlWJnc35Oq4Clo25e180cpw7BL7Bu8kkNCDK9shHfSEVCn147g9MESAIs4eDvhhlr1
+profile::user::mcampbell::password: $6$hecj2CLH$wXEZGqX6djcmZSrWezkPu7J380y0TdBm59kUukogl.Do3ixtGlBaybbuRDFVypx3AcwasMymqHz.rKuaxWVju/
+# profile::user::mcampbell::password: $6$jojfsCCc$ct36us5iNnoMTqN1LV9aGlWJnc35Oq4Clo25e180cpw7BL7Bu8kkNCDK9shHfSEVCn147g9MESAIs4eDvhhlr1
 profile::user::mcampbell::groups:
   - 'adm'
   - 'cdrom'
