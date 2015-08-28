@@ -281,6 +281,12 @@ profile::apps::to_install:
   'python-web2py':
     ensure: installed
 
+profile::user::root::config:
+  '/var/spool/cron/crontabs/root':
+    ensure: file
+    mode: '0600'
+    source: 'puppet:///modules/profile/root/cron-WHOD5000370'
+
 profile::user::mcampbell::config:
   '/home/mcampbell/.config/group-cifs.pw':
     ensure: file
