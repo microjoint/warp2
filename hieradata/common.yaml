@@ -91,9 +91,6 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.bashrc':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/bashrc"
-  '/home/mcampbell/.config':
-    ensure: directory
-    recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
   '/home/mcampbell/.vim/bundle':
