@@ -6,4 +6,4 @@ then
   exit 1
 fi
 
-FACTER_environment=$1 FACTER_hardware=$2 FACTER_role=$3 puppet apply /etc/puppet/manifests/site.pp
+FACTER_environment=$1 FACTER_hardware=$2 FACTER_role=$3 puppet apply /etc/puppet/manifests/site.pp --debug --verbose

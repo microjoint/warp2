@@ -342,16 +342,3 @@ hosts:
     ip: 10.210.200.187
     comment: needed for push in dev
 
-pdnsd::preferred_servers:
-  'williamhill':
-    ip: 10.180.18.24
-    proxy_only: off
-    timeout: 4
-    interface: eth0
-    interval: 10m
-    purge_cache: off
-    edns_query: yes
-    exclude:
-      - .thepiratebay.se
-      - .piratebay.org
-      - .piratebay.se

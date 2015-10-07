@@ -12,3 +12,17 @@ profile::apps::to_install:
     ensure: latest
   'virtualbox-guest-additions-iso':
     ensure: latest
+
+pdnsd::preferred_servers:
+  'williamhill':
+    ip: 10.180.18.24, 10.180.24.138, 10.180.24.139
+    proxy_only: off
+    timeout: 4
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
+    exclude:
+      - .thepiratebay.se
+      - .piratebay.org
+      - .piratebay.se

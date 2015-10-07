@@ -32,8 +32,9 @@ profile::etc::config:
     source: 'puppet:///modules/profile/etc/tmux.conf'
 
 # generic user config
-profile::user::mcampbell::password: $6$CEqGFZ5Z$UyaKnNB1teuzEBXGsVkus5n/GOviCFn5QljX8UVfqeNngh579SpCp6lYCh/mZ.0vpXtH2k498mT1fnotZnj2F1
-#profile::user::mcampbell::password: $6$hecj2CLH$wXEZGqX6djcmZSrWezkPu7J380y0TdBm59kUukogl.Do3ixtGlBaybbuRDFVypx3AcwasMymqHz.rKuaxWVju/
+#profile::user::mcampbell::password: $6$CEqGFZ5Z$UyaKnNB1teuzEBXGsVkus5n/GOviCFn5QljX8UVfqeNngh579SpCp6lYCh/mZ.0vpXtH2k498mT1fnotZnj2F1
+profile::user::mcampbell::password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
+
 profile::user::mcampbell::groups:
   - 'adm'
   - 'cdrom'
@@ -120,7 +121,8 @@ profile::apps::to_install:
     ensure: present
 
 # colorscheme and Vim goodness
-vim::colorscheme: last256
+#vim::colorscheme: last256
+vim::colorscheme: solarized
 
 # Timezone
 profile::timezone: Europe/Madrid
