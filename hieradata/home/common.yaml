@@ -11,3 +11,15 @@ profile::apps::to_install:
     ensure: present
   'reaver':
     ensure: present
+
+# pdnsd settings
+pdnsd::preffered_servers:
+  'google':
+    ip: 8.8.8.8, 8.8.4.4
+    proxy_only: off
+    timeout: 4
+    uptest: query
+    interface: eth0
+    interval: 10m
+    purge_cache: off
+    edns_query: yes
