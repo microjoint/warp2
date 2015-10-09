@@ -305,6 +305,8 @@ profile::user::mcampbell::config:
     ensure: directory
   '/mnt/willhill':
     ensure: directory
+  '/home/mcampbell/data/WillHill':
+    ensure: directory
   '/home/mcampbell/data/WillHill/architecture':
     ensure: directory
   '/home/mcampbell/data/WillHill/architecture/all':

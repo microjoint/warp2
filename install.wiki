@@ -17,3 +17,12 @@
     * [ ] selecet 'Log in automactically'
   * [ ] 'Installation Complete'
     * [ ] press 'Restart Now'
+  * [ ] terminal window
+    * [ ] update restart
+    * [ ] wget https://www.dropbox.com/sh/ziyy95cicd6oau0/AAD3PtLhnbdOCk3XUFhiZQcoa?dl=0 o https://tinyurl.com/pphdpq6
+    * [ ] save as puppet.zip
+    * [ ] run script
+    %% #!/bin/bash
+    %% sudo apt-get install puppet
+    %% sudo unzip ./puppet.zip -d /etc/puppet
+    %% sudo cd /etc/puppet && sudo ./rush.sh work workstation desktop

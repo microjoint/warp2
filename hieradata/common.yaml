@@ -108,8 +108,6 @@ profile::user::mcampbell::config:
   '/home/mcampbell/bin':
     ensure: link
     target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
-  '/home/mcampbell/data':
-    ensure: directory
 
 # common applications to everywhere
 profile::apps::to_install:
