@@ -9,7 +9,7 @@
 	url = https://github.com/microjoint/mj-puppet-dropbox.git
 [submodule "modules/apt"]
 	path = modules/apt
-	url = https://github.com/evolvingweb/puppet-apt.git
+	url = https://forge.puppetlabs.com/puppetlabs/apt
 [submodule "modules/stdlib"]
 	path = modules/stdlib
 	url = https://github.com/puppetlabs/puppetlabs-stdlib.git
