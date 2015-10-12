@@ -73,7 +73,7 @@ theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/def
 theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper_cmd = { "awsetbg /home/mcampbell/sync/Dropbox/1-data/2-images/backdrops/thematrix.jpg" }
+theme.wallpaper_cmd = { "awsetbg /home/mcampbell/1-data/4-sync/Dropbox/1-data/2-images/backdrops/thematrix.jpg" }
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = "/usr/share/awesome/themes/default/layouts/fairhw.png"

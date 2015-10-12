@@ -83,12 +83,12 @@ profile::user::mcampbell::config:
     recurse: remote
   '/home/mcampbell/bin':
     ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
+    target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
   '/home/mcampbell/data':
     ensure: directory
   '/home/mcampbell/data/src':
     ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/1-docs/4-project/programming/src'
+    target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/1-docs/4-project/programming/src'
   '/home/mcampbell/.bashrc':
     ensure: file
     source: "puppet:///modules/profile/mcampbell/bashrc"
@@ -107,7 +107,7 @@ profile::user::mcampbell::config:
     source: 'puppet:///modules/profile/mcampbell/dialrc'
   '/home/mcampbell/bin':
     ensure: link
-    target: '/home/mcampbell/sync/Dropbox/1-data/4-os/home/bin'
+    target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
 
 # common applications to everywhere
 profile::apps::to_install:
