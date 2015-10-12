@@ -119,8 +119,8 @@ profile::apps::to_install:
     ensure: present
 
 # colorscheme and Vim goodness
-#vim::colorscheme: last256
-vim::colorscheme: solarized
+vim::colorscheme: last256
+#vim::colorscheme: solarized
 
 # Timezone
 profile::timezone: Europe/Madrid

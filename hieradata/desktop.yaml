@@ -2,6 +2,33 @@
 classes:
   - profile::desktop
 
+profile::user::mcampbell::config:
+  '/home/mcampbell/Desktop':
+    ensure: absent
+    force: true
+  '/home/mcampbell/Documents':
+    ensure: absent
+    force: true
+  '/home/mcampbell/Music':
+    ensure: absent
+    force: true
+  '/home/mcampbell/Pictures':
+    ensure: absent
+    force: true
+  '/home/mcampbell/Public':
+    ensure: absent
+    force: true
+  '/home/mcampbell/Templates':
+    ensure: absent
+    force: true
+  '/home/mcampbell/Videos':
+    ensure: absent
+    force: true
+  '/home/mcampbell/.xsession':
+    ensure: link
+    target: '/home/mcampbell/.xinitrc'
+
+
 # applications to install on a desktop machine
 profile::apps::to_install:
   'anki':
@@ -44,6 +71,8 @@ profile::apps::to_install:
     ensure: latest
   'numlockx':
     ensure: latest
+  'password-gorilla':
+    ensure: latest
   'postfix':
     ensure: latest
   'p7zip':
@@ -79,6 +108,10 @@ profile::apps::to_install:
   'xpdf':
     ensure: latest
   'xscreensaver':
+    ensure: latest
+  'xscreensaver-data-extra':
+    ensure: latest
+  'xscreensaver-screensaver-dizzy':
     ensure: latest
   'xubuntu-restricted-addons':
     ensure: latest

@@ -2,7 +2,9 @@
 class profile::user::root (
   $colorscheme = hiera('vim::colorscheme', 'ron')
 ) {
+
   $config = hiera_hash(profile::user::root::config)
+
   if $config {
     create_resources( file, $config )
   }

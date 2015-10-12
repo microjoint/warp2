@@ -15,6 +15,11 @@ class profile::user::mcampbell
 
   $config = hiera_hash(profile::user::mcampbell::config)
 
+  FILE {
+    owner => 'mcampbell',
+    group => 'mcampbell',
+  }
+
   $defaults = {
     owner => 'mcampbell',
     group => 'mcampbell',
