@@ -26,3 +26,32 @@ pdnsd::preferred_servers:
       - .thepiratebay.se
       - .piratebay.org
       - .piratebay.se
+
+profile::user::mcampbell::config:
+  '/home/mcampbell/.config/group-cifs.pw':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/group-cifs-WHOD5000370'
+  '/home/mcampbell/.config/online-cifs.pw':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/online-cifs-WHOD5000370'
+  '/home/mcampbell/.synergy.conf':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'
+  '/var/spool/cron/crontabs/mcampbell':
+    ensure: file
+    mode: '0600'
+    source: 'puppet:///modules/profile/mcampbell/cron-WHOD5000370'
+  '/mnt':
+    ensure: directory
+  '/mnt/willhill':
+    ensure: directory
+  '/home/mcampbell/1-data/WillHill':
+    ensure: directory
+  '/home/mcampbell/1-data/WillHill/architecture':
+    ensure: directory
+  '/home/mcampbell/1-data/WillHill/architecture/all':
+    ensure: link
+    target: '/mnt/willhill/group-shared/Architecture'
+  '/home/mcampbell/1-data/WillHill/architecture/trafalgar':
+    ensure: link
+    target: '/mnt/willhill/group-shared/Architecture/Infrastructure/Deployment Views/Projects/Online/Trafalgar'

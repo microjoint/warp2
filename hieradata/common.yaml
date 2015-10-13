@@ -70,6 +70,7 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.ssh':
     ensure: directory
     source: 'puppet:///modules/profile/mcampbell/ssh'
+    mode: 0600
     recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
@@ -84,9 +85,9 @@ profile::user::mcampbell::config:
   '/home/mcampbell/bin':
     ensure: link
     target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
-  '/home/mcampbell/data':
+  '/home/mcampbell/1-data':
     ensure: directory
-  '/home/mcampbell/data/src':
+  '/home/mcampbell/1-data/src':
     ensure: link
     target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/1-docs/4-project/programming/src'
   '/home/mcampbell/.bashrc':
