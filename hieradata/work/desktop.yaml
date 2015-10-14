@@ -4,6 +4,8 @@
 profile::apps::to_install:
   'linux-headers-generic':
     ensure: latest
+  'ruby-dev':
+    ensure: latest
   'vagrant':
     ensure: latest
   'virtualbox':

@@ -13,3 +13,7 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.dialrc':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/dialrc'
+  '/home/mcampbell/1-data/WillHill/src':
+    ensure: directory
+  '/home/mcampbell/1-data/WillHill/src/cx':
+    ensure: directory
