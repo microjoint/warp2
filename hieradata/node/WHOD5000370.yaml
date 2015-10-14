@@ -2,6 +2,9 @@
 classes:
   - profile::user::mcampbell
 
+# two monitors
+xrand: 'xrandr --output DP-3 --right-of DP-4 --primary'
+
 # This will install both server and client
 openssh::package_name: 'ssh'
 

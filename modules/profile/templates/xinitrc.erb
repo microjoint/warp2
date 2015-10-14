@@ -7,7 +7,12 @@ fi
 
 ## Ensure that GTK themes are applied uniformly in the Desktop Environment
 
-#export GTK2_RC_FILES="$HOME/.gtkrc-2.0" 
+#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+<% if @xrandr_cmd %>
+# change screen layout
+<%= @xrandr_cmd %>
+<% end %>
 
 # Dropbox daemon
 ~/.dropbox-dist/dropboxd &
