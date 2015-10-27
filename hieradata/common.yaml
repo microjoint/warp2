@@ -12,8 +12,6 @@ profile::user::root::config:
     group: root
   '/root/.vim/bundle':
     ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
     owner: root
     group: root
   '/root/.vim/colors':
@@ -76,8 +74,6 @@ profile::user::mcampbell::config:
     ensure: directory
   '/home/mcampbell/.vim/bundle':
     ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
   '/home/mcampbell/.vim/colors':
     ensure: directory
     source: 'puppet:///modules/vim/colors/colors'
@@ -95,10 +91,6 @@ profile::user::mcampbell::config:
     source: "puppet:///modules/profile/mcampbell/bashrc"
   '/home/mcampbell/.vim':
     ensure: directory
-  '/home/mcampbell/.vim/bundle':
-    ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
   '/home/mcampbell/.vim/colors':
     ensure: directory
     source: 'puppet:///modules/vim/colors/colors'
@@ -124,6 +116,39 @@ profile::apps::to_install:
 # colorscheme and Vim goodness
 vim::colorscheme: last256
 #vim::colorscheme: solarized
+
+# vim bundle repos to clone
+profile::vim:
+  'ctrlp.vim':
+    source: 'https://github.com/kien/ctrlp.vim.git'
+  'nerdtree':
+    source: 'https://github.com/scrooloose/nerdtree.git'
+  'syntastic':
+    source: 'https://github.com/scrooloose/syntastic.git'
+  'tabular':
+    source: 'https://github.com/godlygeek/tabular.git'
+  'tlib':
+    source: 'https://github.com/vim-scripts/tlib.git'
+  'vim-addon-mw-utils':
+    source: 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
+  'vim-airline':
+    source: 'https://github.com/bling/vim-airline.git'
+  'vim-fugitive':
+    source: 'https://github.com/tpope/vim-fugitive.git'
+  'vimoutliner':
+    source: 'https://github.com/vimoutliner/vimoutliner.git'
+  'vim-puppet':
+    source: 'https://github.com/rodjek/vim-puppet.git'
+  'vim-snipmate':
+    source: 'https://github.com/garbas/vim-snipmate.git'
+  'vim-snippets':
+    source: 'https://github.com/honza/vim-snippets.git'
+  'vim-surround':
+    source: 'https://github.com/tpope/vim-surround.git'
+  'vimwiki':
+    source: 'https://github.com/vimwiki/vimwiki.git'
+  'Vundle.vim':
+    source: 'https://github.com/gmarik/Vundle.vim.git'
 
 # Timezone
 profile::timezone: Europe/Madrid

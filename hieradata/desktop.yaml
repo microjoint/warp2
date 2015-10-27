@@ -140,8 +140,6 @@ profile::user::root::config:
     group: root
   '/root/.vim/bundle':
     ensure: directory
-    source: "puppet:///modules/vim/bundle"
-    recurse: remote
     owner: root
     group: root
   '/root/.vim/colors':
