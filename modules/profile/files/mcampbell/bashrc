@@ -171,3 +171,5 @@ source ~/bin/git-prompt.sh
 #keychain
 keychain ~/.ssh/id_rsa
 source ~/.keychain/${HOSTNAME}-sh
+
+fortune | ponysay
