@@ -6,6 +6,8 @@ profile::apps::to_install:
     ensure: latest
   'linux-headers-generic':
     ensure: latest
+  'puppet-lint':
+    ensure: latest
   'ruby-dev':
     ensure: latest
   'vagrant':
@@ -38,6 +40,9 @@ profile::user::mcampbell::config:
   '/home/mcampbell/.config/online-cifs.pw':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/online-cifs-WHOD5000370'
+  '/home/mcampbell/.cx_config':
+    ensure: file
+    source: 'puppet:///modules/profile/mcampbell/cx_config'
   '/home/mcampbell/.synergy.conf':
     ensure: file
     source: 'puppet:///modules/profile/mcampbell/synergy_willhill.conf'

@@ -17,3 +17,5 @@ profile::user::mcampbell::config:
     ensure: directory
   '/home/mcampbell/1-data/WillHill/src/cx':
     ensure: directory
+  '/home/mcampbell/1-data/WillHill/src/sports':
+    ensure: directory
