@@ -28,3 +28,6 @@
 [submodule "modules/laptop_mode"]
 	path = modules/laptop_mode
 	url = https://github.com/microjoint/puppet-laptop_mode.git
+[submodule "modules/vcsrepo"]
+	path = modules/vcsrepo
+	url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git

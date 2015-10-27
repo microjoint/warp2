@@ -1,0 +1,8 @@
+---
+clone_dir: /home/mcampbell/1-data/WillHill/src/cx
+gitlab_base_url: https://git.nonprod.williamhill.plc
+gitlab_token: CL687qU_ymuRvRrN1Gkx
+additional_groups:
+- infosec
+- stingray_config
+- traffic_scripts
