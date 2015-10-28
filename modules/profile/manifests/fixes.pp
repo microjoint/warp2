@@ -5,8 +5,8 @@ class profile::fixes
   exec{'move_vim_colors':
     path => ['/usr/bin'],
     cwd => '/usr/share/vim/addons/colors',
-    command => 'rsync colors/ .'
+    command => 'rsync -a colors/ .',
     subscribe => Vcsrepo['/usr/share/vim/addons/colors'],
-
+    refreshonly => true,
   }
 }

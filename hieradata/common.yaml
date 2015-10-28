@@ -129,9 +129,11 @@ profile::repos::to_clone:
     source: 'https://github.com/vimoutliner/vimoutliner'
   '/usr/share/vim/addons/plugin/vimwiki':
     source: 'https://github.com/vim-scripts/vimwiki'
+  # colorscheme all of them.
   '/usr/share/vim/addons/colors':
     source: 'https://github.com/flazz/vim-colorschemes.git'
-
+  '/usr/share/vim/addons/fonts':
+    source: 'https://github.com/powerline/fonts.git'
 
 # colorscheme and Vim goodness
 vim::colorscheme: last256
