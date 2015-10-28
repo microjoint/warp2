@@ -142,12 +142,6 @@ profile::user::root::config:
     ensure: directory
     owner: root
     group: root
-  '/root/.vim/colors':
-    ensure: directory
-    source: 'puppet:///modules/vim/colors/colors'
-    recurse: remote
-    owner: root
-    group: root
 
 # pdnsd settings
 pdnsd::start_daemon: yes

@@ -20,6 +20,10 @@ class profile
   # Bring on the vim
   include vim
 
+  # repos to clone
+  include profile::repos
+
+
   # set up common configuration
   $config = hiera_hash(profile::config, undef)
   if $config {
@@ -28,5 +32,10 @@ class profile
 
   include profile::hosts
   include profile::timezone
+
+  # fixes for stuff that don't work right
+  include profile::fixes
+
+  Class['profile::repos'] -> Class['profile::fixes']
 
 }

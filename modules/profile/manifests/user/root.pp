@@ -16,23 +16,23 @@ class profile::user::root (
   }
 
   # set up vim's vundle
-  vcsrepo {'/home/root/.vim/undle/Vundle.vim':
-    ensure   => latest,
-    provider => git,
-    source   => 'https://github.com/gmarik/Vundle.vim.git',
-    notify   => Exec['vim_vundle'],
-    owner    => 'root',
-    group    => 'root',
-  }
+  #vcsrepo {'/home/root/.vim/undle/Vundle.vim':
+  #  ensure   => latest,
+  #  provider => git,
+  #  source   => 'https://github.com/gmarik/Vundle.vim.git',
+  #  notify   => Exec['vim_vundle'],
+  #  owner    => 'root',
+  #  group    => 'root',
+  #}
 
-  exec { 'vim_vundle_root':
-    path        => ['/usr/bin/', '/bin'],
-    cwd         => '/home/root/',
-    command     => '/usr/bin/vim +PluginInstall +qall',
-    provider    => 'shell',
-    environment => 'HOME=/root',
-    user        => 'root',
-    subscribe   => File['/root/.vimrc'],
-    refreshonly => true,
-  }
+  #exec { 'vim_vundle_root':
+  #  path        => ['/usr/bin/', '/bin'],
+  #  cwd         => '/home/root/',
+  #  command     => '/usr/bin/vim +PluginInstall +qall',
+  #  provider    => 'shell',
+  #  environment => 'HOME=/root',
+  #  user        => 'root',
+  #  subscribe   => File['/root/.vimrc'],
+  #  refreshonly => true,
+  #}
 }
