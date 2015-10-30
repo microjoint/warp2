@@ -22,6 +22,37 @@
     " }
   " }
 
+  " Vundle {
+  filetype off                  " required
+
+  " set the runtime path to include Vundle and initialize
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+
+  " let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
+
+  " Keep Plugin commands between vundle#begin/end.
+  Plugin 'kien/ctrlp.vim'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'godlygeek/tabular'
+  Plugin 'vim-scripts/tlib'
+  Plugin 'MarcWeber/vim-addon-mw-utils'
+  Plugin 'bling/vim-airline'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'rodjek/vim-puppet'
+  Plugin 'garbas/vim-snipmate'
+  Plugin 'honza/vim-snippets'
+  Plugin 'tpope/vim-surround'
+  Plugin 'vimoutliner/vimoutliner'
+  Plugin 'vim-scripts/vimwiki'
+
+  " All of your Plugins must be added before the following line
+  call vundle#end()            " required
+  " }
+
+
   " General {
     filetype plugin indent on     	  " detect file types
     syntax on                     " syntax highlighting

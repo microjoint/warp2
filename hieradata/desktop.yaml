@@ -28,7 +28,6 @@ profile::user::mcampbell::config:
     ensure: link
     target: '/home/mcampbell/.xinitrc'
 
-
 # applications to install on a desktop machine
 profile::apps::to_install:
   'anki':
@@ -117,8 +116,6 @@ profile::apps::to_install:
     ensure: latest
   'xubuntu-restricted-extras':
     ensure: latest
-
-
 
 # global configuration
 profile::etc::config:

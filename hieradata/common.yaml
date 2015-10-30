@@ -66,6 +66,8 @@ profile::user::mcampbell::config:
     recurse: remote
   '/home/mcampbell/.vim':
     ensure: directory
+  '/home/mcampbell/.vim/autoload':
+    ensure: directory
   '/home/mcampbell/.vim/bundle':
     ensure: directory
   '/home/mcampbell/bin':
@@ -101,76 +103,18 @@ profile::apps::to_install:
 
 # common repos to clone
 profile::repos::to_clone:
-  '/usr/share/vim/addons/plugin/ctrlp.vim':
-    source: 'https://github.com/kien/ctrlp.vim'
-  '/usr/share/vim/addons/plugin/nerdtree':
-    source: 'https://github.com/scrooloose/nerdtree'
-  '/usr/share/vim/addons/plugin/syntastic':
-    source: 'https://github.com/scrooloose/syntastic'
-  '/usr/share/vim/addons/plugin/tabular':
-    source: 'https://github.com/godlygeek/tabular'
-  '/usr/share/vim/addons/plugin/tlib':
-    source: 'https://github.com/vim-scripts/tlib'
-  '/usr/share/vim/addons/plugin/vim-addon-mw-utils':
-    source: 'https://github.com/MarcWeber/vim-addon-mw-utils'
-  '/usr/share/vim/addons/plugin/vim-airline':
-    source: 'https://github.com/bling/vim-airline'
-  '/usr/share/vim/addons/plugin/vim-fugitive':
-    source: 'https://github.com/tpope/vim-fugitive'
-  '/usr/share/vim/addons/plugin/vim-puppet':
-    source: 'https://github.com/rodjek/vim-puppet'
-  '/usr/share/vim/addons/plugin/vim-snipmate':
-    source: 'https://github.com/garbas/vim-snipmate'
-  '/usr/share/vim/addons/plugin/vim-snippets':
-    source: 'https://github.com/honza/vim-snippets'
-  '/usr/share/vim/addons/plugin/vim-surround':
-    source: 'https://github.com/tpope/vim-surround'
-  '/usr/share/vim/addons/plugin/vimoutliner':
-    source: 'https://github.com/vimoutliner/vimoutliner'
-  '/usr/share/vim/addons/plugin/vimwiki':
-    source: 'https://github.com/vim-scripts/vimwiki'
-  # colorscheme all of them.
-  '/usr/share/vim/addons/colors':
+  '/home/mcampbell/.vim/bundle/Vundle.vim':
+    source: 'https://github.com/VundleVim/Vundle.vim'
+    owner: 'mcampbell'
+    group: 'mcampbell'
+  '/usr/share/vim/vim74/colors':
     source: 'https://github.com/flazz/vim-colorschemes.git'
-  '/usr/share/vim/addons/fonts':
+  '/usr/share/vim/vim74/fonts':
     source: 'https://github.com/powerline/fonts.git'
 
 # colorscheme and Vim goodness
 vim::colorscheme: last256
 #vim::colorscheme: solarized
-
-# vim bundle repos to clone
-#profile::vim:
-#  'ctrlp.vim':
-#    source: 'https://github.com/kien/ctrlp.vim.git'
-#  'nerdtree':
-#    source: 'https://github.com/scrooloose/nerdtree.git'
-#  'syntastic':
-#    source: 'https://github.com/scrooloose/syntastic.git'
-#  'tabular':
-#    source: 'https://github.com/godlygeek/tabular.git'
-#  'tlib':
-#    source: 'https://github.com/vim-scripts/tlib.git'
-#  'vim-addon-mw-utils':
-#    source: 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-#  'vim-airline':
-#    source: 'https://github.com/bling/vim-airline.git'
-#  'vim-fugitive':
-#    source: 'https://github.com/tpope/vim-fugitive.git'
-#  'vimoutliner':
-#    source: 'https://github.com/vimoutliner/vimoutliner.git'
-#  'vim-puppet':
-#    source: 'https://github.com/rodjek/vim-puppet.git'
-#  'vim-snipmate':
-#    source: 'https://github.com/garbas/vim-snipmate.git'
-#  'vim-snippets':
-#    source: 'https://github.com/honza/vim-snippets.git'
-#  'vim-surround':
-#    source: 'https://github.com/tpope/vim-surround.git'
-#  'vimwiki':
-#    source: 'https://github.com/vimwiki/vimwiki.git'
-#  'Vundle.vim':
-#    source: 'https://github.com/gmarik/Vundle.vim.git'
 
 # Timezone
 profile::timezone: Europe/Madrid

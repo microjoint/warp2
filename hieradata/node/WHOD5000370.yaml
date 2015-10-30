@@ -18,6 +18,11 @@ profile::etc::mnt_config:
     device: '//gib-fs1.adgency-domain.ad-gency.com/marcusc$'
     fstype: 'cifs'
     options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
+  '/mnt/willhill/ServiceDesk':
+    ensure: present
+    device: '//gib-fs1.adgency-domain.ad-gency.com/ServiceDesk$'
+    fstype: 'cifs'
+    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
   '/mnt/willhill/systemengineers':
     ensure: present
     device: '//gib-fs1.adgency-domain.ad-gency.com/systemengineers$'

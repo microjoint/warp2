@@ -47,26 +47,15 @@ class profile::user::mcampbell
     ensure  => file,
     content => template('profile/vimrc.erb')
   }
+  exec{'vim_update_plugins':
+    path        => ['/usr/bin'],
+    cwd         => '/home/mcampbell',
+    command     => 'vim +PluginInstall +qall',
+    subscribe   => File['/home/mcampbell/.vimrc'],
+    environment => ['HOME=/home/mcampbell'],
+    refreshonly => true,
+    user        => 'mcampbell',
+  }
 
-  # set up vim's vundle
-  #vcsrepo {'/home/mcampbell/.vim/undle/Vundle.vim':
-  #  ensure   => latest,
-  #  provider => git,
-  #  source   => 'https://github.com/gmarik/Vundle.vim.git',
-  #  notify   => Exec['vim_vundle'],
-  #  owner    => 'mcampbell',
-  #  group    => 'mcampbell',
-  #}
-
-  #exec { 'vim_vundle':
-  #  path        => ['/usr/bin/', '/bin'],
-  #  cwd         => '/home/mcampbell/',
-  #  command     => '/usr/bin/vim +PluginInstall +qall',
-  #  provider    => 'shell',
-  #  environment => 'HOME=/home/mcampbell',
-  #  user        => 'mcampbell',
-  #  subscribe   => File['/home/mcampbell/.vimrc'],
-  #  refreshonly => true,
-  #}
 
 }

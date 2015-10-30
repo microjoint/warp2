@@ -36,6 +36,6 @@ class profile
   # fixes for stuff that don't work right
   include profile::fixes
 
-  Class['profile::repos'] -> Class['profile::fixes']
+  Class['vim'] -> Class['profile::repos'] -> Class['profile::fixes']
 
 }

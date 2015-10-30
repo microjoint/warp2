@@ -1,6 +1,6 @@
 # This is for a desktop PC that we'd have a GUI interface
 class profile::desktop(
-  $xrandr = hiera('xrandr', nil)
+  $xrandr = hiera('xrandr', nil) # command to customise screens
 ){
 
   include pdnsd
@@ -18,8 +18,6 @@ class profile::desktop(
     path        => ['/usr/bin','/bin/'],
     cwd         => ['/usr/local/bin/ponysay'],
     refreshonly => true,
-    #user       => 'root',
     #subscribe  => Vcsrepo['/usr/local/bin/ponysay'],
   }
-
 }
