@@ -39,13 +39,46 @@ profile::etc::mnt_config:
     fstype: 'cifs'
     options: 'creds=/home/mcampbell/.config/group-cifs.pw,users,uid=1000'
 
+# applications to install
+profile::apps::to_install:
+  'subversion':
+    ensure: installed
+  'synergy':
+    ensure: installed
 
+profile::user::root::config:
+  '/var/spool/cron/crontabs/root':
+    ensure: file
+    mode: '0600'
+    source: 'puppet:///modules/profile/root/cron-WHOD5000370'
 
-
-
-
-
-
+hosts:
+  'gitlab.williamhill-dev.local':
+    ip: 10.210.200.25
+    host_aliases:
+      - gitlab
+  'wendy.williamhill.local':
+    ip: 10.210.163.20
+    host_aliases:
+      - wendy
+  'work.df':
+    ip: 10.180.22.78
+  'confluence.williamhill.local':
+    ip: 10.1.28.127
+    host_aliases:
+      - oldwiki
+      - wikiold
+  'w.sports.williamhill-sportsbettingdev.com':
+    ip: 10.210.200.175
+  'icinga':
+    ip: 10.180.19.154
+    host_aliases:
+      - monitoring
+  'sports.williamhill-sportsbettingdev.com':
+    ip: 10.210.200.175
+  'pushdata2.williamhill-sportsbettingdev.com':
+    ip: 10.210.200.187
+    comment: needed for push in dev
 
 
 
@@ -275,52 +308,3 @@ clusterssh::clusters:
     10.222.147.82
     10.222.147.67
     10.222.147.68
-
-# applications to install
-profile::apps::to_install:
-  'subversion':
-    ensure: installed
-  'synergy':
-    ensure: installed
-  'android-tools-adb':
-    ensure: installed
-  'android-tools-fastboot':
-    ensure: installed
-  'python-web2py':
-    ensure: installed
-
-profile::user::root::config:
-  '/var/spool/cron/crontabs/root':
-    ensure: file
-    mode: '0600'
-    source: 'puppet:///modules/profile/root/cron-WHOD5000370'
-
-
-hosts:
-  'gitlab.williamhill-dev.local':
-    ip: 10.210.200.25
-    host_aliases:
-      - gitlab
-  'wendy.williamhill.local':
-    ip: 10.210.163.20
-    host_aliases:
-      - wendy
-  'work.df':
-    ip: 10.180.22.78
-  'confluence.williamhill.local':
-    ip: 10.1.28.127
-    host_aliases:
-      - oldwiki
-      - wikiold
-  'w.sports.williamhill-sportsbettingdev.com':
-    ip: 10.210.200.175
-  'icinga':
-    ip: 10.180.19.154
-    host_aliases:
-      - monitoring
-  'sports.williamhill-sportsbettingdev.com':
-    ip: 10.210.200.175
-  'pushdata2.williamhill-sportsbettingdev.com':
-    ip: 10.210.200.187
-    comment: needed for push in dev
-

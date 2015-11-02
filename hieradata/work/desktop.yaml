@@ -1,5 +1,4 @@
 ---
-
 # applications to install on a desktop machine
 profile::apps::to_install:
   'git-flow':

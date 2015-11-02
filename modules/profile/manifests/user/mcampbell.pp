@@ -30,23 +30,28 @@ class profile::user::mcampbell
   file { '/home/mcampbell/.clusterssh':
     ensure => directory,
   }
+
   file { '/home/mcampbell/.clusterssh/config':
     ensure  => file,
     content => template('profile/cssh.config.erb'),
   }
+
   file { '/home/mcampbell/.clusterssh/clusters':
     ensure  => file,
     content => template('profile/cssh.clusters.erb'),
   }
+
   file { '/home/mcampbell/.xinitrc':
     ensure  => file,
     content => template('profile/xinitrc.erb')
   }
+
   $colorscheme = hiera('vim::colorscheme')
   file { '/home/mcampbell/.vimrc':
     ensure  => file,
     content => template('profile/vimrc.erb')
   }
+
   exec{'vim_update_plugins':
     path        => ['/usr/bin'],
     cwd         => '/home/mcampbell',
@@ -56,6 +61,5 @@ class profile::user::mcampbell
     refreshonly => true,
     user        => 'mcampbell',
   }
-
 
 }

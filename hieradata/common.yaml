@@ -103,6 +103,10 @@ profile::apps::to_install:
 
 # common repos to clone
 profile::repos::to_clone:
+  '/root/.vim/bundle/Vundle.vim':
+    source: 'https://github.com/VundleVim/Vundle.vim'
+    owner: 'mcampbell'
+    group: 'mcampbell'
   '/home/mcampbell/.vim/bundle/Vundle.vim':
     source: 'https://github.com/VundleVim/Vundle.vim'
     owner: 'mcampbell'
