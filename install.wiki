@@ -19,9 +19,11 @@
     * [ ] press 'Restart Now'
   * [ ] terminal window
     * [ ] update restart
+    * [ ] we should clone from github
     * [ ] wget https://www.dropbox.com/sh/ziyy95cicd6oau0/AAD3PtLhnbdOCk3XUFhiZQcoa?dl=0 o https://tinyurl.com/pphdpq6
     * [ ] save as puppet.zip
     * [ ] run script
+    * [ ] git clone     https://github.com/microjoint/warp2.git /etc/puppet
     %% #!/bin/bash
     %% sudo apt-get install puppet
     %% sudo unzip ./puppet.zip -d /etc/puppet

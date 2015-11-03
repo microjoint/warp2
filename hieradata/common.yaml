@@ -7,6 +7,10 @@ classes:
 # users
 users:
   'mcampbell':
+    username: 'mcampbell'
+    home: '/home/mcampbell'
+    password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
+    comment: 'Marcus Campbell'
     uid: '1000'
     gid: '1000'
     groups:
@@ -17,17 +21,81 @@ users:
       - 'plugdev'
       - 'lpadmin'
       - 'sambashare'
-
-# generic root config
-profile::user::root::config:
-  '/root/.vim':
-    ensure: directory
-    owner: root
-    group: root
-  '/root/.vim/bundle':
-    ensure: directory
-    owner: root
-    group: root
+    cssh_config: 'profile/cssh.config.erb'
+    cluster_config: 'profile/cssh.clusters.erb'
+    xinitrc: 'profile/xinitrc.erb'
+    config:
+      '/home/mcampbell/.clusterssh':
+        ensure: directory
+      '/home/mcampbell/.config/awesome':
+        ensure: directory
+      '/home/mcampbell/.config/awesome/rc.lua':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/awesome/rc.lua"
+      '/home/mcampbell/.config/awesome/theme.lua':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
+      '/home/mcampbell/.Xresources':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/Xresources"
+      '/home/mcampbell/.Xdefaults':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/Xresources"
+      '/home/mcampbell/.xscreensaver':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/xscreensaver"
+      '/home/mcampbell/.bashrc':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/bashrc"
+      '/home/mcampbell/.config':
+        ensure: directory
+      '/home/mcampbell/.ssh':
+        ensure: directory
+        source: 'puppet:///modules/profile/mcampbell/ssh'
+        mode: 0600
+        recurse: remote
+      '/home/mcampbell/.vim':
+        ensure: directory
+      '/home/mcampbell/.vim/autoload':
+        ensure: directory
+      '/home/mcampbell/.vim/bundle':
+        ensure: directory
+      '/home/mcampbell/bin':
+        ensure: link
+        target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
+      '/home/mcampbell/1-data':
+        ensure: directory
+      '/home/mcampbell/1-data/src':
+        ensure: link
+        target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/1-docs/4-project/programming/src'
+      '/home/mcampbell/.bashrc':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/bashrc"
+      '/home/mcampbell/.dialrc':
+        ensure: file
+        source: 'puppet:///modules/profile/mcampbell/dialrc'
+      '/home/mcampbell/bin':
+        ensure: link
+        target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
+      '/home/mcampbell/tmp':
+        ensure: directory
+  'root':
+    home: '/root'
+    password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
+    comment: 'Marcus Campbell'
+    uid: '0'
+    gid: '0'
+    groups:
+      - 'root'
+    config:
+      '/root/.vim':
+        ensure: directory
+        owner: root
+        group: root
+      '/root/.vim/bundle':
+        ensure: directory
+        owner: root
+        group: root
 
 profile::etc::config:
   '/etc/bash.bashrc':
@@ -36,79 +104,6 @@ profile::etc::config:
   '/etc/tmux.conf':
     ensure: file
     source: 'puppet:///modules/profile/etc/tmux.conf'
-
-# generic user config
-#profile::user::mcampbell::password: $6$CEqGFZ5Z$UyaKnNB1teuzEBXGsVkus5n/GOviCFn5QljX8UVfqeNngh579SpCp6lYCh/mZ.0vpXtH2k498mT1fnotZnj2F1
-profile::user::mcampbell::password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
-
-profile::user::mcampbell::groups:
-  - 'adm'
-  - 'cdrom'
-  - 'sudo'
-  - 'dip'
-  - 'plugdev'
-  - 'lpadmin'
-  - 'sambashare'
-
-# These are all the configuration files and directories to be created for
-# user mcampbell
-profile::user::mcampbell::config:
-  '/home/mcampbell/.clusterssh':
-    ensure: directory
-  '/home/mcampbell/.config/awesome':
-    ensure: directory
-  '/home/mcampbell/.config/awesome/rc.lua':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/awesome/rc.lua"
-  '/home/mcampbell/.config/awesome/theme.lua':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
-  '/home/mcampbell/.Xresources':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/Xresources"
-  '/home/mcampbell/.Xdefaults':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/Xresources"
-  '/home/mcampbell/.xscreensaver':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/xscreensaver"
-  '/home/mcampbell/.bashrc':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/bashrc"
-  '/home/mcampbell/.config':
-    ensure: directory
-  '/home/mcampbell/.ssh':
-    ensure: directory
-    source: 'puppet:///modules/profile/mcampbell/ssh'
-    mode: 0600
-    recurse: remote
-  '/home/mcampbell/.vim':
-    ensure: directory
-  '/home/mcampbell/.vim/autoload':
-    ensure: directory
-  '/home/mcampbell/.vim/bundle':
-    ensure: directory
-  '/home/mcampbell/bin':
-    ensure: link
-    target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
-  '/home/mcampbell/1-data':
-    ensure: directory
-  '/home/mcampbell/1-data/src':
-    ensure: link
-    target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/1-docs/4-project/programming/src'
-  '/home/mcampbell/.bashrc':
-    ensure: file
-    source: "puppet:///modules/profile/mcampbell/bashrc"
-  '/home/mcampbell/.vim':
-    ensure: directory
-  '/home/mcampbell/.dialrc':
-    ensure: file
-    source: 'puppet:///modules/profile/mcampbell/dialrc'
-  '/home/mcampbell/bin':
-    ensure: link
-    target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
-  '/home/mcampbell/tmp':
-    ensure: directory
 
 # common applications to everywhere
 profile::apps::to_install:

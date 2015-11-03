@@ -2,8 +2,9 @@
 class profile
 {
 
-  # we always setup root user
-  include profile::user
+  # we setup users
+  $users = hiera_hash('users')
+  create_resources( profile::user, $users)
 
   # any global configuration
   include profile::etc
@@ -22,7 +23,6 @@ class profile
 
   # repos to clone
   include profile::repos
-
 
   # set up common configuration
   $config = hiera_hash(profile::config, undef)
