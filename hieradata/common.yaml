@@ -4,6 +4,20 @@
 classes:
   - profile
 
+# users
+users:
+  'mcampbell':
+    uid: '1000'
+    gid: '1000'
+    groups:
+      - 'adm'
+      - 'cdrom'
+      - 'sudo'
+      - 'dip'
+      - 'plugdev'
+      - 'lpadmin'
+      - 'sambashare'
+
 # generic root config
 profile::user::root::config:
   '/root/.vim':
@@ -36,7 +50,11 @@ profile::user::mcampbell::groups:
   - 'lpadmin'
   - 'sambashare'
 
+# These are all the configuration files and directories to be created for
+# user mcampbell
 profile::user::mcampbell::config:
+  '/home/mcampbell/.clusterssh':
+    ensure: directory
   '/home/mcampbell/.config/awesome':
     ensure: directory
   '/home/mcampbell/.config/awesome/rc.lua':

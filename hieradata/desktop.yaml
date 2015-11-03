@@ -40,6 +40,8 @@ profile::apps::to_install:
     ensure: latest
   'clusterssh':
     ensure: latest
+  'coffeescript':
+    ensure: latest
   'exfat-fuse':
     ensure: latest
   'feh':

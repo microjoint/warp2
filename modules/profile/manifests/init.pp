@@ -3,7 +3,7 @@ class profile
 {
 
   # we always setup root user
-  include profile::user::root
+  include profile::user
 
   # any global configuration
   include profile::etc

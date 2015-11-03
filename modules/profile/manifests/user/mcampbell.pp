@@ -1,34 +1,21 @@
 #
-class profile::user::mcampbell
-{
-
-  user {'mcampbell':
-    ensure   => present,
-    comment  => 'Marcus Campbell',
-    gid      => '1000',
-    groups   => hiera('profile::user::mcampbell::groups'),
-    home     => '/home/mcampbell',
-    shell    => '/bin/bash',
-    uid      => '1000',
-    password => hiera('profile::user::mcampbell::password'),
-  }
-
-  $config = hiera_hash(profile::user::mcampbell::config)
+class profile::user::mcampbell (
+    $username = 'mcampbell',
+    $comment  = 'Marcus Campbell',
+    $uid      = '1000',
+    $gid      = '1000',
+    $groups   = hiera('profile::user::mcampbell::groups'),
+    $home     = '/home/mcampbell',
+    $password = hiera('profile::user::mcampbell::password'),
+    $config   = hiera_hash(profile::user::mcampbell::config),
+    $defaults = {
+      owner => 'mcampbell',
+      group => 'mcampbell' },
+) {
 
   FILE {
     owner => 'mcampbell',
     group => 'mcampbell',
-  }
-
-  $defaults = {
-    owner => 'mcampbell',
-    group => 'mcampbell',
-  }
-
-  create_resources( file, $config, $defaults )
-
-  file { '/home/mcampbell/.clusterssh':
-    ensure => directory,
   }
 
   file { '/home/mcampbell/.clusterssh/config':

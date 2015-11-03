@@ -18,6 +18,5 @@ class profile::desktop(
     path        => ['/usr/bin','/bin/'],
     cwd         => ['/usr/local/bin/ponysay'],
     refreshonly => true,
-    #subscribe  => Vcsrepo['/usr/local/bin/ponysay'],
   }
 }
