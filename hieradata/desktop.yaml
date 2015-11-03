@@ -2,31 +2,6 @@
 classes:
   - profile::desktop
 
-profile::user::mcampbell::config:
-  '/home/mcampbell/Desktop':
-    ensure: absent
-    force: true
-  '/home/mcampbell/Documents':
-    ensure: absent
-    force: true
-  '/home/mcampbell/Music':
-    ensure: absent
-    force: true
-  '/home/mcampbell/Pictures':
-    ensure: absent
-    force: true
-  '/home/mcampbell/Public':
-    ensure: absent
-    force: true
-  '/home/mcampbell/Templates':
-    ensure: absent
-    force: true
-  '/home/mcampbell/Videos':
-    ensure: absent
-    force: true
-  '/home/mcampbell/.xsession':
-    ensure: link
-    target: '/home/mcampbell/.xinitrc'
 
 # applications to install on a desktop machine
 profile::apps::to_install:
@@ -131,16 +106,34 @@ profile::etc::config:
     ensure: file
     source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
 
-# generic root config
-profile::user::root::config:
-  '/root/.vim':
-    ensure: directory
-    owner: root
-    group: root
-  '/root/.vim/bundle':
-    ensure: directory
-    owner: root
-    group: root
+# Users
+users:
+  'mcampbell':
+    config:
+      '/home/mcampbell/Desktop':
+        ensure: absent
+        force: true
+      '/home/mcampbell/Documents':
+        ensure: absent
+        force: true
+      '/home/mcampbell/Music':
+        ensure: absent
+        force: true
+      '/home/mcampbell/Pictures':
+        ensure: absent
+        force: true
+      '/home/mcampbell/Public':
+        ensure: absent
+        force: true
+      '/home/mcampbell/Templates':
+        ensure: absent
+        force: true
+      '/home/mcampbell/Videos':
+        ensure: absent
+        force: true
+      '/home/mcampbell/.xsession':
+        ensure: link
+        target: '/home/mcampbell/.xinitrc'
 
 # pdnsd settings
 pdnsd::start_daemon: yes

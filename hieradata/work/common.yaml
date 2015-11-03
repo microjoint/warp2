@@ -9,13 +9,15 @@ profile::apps::to_install:
     ensure: present
 
 # File needed in a work environment
-profile::user::mcampbell::config:
-  '/home/mcampbell/.dialrc':
-    ensure: file
-    source: 'puppet:///modules/profile/mcampbell/dialrc'
-  '/home/mcampbell/1-data/WillHill/src':
-    ensure: directory
-  '/home/mcampbell/1-data/WillHill/src/cx':
-    ensure: directory
-  '/home/mcampbell/1-data/WillHill/src/sports':
-    ensure: directory
+users:
+  'mcampbell':
+    config:
+      '/home/mcampbell/.dialrc':
+        ensure: file
+        source: 'puppet:///modules/profile/mcampbell/dialrc'
+      '/home/mcampbell/1-data/WillHill/src':
+        ensure: directory
+      '/home/mcampbell/1-data/WillHill/src/cx':
+        ensure: directory
+      '/home/mcampbell/1-data/WillHill/src/sports':
+        ensure: directory

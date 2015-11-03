@@ -13,3 +13,4 @@
   - "%{::hardware}"
   - "%{::role}"
   - common
+:merge_behavior: deeper
