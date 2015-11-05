@@ -8,11 +8,10 @@ fi
 ## Ensure that GTK themes are applied uniformly in the Desktop Environment
 
 #export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
-
-<% if @xrandr_cmd %>
+<% if @xrandr -%>
 # change screen layout
-<%= @xrandr_cmd %>
-<% end %>
+<%= @xrandr -%>
+<% end -%>
 
 # Dropbox daemon
 ~/.dropbox-dist/dropboxd &
@@ -32,10 +31,9 @@ numlockx &
 
 xterm &
 xterm &
-
-<% if @role == 'laptop' %>
+<% if @role == 'laptop' -%>
 nm-applet &
-<% end %>
+<% end -%>
 
 # start the multiple madness
 synergys -d WARNING &

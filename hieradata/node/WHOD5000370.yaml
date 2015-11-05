@@ -1,6 +1,4 @@
 ---
-# two monitors
-xrand: 'xrandr --output DP-3 --right-of DP-4 --primary'
 
 # This will install both server and client
 openssh::package_name: 'ssh'
@@ -12,7 +10,11 @@ profile::apps::to_install:
   'synergy':
     ensure: installed
 
+# two monitors
 users:
+  'mcampbell':
+    username: 'mcampbell'
+    xrandr: 'xrandr --output DP-3 --right-of DP-4 --primary'
   'root':
     config:
       '/var/spool/cron/crontabs/root':

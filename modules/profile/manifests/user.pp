@@ -12,6 +12,7 @@ define profile::user (
   $cssh_config    = undef,
   $cluster_config = undef,
   $xinitrc        = undef,
+  $xrandr         = undef,
 ) {
 
   user { $name:
