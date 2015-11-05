@@ -1,17 +1,17 @@
 # Creates users and their configurations files
 define profile::user (
-  $username = undef,
-  $home     = undef,
-  $password = undef,
-  $comment  = undef,
-  $uid      = undef,
-  $gid      = undef,
-  $groups   = undef,
-  $config   = undef,
-  $colorscheme = 'ron',
-  $cssh_config = undef,
+  $username       = undef,
+  $home           = undef,
+  $password       = undef,
+  $comment        = undef,
+  $uid            = undef,
+  $gid            = undef,
+  $groups         = undef,
+  $config         = undef,
+  $colorscheme    = 'ron',
+  $cssh_config    = undef,
   $cluster_config = undef,
-  $xinitrc = undef,
+  $xinitrc        = undef,
 ) {
 
   user { $name:

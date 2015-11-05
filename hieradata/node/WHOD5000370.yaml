@@ -5,37 +5,6 @@ xrand: 'xrandr --output DP-3 --right-of DP-4 --primary'
 # This will install both server and client
 openssh::package_name: 'ssh'
 
-# we need the search domain
-dns_search: 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.williamhill.plc adgency-domain.ad-gency.com Group.WilliamHill.PLC mgmt.prod.williamhill.plc prod.williamhill.plc williamhill.local williamHill.PLC williamhill.co.uk williamhill.remote'
-
-#Mount points need on tower
-profile::etc::mnt_config:
-  '/mnt/willhill/marcusc':
-    ensure: present
-    device: '//gib-fs1.adgency-domain.ad-gency.com/marcusc$'
-    fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
-  '/mnt/willhill/ServiceDesk':
-    ensure: present
-    device: '//gib-fs1.adgency-domain.ad-gency.com/ServiceDesk$'
-    fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
-  '/mnt/willhill/systemengineers':
-    ensure: present
-    device: '//gib-fs1.adgency-domain.ad-gency.com/systemengineers$'
-    fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
-  '/mnt/willhill/online-architecture':
-    ensure: present
-    device: '//gib-fs1.adgency-domain.ad-gency.com/Architecture$'
-    fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
-  '/mnt/willhill/group-shared':
-    ensure: present
-    device: '//group.williamhill.plc/shared'
-    fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/group-cifs.pw,users,uid=1000'
-
 # applications to install
 profile::apps::to_install:
   'subversion':
@@ -43,13 +12,13 @@ profile::apps::to_install:
   'synergy':
     ensure: installed
 
-#users:
-#  'root':
-#    config:
-#      '/var/spool/cron/crontabs/root':
-#        ensure: file
-#        mode: '0600'
-#        source: 'puppet:///modules/profile/root/cron-WHOD5000370'
+users:
+  'root':
+    config:
+      '/var/spool/cron/crontabs/root':
+        ensure: file
+        mode: '0600'
+        source: 'puppet:///modules/profile/root/cron-WHOD5000370'
 
 hosts:
   'gitlab.williamhill-dev.local':

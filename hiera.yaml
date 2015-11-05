@@ -3,6 +3,7 @@
     - yaml
 :yaml:
     :datadir: "/etc/puppet/hieradata"
+:merge_behavior: deeper
 :eyaml:
 :logger: console
 :hierarchy:
@@ -13,4 +14,3 @@
   - "%{::hardware}"
   - "%{::role}"
   - common
-:merge_behavior: deeper

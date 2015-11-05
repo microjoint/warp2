@@ -109,6 +109,7 @@ profile::etc::config:
 # Users
 users:
   'mcampbell':
+    comment: 'Marcus Campbell'
     config:
       '/home/mcampbell/Desktop':
         ensure: absent

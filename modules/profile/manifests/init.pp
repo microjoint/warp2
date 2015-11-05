@@ -4,7 +4,6 @@ class profile
 
   # we setup users
   $users = hiera_hash('users')
-  notice($users)
   create_resources( profile::user, $users)
 
   # any global configuration

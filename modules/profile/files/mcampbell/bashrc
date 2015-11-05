@@ -10,7 +10,7 @@
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
 
-PATH=~/bin:$PATH:~/data/WillHill/src/cx/dev_tools/scripts/git/gitconfig:~/1-data/WillHill/src/cx/scripts
+PATH=~/bin:$PATH:~/data/WillHill/src/cx/dev_tools/scripts/git/gitconfig:~/1-data/WillHill/src/cx/dev_tools/scripts
 
 # Vi command line editing mode
 set -o vi
