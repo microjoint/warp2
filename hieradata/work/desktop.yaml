@@ -45,6 +45,7 @@ dns_search: 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.wi
 profile::etc::mnt_config:
   '/mnt/willhill/marcusc':
     device: '//gib-fs1.adgency-domain.ad-gency.com/marcusc$'
+    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000,gid=1000,exec'
   '/mnt/willhill/systemengineers':
     device: '//gib-fs1.adgency-domain.ad-gency.com/systemengineers$'
   '/mnt/willhill/online-architecture':
@@ -56,7 +57,7 @@ profile::etc::mnt_config:
 profile::etc::mnt_config_defaults:
     ensure: mounted
     fstype: 'cifs'
-    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000'
+    options: 'creds=/home/mcampbell/.config/online-cifs.pw,users,uid=1000,gid=1000'
 
 profile::etc::config:
       '/mnt':
