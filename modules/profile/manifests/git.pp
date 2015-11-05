@@ -1,24 +1,26 @@
 #
 class profile::git (
-    $cache_timeout = 'cache --timeout=3600',
+    $git_config = hiera_hash('git_config')
 ) {
   include git
 
-  git::config {'user.name':
-    value   => 'Marcus Campbell',
-    user    => 'mcampbell',
-  }
-  git::config { 'user.email':
-    value => 'marcus.anthony.campbell@gmail.com',
-    user  => 'mcampbell',
-  }
-  git::config { 'push.default':
-    value => 'simple',
-    user  => 'mcampbell',
-  }
-  git::config { 'credential.helper':
-    value => $cache_timeout,
-    user  => 'mcampbell',
-  }
+  create_resources(git::config, $git_config)
+
+  #git::config {'user.name':
+  #  value   => 'Marcus Campbell',
+  #  user    => 'mcampbell',
+  #}
+  #git::config { 'user.email':
+  #  value => 'marcus.anthony.campbell@gmail.com',
+  #  user  => 'mcampbell',
+  #}
+  #git::config { 'push.default':
+  #  value => 'simple',
+  #  user  => 'mcampbell',
+  #}
+  #git::config { 'credential.helper':
+  #  value => $cache_timeout,
+  #  user  => 'mcampbell',
+  #}
 
 }

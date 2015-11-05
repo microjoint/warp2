@@ -15,9 +15,19 @@ users:
       '/home/mcampbell/.dialrc':
         ensure: file
         source: 'puppet:///modules/profile/mcampbell/dialrc'
-      '/home/mcampbell/1-data/WillHill/src':
-        ensure: directory
-      '/home/mcampbell/1-data/WillHill/src/cx':
-        ensure: directory
-      '/home/mcampbell/1-data/WillHill/src/sports':
-        ensure: directory
+
+git_config:
+  'user.email':
+    value: 'marcus.campbell@williamhill.com'
+    user: 'mcampbell'
+  'core.autocrlf':
+    value: 'input'
+    user: 'mcampbell'
+  'http.sslVerify':
+    value: 'false'
+    user: 'mcampbell'
+  'include.path':
+    value: /home/mcampbell/1-data/WillHill/src/cx/dev_tools/scripts/git/gitconfig
+    user: 'mcampbell'
+
+

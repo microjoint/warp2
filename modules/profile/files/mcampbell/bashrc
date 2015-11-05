@@ -169,7 +169,7 @@ alias cd=cd_func
 source ~/bin/git-prompt.sh
 
 #keychain
-keychain ~/.ssh/id_rsa
+keychain --quick ~/.ssh/id_rsa
 source ~/.keychain/${HOSTNAME}-sh
 
 fortune | ponysay

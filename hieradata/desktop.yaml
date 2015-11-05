@@ -136,6 +136,23 @@ users:
         ensure: link
         target: '/home/mcampbell/.xinitrc'
 
+git_config:
+  'user.name':
+    value: 'Marcus Campbell'
+    user: 'mcampbell'
+  'credential.helper':
+    value: '259200'
+    user: 'mcampbell'
+  'user.email':
+    value: 'marcus.anthony.campbell@gmail.com'
+    user: 'mcampbell'
+  'push.default':
+    value: 'simple'
+    user: 'mcampbell'
+  'merge.tool':
+    value: 'vimdiff'
+    user: 'mcampbell'
+
 # pdnsd settings
 pdnsd::start_daemon: yes
 pdnsd::preferred_servers:
