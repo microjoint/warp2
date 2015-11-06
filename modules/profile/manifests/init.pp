@@ -8,8 +8,6 @@ class profile
     create_resources( profile::user, $users)
   }
 
-
-
   # any global configuration
   include profile::etc
 
