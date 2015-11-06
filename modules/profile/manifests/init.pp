@@ -3,7 +3,7 @@ class profile
 {
 
   # we setup users
-  $users = hiera_hash('users')
+  $users = hiera_hash('users', undef)
   if $users {
     create_resources( profile::user, $users)
   }
