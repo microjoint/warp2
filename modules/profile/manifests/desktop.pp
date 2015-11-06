@@ -6,6 +6,9 @@ class profile::desktop(
   include pdnsd
   include lightdm
 
+  # set common core applications
+  include profile::git
+
   # Let's have some ponysay
   vcsrepo { '/usr/local/bin/ponysay':
     ensure   => latest,

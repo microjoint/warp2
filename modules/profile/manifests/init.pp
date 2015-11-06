@@ -21,8 +21,6 @@ class profile
     restrict => ['127.0.0.1'],
   }
 
-  # set common core applications
-  include profile::git
 
   # install all the applications
   include profile::apps

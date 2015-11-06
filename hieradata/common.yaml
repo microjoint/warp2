@@ -4,6 +4,9 @@
 classes:
   - profile
 
+# This will install both server and client
+openssh::package_name: 'ssh'
+
 
 profile::etc::config:
   '/etc/bash.bashrc':

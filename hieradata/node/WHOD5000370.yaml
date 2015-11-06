@@ -1,7 +1,5 @@
 ---
 
-# This will install both server and client
-openssh::package_name: 'ssh'
 
 # applications to install
 profile::apps::to_install:
