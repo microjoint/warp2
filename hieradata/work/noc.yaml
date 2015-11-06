@@ -1,0 +1,23 @@
+---
+classes:
+  - profile::noc
+
+# applications to install on a desktop machine
+profile::apps::to_install:
+  'awesome':
+    ensure: latest
+  'chromium-browser':
+    ensure: latest
+  'feh':
+    ensure: latest
+  'numlockx':
+    ensure: latest
+
+# global configuration
+profile::etc::config:
+  #'/etc/NetworkManager/NetworkManager.conf':
+  #  ensure: file
+  #  source: 'puppet:///modules/profile/etc/NetworkManager/NetworkManager.conf'
+  '/usr/share/xsessions/custom.desktop':
+    ensure: file
+    source: 'puppet:///modules/profile/usr/usr_share_xsessions_custom.desktop'

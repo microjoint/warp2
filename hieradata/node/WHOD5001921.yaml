@@ -1,0 +1,6 @@
+---
+
+# This is the system engineers NOC wall
+
+lightdm::greeter_hide_users: true
+lightdm::autologin_user: 'mcampbell'
