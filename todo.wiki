@@ -1,1 +1,2 @@
-* [ ] change fstab to mount resource
+* [ ] change work to willhill and keep only william hill item here
+* [ ] think about the difference between latest, cron-apt and unattended server i.e NOC

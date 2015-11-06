@@ -106,6 +106,8 @@ profile::etc::config:
 
 # common applications to everywhere
 profile::apps::to_install:
+  'cron-apt':
+    ensure: latest
   'curl':
     ensure: latest
   'deep_merge':
@@ -135,5 +137,5 @@ profile::repos::to_clone:
 # Timezone
 profile::timezone: Europe/Madrid
 
-# git credentials time out in secs. Set to 3 days
-profile::git::cache_timeout: 'cache --timeout=259200'
+lightdm::autologin_user: 'mcampbell'
+lightdm::user_session: 'custom'

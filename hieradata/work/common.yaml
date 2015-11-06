@@ -1,20 +1,4 @@
 ---
-# work applications to install
-profile::apps::to_install:
-  'libreoffice':
-    ensure: present
-  'bundler':
-    ensure: present
-  'git-flow':
-    ensure: present
-
-# File needed in a work environment
-users:
-  'mcampbell':
-    config:
-      '/home/mcampbell/.dialrc':
-        ensure: file
-        source: 'puppet:///modules/profile/mcampbell/dialrc'
 
 git_config:
   'user.email':

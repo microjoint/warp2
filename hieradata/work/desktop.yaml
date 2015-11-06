@@ -1,8 +1,6 @@
 ---
 # applications to install on a desktop machine
 profile::apps::to_install:
-  'libreoffice':
-    ensure: present
   'bundler':
     ensure: present
   'git-flow':

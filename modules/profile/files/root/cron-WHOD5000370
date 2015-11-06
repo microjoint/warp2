@@ -4,4 +4,5 @@ MAILTO=mcampbell
 #                       jan-dec mon-sun
 
 */10    *       *       *       *       cd /etc/puppet; ./run.sh work workstation desktop
-0       1       *       *       *       (apt-get update && apt-get -y -d upgrade) > /dev/null
+# Let's try cron-apt
+#0       1       *       *       *       (apt-get update && apt-get -y -d upgrade) > /dev/null

@@ -4,6 +4,7 @@ class profile::desktop(
 ){
 
   include pdnsd
+  include lightdm
 
   # Let's have some ponysay
   vcsrepo { '/usr/local/bin/ponysay':

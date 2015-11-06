@@ -1,29 +1,31 @@
-* [ ] done
+* [o] done
   * [ ] 'Welcome'
     * [ ] Press 'install Ubuntu'
-  * [ ] 'Preparing to install Ubuntu'
-    * [ ] Tick 'download updates while installing'
-    * [ ] Tick 'Install this third-party software'
-    * [ ] Press 'Continue'
-  * [ ] 'Installaition type'
-    * [ ] tick 'use LVM with the new Ubuntu installation'
-    * [ ] press 'Continue'
-  * [ ] 'Erase disk and install Ubuntu'
-    * [ ] press 'Install Now'
-  * [ ] 'Write the changes to disks?'
-    * [ ] press 'Continue'
-  * [ ] 'Install'
-    * [ ] answer the questions accordingly
-    * [ ] selecet 'Log in automactically'
+  * [X] 'Preparing to install Ubuntu'
+    * [X] Tick 'download updates while installing'
+    * [X] Tick 'Install this third-party software'
+    * [X] Press 'Continue'
+  * [X] 'Installaition type'
+    * [X] Select Erase disk and install Ubuntu
+    * [X] tick 'use LVM with the new Ubuntu installation'
+    * [X] press 'Continue'
+  * [X] 'Erase disk and install Ubuntu'
+    * [X] press 'Install Now'
+  * [X] 'Write the changes to disks?'
+    * [X] press 'Continue'
+  * [X] 'Install'
+    * [X] answer the questions accordingly
+    * [X] selecet 'Log in automactically'
   * [ ] 'Installation Complete'
     * [ ] press 'Restart Now'
   * [ ] terminal window
     * [ ] update restart
-    * [ ] we should clone from github
-    * [ ] wget https://www.dropbox.com/sh/ziyy95cicd6oau0/AAD3PtLhnbdOCk3XUFhiZQcoa?dl=0 o https://tinyurl.com/pphdpq6
-    * [ ] save as puppet.zip
-    * [ ] run script
-    * [ ] git clone     https://github.com/microjoint/warp2.git /etc/puppet
+  * [ ] first time run
+    * [ ] sudo apt-get install git
+    * [ ] sudo git clone     -- recursive https://github.com/microjoint/warp2.git /etc/puppet
+  * [ ] wget https://www.dropbox.com/sh/ziyy95cicd6oau0/AAD3PtLhnbdOCk3XUFhiZQcoa?dl=0 o https://tinyurl.com/pphdpq6
+  * [ ] save as puppet.zip
+  * [ ] run script
     %% #!/bin/bash
     %% sudo apt-get install puppet
     %% sudo unzip ./puppet.zip -d /etc/puppet

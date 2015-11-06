@@ -2,7 +2,6 @@
 classes:
   - profile::desktop
 
-
 # applications to install on a desktop machine
 profile::apps::to_install:
   'anki':
@@ -37,6 +36,8 @@ profile::apps::to_install:
     ensure: latest
   'libavcodec-extra':
     ensure: latest
+  'libreoffice':
+    ensure: present
   'mutt':
     ensure: latest
   'ncurses-term':
@@ -141,7 +142,7 @@ git_config:
     value: 'Marcus Campbell'
     user: 'mcampbell'
   'credential.helper':
-    value: '259200'
+    value: 'cache timeout=259200'
     user: 'mcampbell'
   'user.email':
     value: 'marcus.anthony.campbell@gmail.com'

@@ -23,6 +23,10 @@ users:
         source: 'puppet:///modules/profile/root/cron-WHOD5000370'
 
 hosts:
+  'syseng-noc.local':
+    ip: 10.180.19.89
+    host_aliases:
+      - 'noc'
   'gitlab.williamhill-dev.local':
     ip: 10.210.200.25
     host_aliases:
@@ -43,7 +47,7 @@ hosts:
   'icinga':
     ip: 10.180.19.154
     host_aliases:
-      - monitoring
+      - 'monitoring'
   'sports.williamhill-sportsbettingdev.com':
     ip: 10.210.200.175
   'pushdata2.williamhill-sportsbettingdev.com':
