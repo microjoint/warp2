@@ -4,7 +4,11 @@ class profile
 
   # we setup users
   $users = hiera_hash('users')
-  create_resources( profile::user, $users)
+  if $users {
+    create_resources( profile::user, $users)
+  }
+
+
 
   # any global configuration
   include profile::etc

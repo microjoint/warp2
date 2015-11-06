@@ -70,8 +70,6 @@ profile::apps::to_install:
     ensure: latest
   'software-properties-common':
     ensure: latest
-  'scrot':
-    ensure: latest
   'tmux':
     ensure: latest
   'vlc':
@@ -105,7 +103,7 @@ profile::etc::config:
     source: 'puppet:///modules/profile/etc/NetworkManager/NetworkManager.conf'
   '/usr/share/xsessions/custom.desktop':
     ensure: file
-    source: 'puppet:///modules/profile/root/usr_share_xsessions_custom.desktop'
+    source: 'puppet:///modules/profile/usr/usr_share_xsessions_custom.desktop'
 
 # Users
 users:
