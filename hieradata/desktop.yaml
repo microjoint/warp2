@@ -93,6 +93,8 @@ profile::apps::to_install:
   'xubuntu-restricted-extras':
     ensure: latest
 
+cluster_config: 'profile/cssh.clusters.erb'
+
 # global configuration
 profile::etc::config:
   '/etc/sysctl.d/10-dropbox.conf':
