@@ -37,6 +37,7 @@ profile::repos::to_clone:
     owner: 'root'
     group: 'root'
     force: true
+    submodules: true
 
 # Timezone
 profile::timezone: Europe/Madrid
