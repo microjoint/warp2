@@ -36,20 +36,7 @@ profile::repos::to_clone:
     source: 'https://github.com/microjoint/warp2.git'
     owner: 'root'
     group: 'root'
-    ensure: true
-  '/root/.vim/bundle/Vundle.vim':
-    source: 'https://github.com/VundleVim/Vundle.vim'
-    owner: 'root'
-    group: 'root'
-  '/home/mcampbell/.vim/bundle/Vundle.vim':
-    source: 'https://github.com/VundleVim/Vundle.vim'
-    owner: 'mcampbell'
-    group: 'mcampbell'
-  '/usr/share/vim/vim74/colors':
-    source: 'https://github.com/flazz/vim-colorschemes.git'
-  '/usr/share/vim/vim74/fonts':
-    source: 'https://github.com/powerline/fonts.git'
-
+    force: true
 
 # Timezone
 profile::timezone: Europe/Madrid
