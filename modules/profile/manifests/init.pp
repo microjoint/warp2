@@ -40,9 +40,6 @@ class profile
   include profile::hosts
   include profile::timezone
 
-  # fixes for stuff that don't work right
-  include profile::fixes
-
   Class['vim'] -> Class['profile::repos'] -> Class['profile::fixes']
 
 }

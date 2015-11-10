@@ -249,8 +249,6 @@ profile::repos::to_clone:
     source: 'https://github.com/VundleVim/Vundle.vim'
     owner: 'mcampbell'
     group: 'mcampbell'
-  '/usr/share/vim/vim74/colors':
-    source: 'https://github.com/flazz/vim-colorschemes.git'
   '/usr/share/vim/vim74/fonts':
     source: 'https://github.com/powerline/fonts.git'
 
