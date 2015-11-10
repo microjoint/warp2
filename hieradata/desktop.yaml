@@ -239,6 +239,21 @@ git_config:
     value: 'vimdiff'
     user: 'mcampbell'
 
+# common repos to clone
+profile::repos::to_clone:
+  '/root/.vim/bundle/Vundle.vim':
+    source: 'https://github.com/VundleVim/Vundle.vim'
+    owner: 'root'
+    group: 'root'
+  '/home/mcampbell/.vim/bundle/Vundle.vim':
+    source: 'https://github.com/VundleVim/Vundle.vim'
+    owner: 'mcampbell'
+    group: 'mcampbell'
+  '/usr/share/vim/vim74/colors':
+    source: 'https://github.com/flazz/vim-colorschemes.git'
+  '/usr/share/vim/vim74/fonts':
+    source: 'https://github.com/powerline/fonts.git'
+
 # pdnsd settings
 pdnsd::start_daemon: yes
 pdnsd::preferred_servers:
