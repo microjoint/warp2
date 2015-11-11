@@ -20,10 +20,10 @@ users:
 
 #host file entries
 hosts:
-  ##  'ramze.local':
-  ##    ip: 10.180.19.71
-  ##    host_aliases:
-  ##      - 'ramze'
+  'ramze.local':
+    ip: 10.180.19.71
+    host_aliases:
+      - 'ramze'
 'syseng-noc.local':
     ip: 10.180.19.89
     host_aliases:
