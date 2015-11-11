@@ -165,10 +165,11 @@ users:
       '/home/mcampbell/.config':
         ensure: directory
       '/home/mcampbell/.ssh':
-        ensure: directory
-        source: 'puppet:///modules/profile/mcampbell/ssh'
-        mode: 0600
-        recurse: remote
+        #ensure: directory
+        #source: 'puppet:///modules/profile/mcampbell/ssh'
+        #mode: 0600
+        ensure: link
+        target: '/home/mcampbell/1-data/src/ruby/puppet/warp2/modules/profile/files/mcampbell/ssh'
       '/home/mcampbell/.vim':
         ensure: directory
       '/home/mcampbell/.vim/autoload':
