@@ -18,11 +18,12 @@ users:
         mode: '0600'
         source: 'puppet:///modules/profile/root/cron-WHOD5000370'
 
+#host file entries
 hosts:
-  'ramze.local':
-    ip: 10.180.19.71
-    host_aliases:
-      - 'ramze'
+  ##  'ramze.local':
+  ##    ip: 10.180.19.71
+  ##    host_aliases:
+  ##      - 'ramze'
 'syseng-noc.local':
     ip: 10.180.19.89
     host_aliases:
