@@ -21,7 +21,11 @@ users:
         source: 'puppet:///modules/profile/root/cron-WHOD5000370'
 
 hosts:
-  'syseng-noc.local':
+  'ramze.local':
+    ip: 10.180.19.71
+    host_aliases:
+      - 'ramze'
+'syseng-noc.local':
     ip: 10.180.19.89
     host_aliases:
       - 'noc'
