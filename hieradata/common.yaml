@@ -1,5 +1,4 @@
 ---
-
 # All machines should start with profile. Items like laptops can include a profile::laptop
 classes:
   - profile
