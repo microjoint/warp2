@@ -38,6 +38,8 @@ profile::apps::to_install:
     ensure: latest
   'libreoffice':
     ensure: present
+  'linux-headers-generic':
+    ensure: present
   'mutt':
     ensure: latest
   'ncurses-term':
@@ -71,6 +73,8 @@ profile::apps::to_install:
   'software-properties-common':
     ensure: latest
   'tmux':
+    ensure: latest
+  'virtualbox-dkms':
     ensure: latest
   'vlc':
     ensure: latest
