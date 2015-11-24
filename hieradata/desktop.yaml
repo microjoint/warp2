@@ -74,6 +74,8 @@ profile::apps::to_install:
     ensure: latest
   'tmux':
     ensure: latest
+  'virtualbox':
+    ensure: latest
   'virtualbox-dkms':
     ensure: latest
   'vlc':
