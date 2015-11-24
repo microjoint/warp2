@@ -76,6 +76,8 @@ profile::apps::to_install:
     ensure: latest
   'virtualbox':
     ensure: latest
+  'virtualbox-guest-additions-iso':
+    ensure: latest
   'virtualbox-dkms':
     ensure: latest
   'vlc':

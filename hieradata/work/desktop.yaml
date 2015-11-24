@@ -15,12 +15,6 @@ profile::apps::to_install:
     ensure: latest
   'vagrant':
     ensure: latest
-  'virtualbox':
-    ensure: latest
-  'virtualbox-dkms':
-    ensure: latest
-  'virtualbox-guest-additions-iso':
-    ensure: latest
 
 pdnsd::preferred_servers:
   'williamhill':
