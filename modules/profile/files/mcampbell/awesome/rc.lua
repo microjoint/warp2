@@ -228,20 +228,16 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Screen brightness
-    awful.key({ }, "XF86MonBrightnessDown", function ()
-    awful.util.spawn("xbacklight -dec 15") end),
-    awful.key({ }, "XF86MonBrightnessUp", function ()
-    awful.util.spawn("xbacklight -inc 15") end),
-    -- Keyboard brightness
-    awful.key({ }, "XF86KbdBrightnessDown ", function ()
-    awful.util.spawn("samsung-kbd -dec") end),
-    awful.key({ }, "XF86KbdBrightnessUp ", function ()
-    awful.util.spawn("samsung-kbd -inc") end),
+    awful.key({ }, "XF86MonBrightnessDown",     function () awful.util.spawn("xbacklight -dec 15") end),
+    awful.key({ }, "XF86MonBrightnessUp",       function () awful.util.spawn("xbacklight -inc 15") end),
+    -- Keyboard brightness - currentyl samsung only :)
+    awful.key({ }, "XF86KbdBrightnessDown ",    function () awful.util.spawn("samsung-kbd -dec") end),
+    awful.key({ }, "XF86KbdBrightnessUp ",      function () awful.util.spawn("samsung-kbd -inc") end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
-    awful.key({ modkey, "Control" }, "r", awesome.restart),
-    awful.key({ modkey, "Shift"   }, "F12", awesome.quit),
+    awful.key({ modkey,           }, "Return",  function () awful.util.spawn(terminal) end),
+    awful.key({ modkey, "Control" }, "r",       awesome.restart),
+    awful.key({ modkey, "Shift"   }, "F12",     awesome.quit),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)    end),
@@ -252,13 +248,16 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
+    -- un-minify window
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    awful.key({ modkey,           }, "F12",   function () awful.util.spawn("xscreensaver-command -lock") end),
-    awful.key({ modkey,           }, "F1",   function () awful.util.spawn("password-gorilla") end),
+    -- lock PC
+    awful.key({ modkey,           }, "F12",     function () awful.util.spawn("xscreensaver-command -lock") end),
+    -- open password manager
+    awful.key({ modkey,           }, "F1",      function () awful.util.spawn("password-gorilla") end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",       function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
