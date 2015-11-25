@@ -13,6 +13,7 @@ define profile::user (
   $cluster_config = undef,
   $xinitrc        = undef,
   $xrandr         = undef,
+  $vim_beautify   = false,
 ) {
 
   user { $name:
@@ -31,30 +32,32 @@ define profile::user (
 
   create_resources( file, $config )
 
-  file { "${home}/.vimrc":
-    ensure  => file,
-    content => template('profile/vimrc.erb')
-  }
+  if $vim_beautify {
+    file { "${home}/.vimrc":
+      ensure  => file,
+      content => template('profile/vimrc.erb')
+    }
 
-  exec{"${name}_vim_update_plugins":
-    path        => ['/usr/bin'],
-    cwd         => $home,
-    command     => 'vim +PluginInstall +qall',
-    subscribe   => File["${home}/.vimrc"],
-    environment => ["HOME=${home}"],
-    refreshonly => true,
-    user        => $name,
+    exec{"${name}_vim_update_plugins":
+      path        => ['/usr/bin'],
+      cwd         => $home,
+      command     => 'vim +PluginInstall +qall',
+      subscribe   => File["${home}/.vimrc"],
+      environment => ["HOME=${home}"],
+      refreshonly => true,
+      user        => $name,
+    }
   }
 
   if $cssh_config {
-    file { '/home/mcampbell/.clusterssh/config':
+    file { '${home}/.clusterssh/config':
       ensure  => file,
       content => template($cssh_config),
     }
   }
 
   if $cluster_config {
-    file { '/home/mcampbell/.clusterssh/clusters':
+    file { '${home}/.clusterssh/clusters':
       ensure  => file,
       content => template($cluster_config),
     }

@@ -12,8 +12,8 @@ users:
     #xrandr: 'xrandr --output DP-3 --right-of DP-4 --primary'
     password: $6$xUI47FjI$BTjZM2RjQI9roVXD36YJVwpl8kHTEru80eia7OBP.9J0pd6XeP7EKgB93qAMDk8/RvsXvisMQB0QMUfxrabAz1
     comment: 'NOC user'
-    uid: 5001
-    gid: 5001
+    #uid: 5001
+    #gid: 5001
     xinitrc: 'profile/xinitrc_noc.erb'
     config:
       '/home/mcampbell/.config':

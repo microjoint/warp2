@@ -121,6 +121,7 @@ users:
       - 'sambashare'
     cssh_config: 'profile/cssh.config.erb'
     cluster_config: 'profile/cssh.clusters.erb'
+    vim_beautify: true
     xinitrc: 'profile/xinitrc.erb'
     colorscheme: last256
     config:
