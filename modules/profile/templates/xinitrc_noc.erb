@@ -1,0 +1,30 @@
+# This file is for usage with in a NOC environment
+## Ensure that the D-Bus Communication System is running properly to fix
+## File management, authentication, and other essential system processes
+
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+    eval "$(dbus-launch --sh-syntax --exit-with-session)"
+fi
+
+## Ensure that GTK themes are applied uniformly in the Desktop Environment
+
+#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+<% if @xrandr -%>
+# change screen layout
+<%= @xrandr -%>
+<% end -%>
+
+# get colours right
+xrdb -load ~/.Xresources
+
+numlockx &
+
+# we gonna do some work ??
+#xterm &
+#xterm &
+
+# start the multiple madness
+#synergys -d WARNING &
+
+# start WM
+awesome

@@ -61,7 +61,7 @@ define profile::user (
   }
 
   if $xinitrc {
-    file { '/home/mcampbell/.xinitrc':
+    file { "${home}/.xinitrc":
       ensure  => file,
       content => template($xinitrc)
     }

@@ -4,3 +4,39 @@
 
 lightdm::greeter_hide_users: true
 lightdm::autologin_user: 'noc'
+
+# Noc user
+users:
+  'noc':
+    home: '/home/noc'
+    #xrandr: 'xrandr --output DP-3 --right-of DP-4 --primary'
+    password: $6$xUI47FjI$BTjZM2RjQI9roVXD36YJVwpl8kHTEru80eia7OBP.9J0pd6XeP7EKgB93qAMDk8/RvsXvisMQB0QMUfxrabAz1
+    comment: 'NOC user'
+    uid: 5001
+    gid: 5001
+    xinitrc: 'profile/xinitrc_noc.erb'
+    config:
+      '/home/mcampbell/.config':
+        ensure: directory
+      '/home/mcampbell/.config/awesome':
+        ensure: directory
+      '/home/mcampbell/.config/awesome/rc.lua':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/awesome/rc_noc.lua"
+      '/home/mcampbell/.config/awesome/theme.lua':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/awesome/theme_noc.lua"
+      '/home/mcampbell/.Xresources':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/Xresources"
+      '/home/mcampbell/.Xdefaults':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/Xresources"
+      '/home/noc/.vim':
+        ensure: directory
+        owner: root
+        group: root
+      '/home/noc/.vim/bundle':
+        ensure: directory
+        owner: root
+        group: root

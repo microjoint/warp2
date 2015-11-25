@@ -150,6 +150,8 @@ users:
         target: '/home/mcampbell/.xinitrc'
       '/home/mcampbell/.clusterssh':
         ensure: directory
+      '/home/mcampbell/.config':
+        ensure: directory
       '/home/mcampbell/.config/awesome':
         ensure: directory
       '/home/mcampbell/.config/awesome/rc.lua':
@@ -170,8 +172,6 @@ users:
       '/home/mcampbell/.bashrc':
         ensure: file
         source: "puppet:///modules/profile/mcampbell/bashrc"
-      '/home/mcampbell/.config':
-        ensure: directory
       '/home/mcampbell/.ssh':
         #ensure: directory
         #source: 'puppet:///modules/profile/mcampbell/ssh'
