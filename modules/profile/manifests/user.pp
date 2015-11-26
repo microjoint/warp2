@@ -50,14 +50,14 @@ define profile::user (
   }
 
   if $cssh_config {
-    file { '${home}/.clusterssh/config':
+    file { "${home}/.clusterssh/config":
       ensure  => file,
       content => template($cssh_config),
     }
   }
 
   if $cluster_config {
-    file { '${home}/.clusterssh/clusters':
+    file { "${home}/.clusterssh/clusters":
       ensure  => file,
       content => template($cluster_config),
     }
