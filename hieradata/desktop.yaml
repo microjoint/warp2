@@ -163,10 +163,10 @@ users:
         source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
       '/home/mcampbell/.Xresources':
         ensure: file
-        source: "puppet:///modules/profile/mcampbell/Xresources"
+        source: "puppet:///modules/profile/common/Xresources"
       '/home/mcampbell/.Xdefaults':
         ensure: file
-        source: "puppet:///modules/profile/mcampbell/Xresources"
+        source: "puppet:///modules/profile/common/Xresources"
       '/home/mcampbell/.xscreensaver':
         ensure: file
         source: "puppet:///modules/profile/mcampbell/xscreensaver"

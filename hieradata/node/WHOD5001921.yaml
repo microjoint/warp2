@@ -22,21 +22,20 @@ users:
         ensure: directory
       '/home/mcampbell/.config/awesome/rc.lua':
         ensure: file
-        source: "puppet:///modules/profile/mcampbell/awesome/rc_noc.lua"
+        source: "puppet:///modules/profile/noc/awesome/rc.lua"
       '/home/mcampbell/.config/awesome/theme.lua':
         ensure: file
-        source: "puppet:///modules/profile/mcampbell/awesome/theme_noc.lua"
+        source: "puppet:///modules/profile/noc/awesome/theme.lua"
       '/home/mcampbell/.Xresources':
         ensure: file
-        source: "puppet:///modules/profile/mcampbell/Xresources"
+        source: "puppet:///modules/profile/common/Xresources"
       '/home/mcampbell/.Xdefaults':
         ensure: file
-        source: "puppet:///modules/profile/mcampbell/Xresources"
+        source: "puppet:///modules/profile/common/Xresources"
       '/home/noc/.vim':
         ensure: directory
-        owner: root
-        group: root
       '/home/noc/.vim/bundle':
         ensure: directory
-        owner: root
-        group: root
+      '/home/noc/willhill.jpg':
+        ensure: file
+        source: "puppet:///modules/profile/noc/willhill.jpg"
