@@ -238,7 +238,7 @@ git_config:
     value: 'Marcus Campbell'
     user: 'mcampbell'
   'credential.helper':
-    value: 'cache --timeout=259200'
+    value: 'cache --timeout=172800'
     user: 'mcampbell'
   'user.email':
     value: 'marcus.anthony.campbell@gmail.com'
