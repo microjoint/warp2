@@ -16,6 +16,21 @@ profile::apps::to_install:
   'vagrant':
     ensure: latest
 
+
+git_config:
+  'user.email':
+    value: 'marcus.campbell@williamhill.com'
+    user: 'mcampbell'
+  'core.autocrlf':
+    value: 'input'
+    user: 'mcampbell'
+  'http.sslVerify':
+    value: 'false'
+    user: 'mcampbell'
+  'include.path':
+    value: /home/mcampbell/1-data/WillHill/src/cx/dev_tools/scripts/git/gitconfig
+    user: 'mcampbell'
+
 pdnsd::preferred_servers:
   'williamhill':
     ip: 10.180.18.24, 10.180.24.138, 10.180.24.139
