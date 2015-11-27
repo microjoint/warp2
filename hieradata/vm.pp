@@ -1,0 +1,2 @@
+---
+openssh::port: 22
