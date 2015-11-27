@@ -20,13 +20,7 @@ profile::apps::to_install:
     ensure: latest
   'python-ipdb':
     ensure: latest
-  'python3-ipdb':
-    ensure: latest
   'python-virtualenv':
-    ensure: latest
-  'rar':
-    ensure: latest
-  'sqlite3':
     ensure: latest
   'tmux':
     ensure: latest
