@@ -20,6 +20,8 @@ users:
 
 #host file entries
 hosts:
+  'svn':
+    ip: 10.1.28.205
   'ramze.local':
     ip: 10.180.19.71
     host_aliases:

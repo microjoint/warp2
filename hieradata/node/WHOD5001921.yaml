@@ -16,20 +16,23 @@ users:
     #gid: 5001
     xinitrc: 'profile/xinitrc_noc.erb'
     config:
-      '/home/mcampbell/.config':
+      '/home/noc/.config':
         ensure: directory
-      '/home/mcampbell/.config/awesome':
+      '/home/noc/.config/awesome':
         ensure: directory
-      '/home/mcampbell/.config/awesome/rc.lua':
+      '/home/noc/.config/awesome/rc.lua':
         ensure: file
         source: "puppet:///modules/profile/noc/awesome/rc.lua"
-      '/home/mcampbell/.config/awesome/theme.lua':
+      '/home/noc/.config/awesome/theme.lua':
         ensure: file
         source: "puppet:///modules/profile/noc/awesome/theme.lua"
-      '/home/mcampbell/.Xresources':
+      '/home/noc/.xsession':
+        ensure: link
+        target: '/home/noc/.xinitrc'
+      '/home/noc/.Xresources':
         ensure: file
         source: "puppet:///modules/profile/common/Xresources"
-      '/home/mcampbell/.Xdefaults':
+      '/home/noc/.Xdefaults':
         ensure: file
         source: "puppet:///modules/profile/common/Xresources"
       '/home/noc/.vim':
