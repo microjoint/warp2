@@ -33,143 +33,24 @@ profile::apps::to_install:
   'w3m':
     ensure: latest
 
-# users
-users:
-  'mcampbell':
-    username: 'mcampbell'
-    home: '/home/mcampbell'
-    password: $6$Q3WFMQMl$GdOTNnb48.r395gVlbHa4luxe26zJtBGgeoiERiJ3CLaPfDfBu6eho4avR.blC6O/HRwJ39yBPWueLTUN7yOX1
-    #password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
-    comment: 'Marcus Campbell'
-    uid: '1000'
-    gid: '1000'
-    groups:
-      - 'adm'
-      - 'cdrom'
-      - 'sudo'
-      - 'dip'
-      - 'plugdev'
-      - 'lpadmin'
-      - 'sambashare'
-    cssh_config: 'profile/cssh.config.erb'
-    cluster_config: 'profile/cssh.clusters.erb'
-    vim_beautify: true
-    xinitrc: 'profile/xinitrc.erb'
-    colorscheme: last256
-    config:
-      '/home/mcampbell/Desktop':
-        ensure: absent
-        force: true
-      '/home/mcampbell/Documents':
-        ensure: absent
-        force: true
-      '/home/mcampbell/Music':
-        ensure: absent
-        force: true
-      '/home/mcampbell/Pictures':
-        ensure: absent
-        force: true
-      '/home/mcampbell/Public':
-        ensure: absent
-        force: true
-      '/home/mcampbell/Templates':
-        ensure: absent
-        force: true
-      '/home/mcampbell/Videos':
-        ensure: absent
-        force: true
-      '/home/mcampbell/.xsession':
-        ensure: link
-        target: '/home/mcampbell/.xinitrc'
-      '/home/mcampbell/.clusterssh':
-        ensure: directory
-      '/home/mcampbell/.config':
-        ensure: directory
-      '/home/mcampbell/.config/awesome':
-        ensure: directory
-      '/home/mcampbell/.config/awesome/rc.lua':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/awesome/rc.lua"
-      '/home/mcampbell/.config/awesome/theme.lua':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
-      '/home/mcampbell/.Xresources':
-        ensure: file
-        source: "puppet:///modules/profile/common/Xresources"
-      '/home/mcampbell/.Xdefaults':
-        ensure: file
-        source: "puppet:///modules/profile/common/Xresources"
-      '/home/mcampbell/.xscreensaver':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/xscreensaver"
-      '/home/mcampbell/.bashrc':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/bashrc"
-      '/home/mcampbell/.ssh':
-        #ensure: directory
-        #source: 'puppet:///modules/profile/mcampbell/ssh'
-        #mode: 0600
-        ensure: link
-        target: '/home/mcampbell/1-data/src/ruby/puppet/warp2/modules/profile/files/mcampbell/ssh'
-        force: true
-      '/home/mcampbell/.vim':
-        ensure: directory
-      '/home/mcampbell/.vim/autoload':
-        ensure: directory
-      '/home/mcampbell/.vim/bundle':
-        ensure: directory
-      '/home/mcampbell/bin':
-        ensure: link
-        target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
-      '/home/mcampbell/1-data':
-        ensure: directory
-      '/home/mcampbell/1-data/src':
-        ensure: link
-        target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/1-docs/4-project/programming/src'
-      '/home/mcampbell/.bashrc':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/bashrc"
-      '/home/mcampbell/bin':
-        ensure: link
-        target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
-      '/home/mcampbell/tmp':
-        ensure: directory
-  'root':
-    home: '/root'
-    password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
-    comment: 'root user'
-    uid: '0'
-    gid: '0'
-    groups:
-      - 'root'
-    config:
-      '/root/.vim':
-        ensure: directory
-        owner: root
-        group: root
-      '/root/.vim/bundle':
-        ensure: directory
-        owner: root
-        group: root
-
 # global configuration
 
 git_config:
   'user.name':
     value: 'Marcus Campbell'
-    user: 'mcampbell'
+    user: 'vagrant'
   'credential.helper':
     value: 'cache --timeout=172800'
-    user: 'mcampbell'
+    user: 'vagrant'
   'user.email':
     value: 'marcus.anthony.campbell@gmail.com'
-    user: 'mcampbell'
+    user: 'vagrant'
   'push.default':
     value: 'simple'
-    user: 'mcampbell'
+    user: 'vagrant'
   'merge.tool':
     value: 'vimdiff'
-    user: 'mcampbell'
+    user: 'vagrant'
 
 # common repos to clone
 profile::repos::to_clone:
