@@ -9,7 +9,7 @@ lightdm::autologin_user: 'noc'
 users:
   'noc':
     home: '/home/noc'
-    xrandr: 'xrandr --output DP-1 --righgt of DP-3 --output DP3 --right-of DP-4 --primary'
+    xrandr: 'xrandr --output DP-1 --right of DP-3 --output DP3 --right-of DP-4 --primary'
     password: $6$xUI47FjI$BTjZM2RjQI9roVXD36YJVwpl8kHTEru80eia7OBP.9J0pd6XeP7EKgB93qAMDk8/RvsXvisMQB0QMUfxrabAz1
     comment: 'NOC user'
     #uid: 5001
