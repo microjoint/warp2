@@ -45,16 +45,3 @@ git_config:
   'merge.tool':
     value: 'vimdiff'
     user: 'vagrant'
-
-# common repos to clone
-profile::repos::to_clone:
-  '/root/.vim/bundle/Vundle.vim':
-    source: 'https://github.com/VundleVim/Vundle.vim'
-    owner: 'root'
-    group: 'root'
-  '/home/mcampbell/.vim/bundle/Vundle.vim':
-    source: 'https://github.com/VundleVim/Vundle.vim'
-    owner: 'mcampbell'
-    group: 'mcampbell'
-  '/usr/share/vim/vim74/fonts':
-    source: 'https://github.com/powerline/fonts.git'
