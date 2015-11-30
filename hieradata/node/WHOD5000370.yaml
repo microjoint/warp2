@@ -30,6 +30,10 @@ hosts:
     ip: 10.180.19.89
     host_aliases:
       - 'noc'
+  'maven.apps.local':
+    ip: 10.1.28.8
+    host_aliases:
+      - maven
   'gitlab.williamhill-dev.local':
     ip: 10.210.200.25
     host_aliases:

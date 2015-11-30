@@ -5,7 +5,6 @@ class profile::git (
   include git
 
   if $git_config {
-    notice($git_config)
     create_resources(git::config, $git_config)
   }
 }
