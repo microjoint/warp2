@@ -1,4 +1,6 @@
 nameserver 127.0.0.1
 <% if @dns_search -%>
-search <%= @dns_search %>
+  <% @dns_search.each do |search| -%>
+search <%= search %>
+  <% end -%>
 <% end -%>
