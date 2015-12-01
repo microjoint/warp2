@@ -52,7 +52,7 @@ pdnsd::preferred_servers:
 # Maximum domain name length is 256 characters.
 # Maximum search domains limit is 6.
 dns_search:
-  - 'prod.williamhill.plc adgency-domain.ad-gency.com group.williamHill.plc williamhill.local williamhill.plc williamhill.co.uk williamhill.remote'
+  - 'prod.williamhill.plc adgency-domain.ad-gency.com group.williamHill.plc williamhill.local williamhill.plc williamhill.co.uk williamhill.remote williamhill.local'
   - 'pp1.williamhill.plc pp2.williamhill.plc pp3.williamhill.plc williamhill.plc pte.williamhill.plc'
   - 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.williamhill.plc mgmt.prod.williamhill.plc'
 
