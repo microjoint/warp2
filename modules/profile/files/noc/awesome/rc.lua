@@ -247,6 +247,8 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "r",       function () mypromptbox[mouse.screen]:run() end),
 
+)
+
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
