@@ -4,5 +4,6 @@ class profile::noc(
 ){
 
   include lightdm
+  include pdnsd
 
 }
