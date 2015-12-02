@@ -14,7 +14,8 @@ fi
 <%= @xrandr -%>
 <% end -%>
 
-xset dpms force off
+# turn of power savings
+xset -dpms
 
 # get colours right
 xrdb -load ~/.Xresources

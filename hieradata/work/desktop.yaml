@@ -31,30 +31,6 @@ git_config:
     value: /home/mcampbell/1-data/WillHill/src/cx/dev_tools/scripts/git/gitconfig
     user: 'mcampbell'
 
-pdnsd::preferred_servers:
-  'williamhill':
-    ip: 10.180.18.24, 10.180.24.138, 10.180.24.139
-    proxy_only: off
-    timeout: 4
-    interface: eth0
-    interval: 10m
-    purge_cache: off
-    edns_query: yes
-    exclude:
-      - .thepiratebay.se
-      - .piratebay.org
-      - .piratebay.se
-
-# we need the search domain
-# resolv.conf has these limitation
-# Maximum line size is 256.
-# Maximum number of name servers is 3.
-# Maximum domain name length is 256 characters.
-# Maximum search domains limit is 6.
-dns_search:
-  - 'prod.williamhill.plc adgency-domain.ad-gency.com group.williamHill.plc williamhill.local williamhill.plc williamhill.co.uk williamhill.remote williamhill.local'
-  - 'pp1.williamhill.plc pp2.williamhill.plc pp3.williamhill.plc williamhill.plc pte.williamhill.plc'
-  - 'local mgmt.pp1.williamhill.plc mgmt.pp2.williamhill.plc mgmt.pp3.williamhill.plc mgmt.williamhill.plc mgmt.pte.williamhill.plc mgmt.prod.williamhill.plc'
 
 #Mount points need on work desktop
 profile::etc::mnt_config:
