@@ -14,6 +14,8 @@ fi
 <%= @xrandr -%>
 <% end -%>
 
+xset dpms force off
+
 # get colours right
 xrdb -load ~/.Xresources
 
