@@ -23,6 +23,7 @@ users:
       '/home/noc/.config/awesome/rc.lua':
         ensure: file
         source: "puppet:///modules/profile/noc/awesome/rc.lua"
+        notify: "Service['lightdm']"
       '/home/noc/.config/awesome/theme.lua':
         ensure: file
         source: "puppet:///modules/profile/noc/awesome/theme.lua"
