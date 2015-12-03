@@ -4,5 +4,4 @@ MAILTO=mcampbell
 #                       jan-dec mon-sun
 
 */10    *       *       *       *       cd /etc/puppet; ./run.sh work vm noc
-# Let's try cron-apt
-#0       1       *       *       *       (apt-get update && apt-get -y -d upgrade) > /dev/null
+0  1    *       *       *       *       cd /etc/puppet; git pull

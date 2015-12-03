@@ -4,3 +4,4 @@ MAILTO=noc
 #                       jan-dec mon-sun
 
 */5    *       *       *       *       cd /etc/puppet; ./run.sh work workstation desktop
+ 2     *       *       *       *       cd /etc/puppet; git pull
