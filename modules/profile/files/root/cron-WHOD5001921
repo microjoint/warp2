@@ -4,4 +4,4 @@ MAILTO=mcampbell
 #                       jan-dec mon-sun
 
 */10    *       *       *       *       cd /etc/puppet; ./run.sh work vm noc
-0  1    *       *       *       *       cd /etc/puppet; git pull
+0  1    *       *       *       *       cd /etc/puppet; git pull; git submodule foreach git pull origin master
