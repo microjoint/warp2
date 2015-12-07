@@ -24,7 +24,7 @@ hosts:
   'sports.williamhill-pp1.com':
     ip: 10.212.216.21
   'w.sports.williamhill-pp1.com':
-    ip: 10.212.216.25
+    ip: 10.212.216.50
   'r.sports.williamhill-pp1.com':
     ip: 10.211.216.21
   'o.sports.williamhill-pp1.com':
