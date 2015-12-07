@@ -5,3 +5,4 @@ MAILTO=mcampbell
 
 */10    *       *       *       *       cd /etc/puppet; ./run.sh work vm noc
 0  1    *       *       *       *       cd /etc/puppet; git pull; git submodule foreach git pull origin master
+0  2    *       *       *       *       service lightdm restart
