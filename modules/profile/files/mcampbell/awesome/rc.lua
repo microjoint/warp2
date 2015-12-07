@@ -357,7 +357,7 @@ awful.rules.rules = {
                      size_hints_honor = false,
                      buttons = clientbuttons } },
     { rule = { class = "Chromium"},
-      properties = { floaring = false } },
+      properties = { floating = false } },
     { rule = { instance = "openDialog", class = "Gorilla" },
       properties = { floating = true } },
     { rule = { instance = "findDialog", class = "Gorilla" },
