@@ -20,6 +20,15 @@ users:
 
 #host file entries
 hosts:
+  # for testing PP1 scc migration
+  'sports.williamhill-pp1.com':
+    ip: 10.212.216.21
+  'w.sports.williamhill-pp1.com':
+    ip: 10.212.216.25
+  'r.sports.williamhill-pp1.com':
+    ip: 10.211.216.21
+  'o.sports.williamhill-pp1.com':
+    ip: 10.211.216.94
   'svn':
     ip: 10.1.28.205
   'ramze.local':
