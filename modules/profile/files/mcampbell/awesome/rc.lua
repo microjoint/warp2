@@ -255,6 +255,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F12",     function () awful.util.spawn("xscreensaver-command -lock") end),
     -- open password manager
     awful.key({ modkey,           }, "F1",      function () awful.util.spawn("password-gorilla") end),
+    -- open journal
+    awful.key({ modkey,           }, "F5",      function () awful.util.spawn("journal") end),
 
     -- Prompt
     awful.key({ modkey },            "r",       function () mypromptbox[mouse.screen]:run() end),
