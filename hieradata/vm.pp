@@ -1,5 +1,5 @@
 ---
-openssh::port: 22
+openssh::port: '22'
 
 users:
   'root':
