@@ -1,4 +1,6 @@
 ---
+openssh:port: 2222
+
 # Which users belong @home
 
 # work applications to install

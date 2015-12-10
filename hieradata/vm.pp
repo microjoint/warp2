@@ -1,6 +1,4 @@
 ---
-openssh::port: '22'
-
 users:
   'root':
     config:
