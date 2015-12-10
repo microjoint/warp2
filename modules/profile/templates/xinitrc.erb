@@ -17,7 +17,7 @@ fi
 ~/.dropbox-dist/dropboxd &
 
 # get colours right
-xrdb -load ~/.Xresources
+[[ -r ~.Xresources ]] && xrdb -load ~/.Xresources
 
 # start vrome server so we can have vim as chromium editor
 nohup vrome > /dev/null &
