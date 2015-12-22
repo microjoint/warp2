@@ -109,7 +109,6 @@ users:
     username: 'mcampbell'
     home: '/home/mcampbell'
     password: $6$Q3WFMQMl$GdOTNnb48.r395gVlbHa4luxe26zJtBGgeoiERiJ3CLaPfDfBu6eho4avR.blC6O/HRwJ39yBPWueLTUN7yOX1
-    #password: $6$keCWcRed$G7q3lHOa6Wn0YDEz//DgOaRfy0IkUl6ei4HW/XbkWqDd27ZvceOU6W1d4YjAKuzPdMzgXUVbxiGXOXLiXx2T..
     comment: 'Marcus Campbell'
     uid: '1000'
     gid: '1000'
@@ -176,9 +175,6 @@ users:
         ensure: file
         source: "puppet:///modules/profile/mcampbell/bashrc"
       '/home/mcampbell/.ssh':
-        #ensure: directory
-        #source: 'puppet:///modules/profile/mcampbell/ssh'
-        #mode: 0600
         ensure: link
         target: '/home/mcampbell/1-data/src/ruby/puppet/warp2/modules/profile/files/mcampbell/ssh'
         force: true
