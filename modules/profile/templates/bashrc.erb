@@ -38,9 +38,9 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # CDPATH
-CDPATH=/etc,/home/mcampbell,/home/mcampbell/1-data/src,/home/mcampbell/WillHill/src
-<% if cd_paths -%>
-CD_PATH=<% cd_paths.join(',') %>
+#CDPATH=/etc,/home/mcampbell,/home/mcampbell/1-data/src,/home/mcampbell/WillHill/src
+<% if @cd_paths -%>
+CDPATH=<% @cd_paths.join(',') %>
 <% end -%>
 
 
