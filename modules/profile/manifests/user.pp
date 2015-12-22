@@ -70,4 +70,14 @@ define profile::user (
     }
   }
 
+  if $::bashrc {
+    $pre_paths = hiera_hash('user::pre_path')
+    $post_paths = hiera_hash('user::post_path')
+    $cd_paths = hiera_hash('user::cd_path')
+    file { "${home}/.bashrc":
+      ensure  => file,
+      content => template($::bashrc)
+    }
+  }
+
 }

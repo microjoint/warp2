@@ -1,8 +1,17 @@
 ---
 openssh::port: 2222
 
+# path change
+user::post_path:
+  - '~/data/WillHill/src/cx/dev_tools/scripts/git/gitconfig'
+  - '~/1-data/WillHill/src/cx/dev_tools/scripts'
+
+user::cd_path:
+  - '/home/mcampbell/1-data/src'
+  - '/home/mcampbell/WillHill/src'
+
 pdnsd::preferred_servers:
-  'williamhill':
+  'williamhil':
     ip: 10.180.18.24, 10.180.24.138, 10.180.24.139
     proxy_only: off
     timeout: 4

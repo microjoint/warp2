@@ -171,9 +171,9 @@ users:
       '/home/mcampbell/.xscreensaver':
         ensure: file
         source: "puppet:///modules/profile/mcampbell/xscreensaver"
-      '/home/mcampbell/.bashrc':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/bashrc"
+#      '/home/mcampbell/.bashrc':
+#        ensure: file
+#        source: "puppet:///modules/profile/mcampbell/bashrc"
       '/home/mcampbell/.ssh':
         ensure: link
         target: '/home/mcampbell/1-data/src/ruby/puppet/warp2/modules/profile/files/mcampbell/ssh'
@@ -192,9 +192,6 @@ users:
       '/home/mcampbell/1-data/src':
         ensure: link
         target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/1-docs/4-project/programming/src'
-      '/home/mcampbell/.bashrc':
-        ensure: file
-        source: "puppet:///modules/profile/mcampbell/bashrc"
       '/home/mcampbell/bin':
         ensure: link
         target: '/home/mcampbell/1-data/4-sync/Dropbox/1-data/4-os/home/bin'
