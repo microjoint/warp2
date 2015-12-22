@@ -12,7 +12,7 @@ shopt -s histappend
 
 #PATH=~/bin:$PATH:~/data/WillHill/src/cx/dev_tools/scripts/git/gitconfig:~/1-data/WillHill/src/cx/dev_tools/scripts
 <% if @pre_paths -%>
-PATH=<%= @pre_paths.join(':') -%>:SPATH
+PATH=<%= @pre_paths.join(':') -%>:$PATH
 <% end -%>
 <% if @post_paths -%>
 PATH=$PATH:<%= @post_paths.join(':') -%>
