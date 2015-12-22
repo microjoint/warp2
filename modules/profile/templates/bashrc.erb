@@ -11,11 +11,11 @@
 shopt -s histappend
 
 #PATH=~/bin:$PATH:~/data/WillHill/src/cx/dev_tools/scripts/git/gitconfig:~/1-data/WillHill/src/cx/dev_tools/scripts
-<% if pre_paths -%>
-PATH=<%= pre_paths.join(':') -%>:SPATH
+<% if @pre_paths -%>
+PATH=<%= @pre_paths.join(':') -%>:SPATH
 <% end -%>
-<% if post_paths -%>
-PATH=$PATH:<%= post_paths.join(':') -%>
+<% if @post_paths -%>
+PATH=$PATH:<%= @post_paths.join(':') -%>
 <% end -%>
 
 # Vi command line editing mode
