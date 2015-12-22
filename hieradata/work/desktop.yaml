@@ -16,6 +16,12 @@ profile::apps::to_install:
   'vagrant':
     ensure: latest
 
+user:
+  'mcampbell':
+    post_path:
+      - '/home/mcampbell/1-data/src'
+      - '/home/mcampbell/WillHill/src'
+
 
 git_config:
   'user.email':

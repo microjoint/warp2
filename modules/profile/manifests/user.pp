@@ -1,17 +1,23 @@
 # Creates users and their configurations files
 define profile::user (
-  $username       = undef,
-  $home           = undef,
-  $password       = undef,
-  $comment        = undef,
-  $uid            = undef,
-  $gid            = undef,
-  $groups         = undef,
-  $config         = undef,
-  $cssh_config    = undef,
-  $xinitrc        = undef,
-  $vim_beautify   = false,
-  $bashrc         = false,
+  $username            = undef,
+  $home                = undef,
+  $password            = undef,
+  $comment             = undef,
+  $uid                 = undef,
+  $gid                 = undef,
+  $groups              = undef,
+  $config              = undef,
+  $cssh_config         = undef,
+  $cluster_config      = undef,
+  $xinitrc             = undef,
+  $xrandr              = undef,
+  $vim_beautify        = false,
+  $colorscheme         = 'ron',
+  $bashrc              = false,
+  $pre_paths           = false,
+  $post_paths          = false,
+  $cd_paths            = false,
 ) {
 
   user { $name:
@@ -31,7 +37,6 @@ define profile::user (
   create_resources( file, $config )
 
   if $vim_beautify {
-    $colorscheme    = 'ron'
 
     file { "${home}/.vimrc":
       ensure  => file,
@@ -50,7 +55,6 @@ define profile::user (
   }
 
   if $cssh_config {
-    $cluster_config = undef
     file { "${home}/.clusterssh/config":
       ensure  => file,
       content => template($cssh_config),
@@ -65,7 +69,6 @@ define profile::user (
   }
 
   if $xinitrc {
-    $xrandr         = undef
     file { "${home}/.xinitrc":
       ensure  => file,
       content => template($xinitrc)
@@ -73,9 +76,6 @@ define profile::user (
   }
 
   if $bashrc {
-    $pre_paths = hiera_hash('user::pre_path')
-    $post_paths = hiera_hash('user::post_path')
-    $cd_paths = hiera_hash('user::cd_path')
     file { "${home}/.bashrc":
       ensure  => file,
       content => template($bashrc)
