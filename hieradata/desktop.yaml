@@ -16,6 +16,8 @@ profile::apps::to_install:
     ensure: latest
   'coffeescript':
     ensure: latest
+  'encfs':
+    ensure: latest
   'exfat-fuse':
     ensure: latest
   'feh':

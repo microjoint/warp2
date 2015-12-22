@@ -31,6 +31,9 @@ export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# CDPATH
+CDPATH=/etc,/home/mcampbell,/home/mcampbell/1-data/src,/home/mcampbell/WillHill/src
+
 # check the window size after each command and, if necessary, update
 # values of LINES and COLUMNS.
 shopt -s checkwinsize
