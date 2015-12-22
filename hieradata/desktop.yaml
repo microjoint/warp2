@@ -123,9 +123,9 @@ users:
     cssh_config: 'profile/cssh.config.erb'
     cluster_config: 'profile/cssh.clusters.erb'
     bashrc: 'profile/bashrc.erb'
-    pre_path:
+    pre_paths:
       - '/home/mcampbell/bin'
-    cd_path:
+    cd_paths:
       - '/etc/'
       - '/home/mcampbell'
     vim_beautify: true

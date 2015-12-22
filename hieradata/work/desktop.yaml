@@ -18,7 +18,7 @@ profile::apps::to_install:
 
 user:
   'mcampbell':
-    post_path:
+    post_paths:
       - '/home/mcampbell/1-data/src'
       - '/home/mcampbell/WillHill/src'
 
