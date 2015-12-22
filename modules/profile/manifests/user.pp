@@ -8,12 +8,10 @@ define profile::user (
   $gid            = undef,
   $groups         = undef,
   $config         = undef,
-  $colorscheme    = 'ron',
   $cssh_config    = undef,
-  $cluster_config = undef,
   $xinitrc        = undef,
-  $xrandr         = undef,
   $vim_beautify   = false,
+  $bashrc         = false,
 ) {
 
   user { $name:
@@ -33,6 +31,8 @@ define profile::user (
   create_resources( file, $config )
 
   if $vim_beautify {
+    $colorscheme    = 'ron'
+
     file { "${home}/.vimrc":
       ensure  => file,
       content => template('profile/vimrc.erb')
@@ -50,6 +50,7 @@ define profile::user (
   }
 
   if $cssh_config {
+    $cluster_config = undef
     file { "${home}/.clusterssh/config":
       ensure  => file,
       content => template($cssh_config),
@@ -64,19 +65,20 @@ define profile::user (
   }
 
   if $xinitrc {
+    $xrandr         = undef
     file { "${home}/.xinitrc":
       ensure  => file,
       content => template($xinitrc)
     }
   }
 
-  if $::bashrc {
+  if $bashrc {
     $pre_paths = hiera_hash('user::pre_path')
     $post_paths = hiera_hash('user::post_path')
     $cd_paths = hiera_hash('user::cd_path')
     file { "${home}/.bashrc":
       ensure  => file,
-      content => template($::bashrc)
+      content => template($bashrc)
     }
   }
 
