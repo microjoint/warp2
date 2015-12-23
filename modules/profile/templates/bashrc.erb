@@ -232,7 +232,13 @@ mcd() {
 source ~/bin/git-prompt.sh
 
 #keychain
-keychain --quick ~/.ssh/id_rsa
-source ~/.keychain/${HOSTNAME}-sh
+if [ -x /usr/bin/keychain ]
+then
+  keychain --quick ~/.ssh/id_rsa
+  source ~/.keychain/${HOSTNAME}-sh
+fi
 
-fortune | ponysay
+if [ -x /usr/games/fortune ]
+then
+  fortune | ponysay
+fi
