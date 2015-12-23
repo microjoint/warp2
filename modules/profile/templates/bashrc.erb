@@ -186,19 +186,7 @@ alias cd=cd_func
 #Translate a Word  - USAGE: translate house spanish  # See dictionary.com for available languages (there are many).
 translate ()
 {
-  TRANSLATED=`lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i -m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//'`
-  if [[ ${#TRANSLATED} != 0 ]] ;then
-    echo "\"${1}\" in ${TRANSLATED}"
-  else
-    echo "Sorry, I can not translate \"${1}\" to ${2}"
-  fi
-}
-
-# Define a word - USAGE: define dog
-define ()
-{
-#lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 > /tmp/templookup.txt
-lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | awk '{if (lines > 0) {print; --lines; }} /Wiki/{lines = 5;} /http/{exit;}' > /tmp/templookup.txt
+lynx -dump "http://www.vocabulix.com/translation/${2}/${1}.html" | awk "IGNORECASE = 1 {if (lines > 0) {print; --lines; }} /Translation of ${1} in ${2}/{lines = 10;} /Translation by Vocabulix/{exit;}" > /tmp/templookup.txt
       if [[ -s  /tmp/templookup.txt ]] ;then
         until ! read response
           do
@@ -208,6 +196,21 @@ lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Sear
           echo "Sorry $USER, I can't find the term \"${1} \""
       fi
 rm -f /tmp/templookup.txt
+}
+
+# Define a word - USAGE: define dog
+define ()
+{
+  lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | awk '{if (lines > 0) {print; --lines; }} /Wiki/{lines = 10;} /http/{exit;}' > /tmp/templookup.txt
+    if [[ -s  /tmp/templookup.txt ]] ;then
+      until ! read response
+        do
+        echo "${response}"
+        done < /tmp/templookup.txt
+      else
+        echo "Sorry $USER, I can't find the term \"${1} \""
+    fi
+  rm -f /tmp/templookup.txt
 }
 
 #git prompt
