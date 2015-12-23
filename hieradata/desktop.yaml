@@ -172,6 +172,13 @@ users:
       '/home/mcampbell/.config/awesome/theme.lua':
         ensure: file
         source: "puppet:///modules/profile/mcampbell/awesome/theme.lua"
+      '/home/mcampbell/.config/pearl':
+        ensure: directory
+      '/home/mcampbell/.config/pearl/sshrc.d':
+        ensure: directory
+      '/home/mcampbell/.config/pearl/sshrc.d/bashrc':
+        ensure: link
+        target: '/home/mcampbell/.bashrc'
       '/home/mcampbell/.Xresources':
         ensure: file
         source: "puppet:///modules/profile/common/Xresources"
