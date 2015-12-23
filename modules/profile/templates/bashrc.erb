@@ -197,7 +197,8 @@ translate ()
 # Define a word - USAGE: define dog
 define ()
 {
-lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 > /tmp/templookup.txt
+#lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 > /tmp/templookup.txt
+lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | awk '{if (lines > 0) {print; --lines; }} /Wiki/{lines = 5;} /http/{exit;}' > /tmp/templookup.txt
       if [[ -s  /tmp/templookup.txt ]] ;then
         until ! read response
           do
