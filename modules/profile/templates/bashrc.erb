@@ -68,13 +68,16 @@ alias df='df -h'
 alias du='du -h'
 
 # Misc :)
-# alias less='less -r'                          # raw control characters
-# alias whence='type -a'                        # where, of a sort
 alias grep='grep --color'                     # show differences in colour
 alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 alias ps='ps faux'
 alias pg='ps aux | grep'
+alias gp='grep -R'
+gpe() {
+  vim `grep -R "$1"`
+}
+
 
 # Some shortcuts for different directory listings
 alias ls='ls -hF --color=tty'                 # classify files in colour
@@ -86,10 +89,6 @@ alias l='ls -CF'                              #
 
 alias v='vim'
 alias vi='vim'
-
-gpe() {
-  vim `grep -R "$1"`
-}
 
 # git
 git_commit() {
@@ -182,8 +181,33 @@ cd_func ()
 
    return 0
 }
-
 alias cd=cd_func
+
+#Translate a Word  - USAGE: translate house spanish  # See dictionary.com for available languages (there are many).
+translate ()
+{
+  TRANSLATED=`lynx -dump "http://dictionary.reference.com/browse/${1}" | grep -i -m 1 -w "${2}:" | sed 's/^[ \t]*//;s/[ \t]*$//'`
+  if [[ ${#TRANSLATED} != 0 ]] ;then
+    echo "\"${1}\" in ${TRANSLATED}"
+  else
+    echo "Sorry, I can not translate \"${1}\" to ${2}"
+  fi
+}
+
+# Define a word - USAGE: define dog
+define ()
+{
+lynx -dump "http://www.google.com/search?hl=en&q=define%3A+${1}&btnG=Google+Search" | grep -m 3 -w "*"  | sed 's/;/ -/g' | cut -d- -f1 > /tmp/templookup.txt
+      if [[ -s  /tmp/templookup.txt ]] ;then
+        until ! read response
+          do
+          echo "${response}"
+          done < /tmp/templookup.txt
+        else
+          echo "Sorry $USER, I can't find the term \"${1} \""
+      fi
+rm -f /tmp/templookup.txt
+}
 
 #git prompt
 source ~/bin/git-prompt.sh

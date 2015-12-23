@@ -177,9 +177,9 @@ users:
       '/home/mcampbell/.xscreensaver':
         ensure: file
         source: "puppet:///modules/profile/mcampbell/xscreensaver"
-#      '/home/mcampbell/.bashrc':
-#        ensure: file
-#        source: "puppet:///modules/profile/mcampbell/bashrc"
+      '/home/mcampbell/.bashrc':
+        ensure: file
+        source: "puppet:///modules/profile/mcampbell/bashrc"
       '/home/mcampbell/.ssh':
         ensure: link
         target: '/home/mcampbell/1-data/src/ruby/puppet/warp2/modules/profile/files/mcampbell/ssh'
