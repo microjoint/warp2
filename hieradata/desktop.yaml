@@ -181,7 +181,7 @@ users:
         target: '/home/mcampbell/.bashrc'
       '/home/mcampbell/.config/pearl/sshvimrc':
         ensure: file
-        source: "puppet:///modules/profile/vimr_plain"
+        source: "puppet:///modules/profile/vimrc_plain"
       '/home/mcampbell/.Xresources':
         ensure: file
         source: "puppet:///modules/profile/common/Xresources"
