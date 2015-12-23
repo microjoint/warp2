@@ -101,6 +101,10 @@ alias gitst='git status'
 alias gitl='git log --graph --abbrev-commit --decorate --date=relative --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)" --all'
 alias gitll='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)" --all'
 
+# A command to see which functions I use the most
+alias hist=history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
+alias h=history
+
 # Umask
 #
 # /etc/profile sets 022, removing write perms to group + others.
@@ -213,6 +217,14 @@ define ()
     fi
   rm -f /tmp/templookup.txt
 }
+
+#Make a directory and go there
+mcd() {
+  mkdir -p $1
+  cd $1
+}
+
+
 
 #git prompt
 source ~/bin/git-prompt.sh
