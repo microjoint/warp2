@@ -127,6 +127,8 @@ users:
     bashrc: 'profile/bashrc.erb'
     pre_paths:
       - '/home/mcampbell/bin'
+    post_paths:
+      - '/home/mcampbell/.pearl-ssh/bin'
     cd_paths:
       - '/etc/'
       - '/home/mcampbell'
@@ -262,6 +264,9 @@ profile::repos::to_clone:
     group: 'mcampbell'
   '/usr/share/vim/vim74/fonts':
     source: 'https://github.com/powerline/fonts.git'
+  '/home/mcampbell/.pearl-ssh':
+    source: 'https://github.com/fsquillace/pearl-ssh ~/.pearl-ssh'
+
 
 # pdnsd settings
 pdnsd::start_daemon: yes
