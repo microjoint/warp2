@@ -179,6 +179,9 @@ users:
       '/home/mcampbell/.config/pearl/sshrc.d/bashrc':
         ensure: link
         target: '/home/mcampbell/.bashrc'
+      '/home/mcampbell/.config/pearl/sshvimrc':
+        ensure: file
+        source: "puppet:///modules/profile/vimr_plain"
       '/home/mcampbell/.Xresources':
         ensure: file
         source: "puppet:///modules/profile/common/Xresources"
