@@ -103,7 +103,7 @@ alias gitl='git log --graph --abbrev-commit --decorate --date=relative --format=
 alias gitll='git log --graph --abbrev-commit --decorate --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)" --all'
 
 # A command to see which functions I use the most
-alias hist_stats='history | awk \'{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}\' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10'
+alias hist_stats='history | cut -c8- | sort | uniq -c | sort -nr | head -n10'
 alias h='history'
 
 # Umask
