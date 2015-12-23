@@ -42,6 +42,8 @@ profile::apps::to_install:
     ensure: present
   'linux-headers-generic':
     ensure: present
+  'lynx':
+    ensure: latest
   'mutt':
     ensure: latest
   'ncurses-term':
