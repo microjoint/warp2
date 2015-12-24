@@ -225,6 +225,10 @@
       let g:airline_powerline_fonts = 1
     " }
 
+    " CtrlP {
+        let g:ctrlp_map = '<c-o>'
+    " }
+
     " NerdTree {
       map <C-n> :NerdTreeToggle<CR>
     " }
@@ -245,26 +249,3 @@
       set term=builtin_ansi         " make arrow and other keys work
     endif
   " }
-
-  " Auto commannds {
-    au BufRead,BufNewFile * let b:start_time=localtime()
-    au CursorHold * call UpdateFile()
-    au CursorHold * silent! checktime
-    au BufWritePre * let b:start_time=localtime()
-  " }
-
-  " functions {
-    " UpdateFile {
-      function! UpdateFile()
-        if ((localtime() - b:start_time) >= 10)
-          update
-          checktime
-          let b:start_time=localtime()
-        else
-          echo "Only " . (localtime() - b:start_time) . " seconds have elapsed so far."
-        endif
-      endfunction
-    " }
-
-  " }
-" }
