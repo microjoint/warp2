@@ -5,13 +5,13 @@
   "   http://spf13.com/post/perfect-vimrc-vim-config-file. Other bits
   "   have been added on over time
   "
-  " }
+" }
 
-  " Environment {
-    " Basics {
+" Environment {
+   " Basics {
       set nocompatible      " must be the first line
       set background=dark   " we like in this way
-    " }
+" }
 
     " Windows Compatible {
       " On Windows, also use '.vim' instead of 'vimfiles'; this makes
@@ -20,7 +20,7 @@
         set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
       endif
     " }
-  " }
+" }
 
   " Vundle {
   filetype off                  " required
@@ -41,7 +41,7 @@
   Plugin 'MarcWeber/vim-addon-mw-utils'
   Plugin 'bling/vim-airline'
   Plugin 'tpope/vim-fugitive'
-  Plugin 'rodjek/vim-puppet'
+  Plugin 'rodjek/vi-puppet'
   Plugin 'garbas/vim-snipmate'
   Plugin 'honza/vim-snippets'
   Plugin 'tpope/vim-surround'
@@ -51,201 +51,202 @@
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
-  " }
-
+" }
 
   " General {
     filetype plugin indent on     	  " detect file types
     syntax on                     " syntax highlighting
-"    " set mouse=a                 " enable mouse usage
-"    set mousehide                 " hide mouse cursor while typing
-"    set autochdir                 " switch to current file
-"    scriptencoding utf-8
-"    set autowrite                 " write a file when leaving modified buffer
-"    set autowriteall              " writa a file for all commands
-"    set autoread                  " auto read file if changed
-"    set shortmess+=filmnrxoOtIT   " abrrev. messages
-"    set viewoptions=folds,options,cursor,unix,slash   " save all
-"    set virtualedit=onemore   " allow cursor beyond end
-"    set history=1000              " how much history to save
-"    set nospell
-"    set clipboard=unnamed
-"
-"    " Setting up the directories {
-"    set backup                  " nice to have backups, let's put them
-"                                " out of the way
-"    set backupdir=$HOME/.vimbackup//
-"    set directory=$HOME/.vimswap//
-"    set viewdir=$HOME/.vimviews//
-"
-"    " Create them if not already there
-"    silent execute '!mkdir -p $HOME/.vimbackup'
-"    silent execute '!mkdir -p $HOME/.vimswap'
-"    silent execute '!mkdir -p $HOME/.vimviews'
-"
-"    au BufWinLeave *.* silent! mkview    "make vim save view
-"    au BufWinEnter *.* silent! loadview  "load vim save view
-"    " }
-"  "}
-"
-"  " Vim Sound {
-"  set noerrorbells
-"  set novisualbell
-"  set t_vb=
-"  set tm=500
-"  " }
-"
-"  " Vim UI {
-"    set t_Co=256
-"    colorscheme <%= @colorscheme -%>         " load a colorscheme
-"    set showmode                   " display the current mode
-"    set cursorline                 " highlight the current line
-"    hi cursorline guibg=#333333    " highlight bg color
-"    hi cursorColunm guibg=#333333  " highlight cursor
-"    set laststatus=2
-"
-"    set backspace=indent,eol,start  " backspace galore
-"    set linespace=0                 " no extra spaces between lines
-"    set number                      " show line numbers
-"    set relativenumber              " show relative numbers
-"    set showmatch                   " show matching brackets,etc
-"    set incsearch                   " find as you type
-"    set hlsearch                    " light up the search
-"    set winminheight=0              " allow 0 height windows
-"    set ignorecase                  " case insensitive search
-"    set smartcase                   " case sensitive if the is a UC
-"    set wildmenu                    " show list
-"    set wildmode=list:longest,full  " order for list
-"    set whichwrap=b,s,h,l,<,>,[,]   " good wraping
-"    set scrolljump=5                " lines to jump when leave screen
-"    set scrolloff=3                 " lines to keep for context
-"    set foldenable                  " fold code
-"    set list
-"    set listchars=tab:>.,trail:.,extends:\#,nbsp:. " Highlight bad whitespace
-"  " }
-"
-"  " Formatting {
-"    set wrap                      " wrap long lines
-"    set autoindent                " indent at the same level of the previous line
-"    set shiftwidth=2              " indent 2 spaces
-"    set expandtab                 " tabs are spaces
-"    set tabstop=4                 " indentation
-"    set softtabstop=4             " can be deleted
-"    set smarttab                  "
-"    set pastetoggle=<F12>         " toggle safer pastes
-"    " Remove trailing whitespaces and \^M chars
-"    " autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\\\s\\\\+$","","")'))
-"
-"    " file type folding
-"    autocmd FileType vimwiki,yaml set foldmethod=indent
-"    " }
-"
-"  " Key (re)Mappings {
-"    " The default leader is '\\', but many people prefer ',' as it's in a standard
-"    " location
-"    let mapleader = ','
-"
-"    " Escape button is too far away
-"    imap ii  <Esc>
-"
-"    " quick save
-"    map <Esc><Esc> :w<CR>
-"
-"    " movement keys to change windows
-"    map <Up>    <C-W>k
-"    map <Down>  <C-W>j
-"    map <Left>  <C-W>h
-"    map <Right> <C-W>l
-"
-"    " Press space to clear highlighting and any message already displayed
-"    nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
-"
-"    " Making it so ; works like for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
-"    nnoremap ; :
-"    nnoremap : ;                   " So we can still use F, f and T and t
-"
-"    " Easier moving in tabs and windows
-"    map <C-J> <C-W>j<C-W>_
-"    map <C-K> <C-W>k<C-W>_
-"    map <C-L> <C-W>l<C-W>_
-"    map <C-H> <C-W>h<C-W>_
-"
-"    " Insert a timestamp and turn it into a level-1 Vimwiki header
-"    " map <F3> :r! date +"\%H:\%M:\%S"<cr>
-"    nnoremap <F3> "=strftime("%Y%m%d %T")<CR>P
-"    inoremap <F3> <C-R>=strftime("%Y%m%d %T")<CR>
-"
-"    " Spellchecking {
-"        map <leader>ss :setlocal spell!<cr>
-"        map <leader>sn ]s
-"        map <leader>sp [s
-"        map <leader>sa zg
-"        map <leader>sS z=
-"    " }
-"    " wrapped lines goes down/up to next row, rather than next line in file.
-"    "nnoremap j gj
-"    "nnoremap k gk
-"
-"    " The following two lines conflict with moving to top and bottom of the screen
-"    " If you prefer that functionality, comment them out.
-"    " map <S-H> gT
-"    " map <S-L> gt
-"
-"    " stupid shift key fixes
-"    " cmap W w
-"    " cmap WQ wq
-"    " cmap wQ wq
-"    " cmap Q q
-"    " cmap Tabe tabe
-"
-"    " yank from the cursor to the end of the line, to be consistent with C and D
-"    nnoremap Y y$
-"
-"    nmap <leader>f0 :set foldlevel=0<CR>
-"    nmap <leader>f1 :set foldlevel=1<CR>
-"    nmap <leader>f2 :set foldlevel=2<CR>
-"    nmap <leader>f3 :set foldlevel=3<CR>
-"    nmap <leader>f4 :set foldlevel=4<CR>
-"    nmap <leader>f5 :set foldlevel=5<CR>
-"    nmap <leader>f6 :set foldlevel=6<CR>
-"    nmap <leader>f7 :set foldlevel=7<CR>
-"    nmap <leader>f8 :set foldlevel=8<CR>
-"    nmap <leader>f9 :set foldlevel=9<CR>
-"
-"    " For when you forget to sudo...
-"    cmap w!! w !sudo tee % >/dev/null
-"  " }
-"
-"  " Plugins {
-"    " VimWiki {
-"      let g:vimwiki_list = [{'path': '~/1-data/4-sync/Dropbox/1-data/1-docs/0-wiki/wiki', 'path_html': '~/1-data/4-sync/Dropbox/1-data/1-docs/0-wiki/html'}]
-"    " }
-"
-"    " Airline {
-"      let g:airline_powerline_fonts = 1
-"    " }
-"
-"    " CtrlP {
-"        let g:ctrlp_map = '<c-o>'
-"    " }
-"
-"    " NerdTree {
-"      map <c-n> :NerdTreeToggle<CR>
-"    " }
-"
-"    " Syntastic {
-"      " Removing any annoying warnings
-"      let g:syntastic_quiet_messages = { 'regex': 'void context' }
-"    " }
-"  " }
-"
-"  " GUI settings {
-"    " GVIM - who needs a vimrc
-"    if has('gui_running')
-"      set guioptions-=T             " remove the toolbar
-"      set guioptions-=m             " remove the toolbar
-"      set guioptions-=r             " remove the toolbar
-"      set lines=40                  " 24??
-"      set term=builtin_ansi         " make arrow and other keys work
-"    endif
-"  " }
+    " set mouse=a                 " enable mouse usage
+    set mousehide                 " hide mouse cursor while typing
+    set autochdir                 " switch to current file
+    scriptencoding utf-8
+    set autowrite                 " write a file when leaving modified buffer
+    set autowriteall              " writa a file for all commands
+    set autoread                  " auto read file if changed
+    set shortmess+=filmnrxoOtIT   " abrrev. messages
+    set viewoptions=folds,options,cursor,unix,slash   " save all
+    set virtualedit=onemore   " allow cursor beyond end
+    set history=1000              " how much history to save
+    set nospell
+    set clipboard=unnamed
+
+    " Setting up the directories {
+    set backup                  " nice to have backups, let's put them
+                                " out of the way
+    set backupdir=$HOME/.vimbackup//
+    set directory=$HOME/.vimswap//
+    set viewdir=$HOME/.vimviews//
+
+    " Create them if not already there
+    silent execute '!mkdir -p $HOME/.vimbackup'
+    silent execute '!mkdir -p $HOME/.vimswap'
+    silent execute '!mkdir -p $HOME/.vimviews'
+
+    au BufWinLeave *.* silent! mkview    "make vim save view
+    au BufWinEnter *.* silent! loadview  "load vim save view
+    " }
+  "}
+
+  " Vim Sound {
+  set noerrorbells
+  set novisualbell
+  set t_vb=
+  set tm=500
+  " }
+
+  " Vim UI {
+    set t_Co=256
+    colorscheme <%= @colorscheme -%>         " load a colorscheme
+    set showmode                   " display the current mode
+    set cursorline                 " highlight the current line
+    hi cursorline guibg=#333333    " highlight bg color
+    hi cursorColunm guibg=#333333  " highlight cursor
+    set laststatus=2
+
+    set backspace=indent,eol,start  " backspace galore
+    set linespace=0                 " no extra spaces between lines
+    set number                      " show line numbers
+    set relativenumber              " show relative numbers
+    set showmatch                   " show matching brackets,etc
+    set incsearch                   " find as you type
+    set hlsearch                    " light up the search
+    set winminheight=0              " allow 0 height windows
+    set ignorecase                  " case insensitive search
+    set smartcase                   " case sensitive if the is a UC
+    set wildmenu                    " show list
+    set wildmode=list:longest,full  " order for list
+    set whichwrap=b,s,h,l,<,>,[,]   " good wraping
+    set scrolljump=5                " lines to jump when leave screen
+    set scrolloff=3                 " lines to keep for context
+    set foldenable                  " fold code
+    set list
+    set listchars=tab:>.,trail:.,extends:\#,nbsp:. " Highlight bad whitespace
+  " }
+
+  " Formatting {
+    set wrap                      " wrap long lines
+    set autoindent                " indent at the same level of the previous line
+    set shiftwidth=2              " indent 2 spaces
+    set expandtab                 " tabs are spaces
+    set tabstop=4                 " indentation
+    set softtabstop=4             " can be deleted
+    set smarttab                  "
+    set pastetoggle=<F12>         " toggle safer pastes
+    " Remove trailing whitespaces and \^M chars
+    " autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\\\s\\\\+$","","")'))
+
+    " file type folding
+    autocmd FileType vimwiki,yaml set foldmethod=indent
+    " }
+
+  " Key (re)Mappings {
+    " The default leader is '\\', but many people prefer ',' as it's in a standard
+    " location
+    let mapleader = ','
+
+    " Escape button is too far away
+    inoremap ii  <Esc>
+
+    " quick save
+    map <Esc><Esc> :xa<CR>
+
+    " movement keys to change windows
+    map <Up>    <C-W>k
+    map <Down>  <C-W>j
+    map <Left>  <C-W>h
+    map <Right> <C-W>l
+
+    " Press space to clear highlighting and any message already displayed
+    nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+
+    " Making it so ; works like for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
+    nnoremap ; :
+    nnoremap : ;                   " So we can still use F, f and T and t
+
+    " Easier moving in tabs and windows
+    map <C-J> <C-W>j<C-W>_
+    map <C-K> <C-W>k<C-W>_
+    map <C-L> <C-W>l<C-W>_
+    map <C-H> <C-W>h<C-W>_
+
+    " Insert a timestamp and turn it into a level-1 Vimwiki header
+    " map <F3> :r! date +"\%H:\%M:\%S"<cr>
+    nnoremap <F3> "=strftime("%Y%m%d %T")<CR>P
+    inoremap <F3> <C-R>=strftime("%Y%m%d %T")<CR>
+
+    " Spellchecking {
+        map <leader>ss :setlocal spell!<cr>
+        map <leader>sn ]s
+        map <leader>sp [s
+        map <leader>sa zg
+        map <leader>sS z=
+    " }
+    " wrapped lines goes down/up to next row, rather than next line in file.
+    "nnoremap j gj
+    "nnoremap k gk
+
+    " The following two lines conflict with moving to top and bottom of the screen
+    " If you prefer that functionality, comment them out.
+    " map <S-H> gT
+    " map <S-L> gt
+
+    " stupid shift key fixes
+    " cmap W w
+    " cmap WQ wq
+    " cmap wQ wq
+    " cmap Q q
+    " cmap Tabe tabe
+
+    " yank from the cursor to the end of the line, to be consistent with C and D
+    nnoremap Y y$
+
+    nmap <leader>f0 :set foldlevel=0<CR>
+    nmap <leader>f1 :set foldlevel=1<CR>
+    nmap <leader>f2 :set foldlevel=2<CR>
+    nmap <leader>f3 :set foldlevel=3<CR>
+    nmap <leader>f4 :set foldlevel=4<CR>
+    nmap <leader>f5 :set foldlevel=5<CR>
+    nmap <leader>f6 :set foldlevel=6<CR>
+    nmap <leader>f7 :set foldlevel=7<CR>
+    nmap <leader>f8 :set foldlevel=8<CR>
+    nmap <leader>f9 :set foldlevel=9<CR>
+
+    " For when you forget to sudo...
+    cmap w!! w !sudo tee % >/dev/null
+  " }
+
+  " Plugins {
+    " VimWiki {
+      let g:vimwiki_list = [{'path': '~/1-data/4-sync/Dropbox/1-data/1-docs/0-wiki/wiki', 'path_html': '~/1-data/4-sync/Dropbox/1-data/1-docs/0-wiki/html'}]
+    " }
+
+    " Airline {
+      let g:airline_powerline_fonts = 1
+    " }
+
+    " CtrlP {
+        let g:ctrlp_map = '<c-o>'
+    " }
+
+    " NerdTree {
+      map <c-n> :NerdTreeToggle<CR>
+    " }
+
+    " Syntastic {
+      " Removing any annoying warnings
+      let g:syntastic_quiet_messages = { 'regex': 'void context' }
+    " }
+  " }
+
+  " GUI settings {
+    " GVIM - who needs a vimrc
+    if has('gui_running')
+      set guioptions-=T             " remove the toolbar
+      set guioptions-=m             " remove the toolbar
+      set guioptions-=r             " remove the toolbar
+      set lines=40                  " 24??
+      set term=builtin_ansi         " make arrow and other keys work
+    endif
+  " }
+
+" }
