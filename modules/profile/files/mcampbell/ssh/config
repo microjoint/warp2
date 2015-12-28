@@ -8,6 +8,8 @@ host 10.180.19.71 ramze
 host 10.180.19.154 icinga
   User icinga
   Port 993
+host noc
+  port 2222
 host *
   User mcampbel
   LogLevel quiet
