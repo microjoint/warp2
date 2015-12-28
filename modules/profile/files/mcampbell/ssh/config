@@ -10,6 +10,7 @@ host 10.180.19.154 icinga
   Port 993
 host noc
   port 2222
+  User noc
 host *
   User mcampbel
   LogLevel quiet
