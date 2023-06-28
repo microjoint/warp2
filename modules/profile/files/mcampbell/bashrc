@@ -10,7 +10,7 @@
 # Make bash append rather than overwrite the history on disk
 shopt -s histappend
 
-PATH=~/bin:$PATH:~/data/WillHill/src/cx/dev_tools/scripts/git/gitconfig:~/1-data/WillHill/src/cx/dev_tools/scripts
+PATH=~/bin:$PATH
 
 # Vi command line editing mode
 set -o vi
@@ -32,7 +32,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # CDPATH
-CDPATH=/etc,/home/mcampbell,/home/mcampbell/1-data/src,/home/mcampbell/WillHill/src
+CDPATH=/etc,/home/mcampbell,/home/mcampbell/1-data/src
 
 # check the window size after each command and, if necessary, update
 # values of LINES and COLUMNS.
